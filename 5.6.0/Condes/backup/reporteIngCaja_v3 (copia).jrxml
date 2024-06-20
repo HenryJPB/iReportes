@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportIngCaja_v3" language="groovy" pageWidth="666" pageHeight="842" columnWidth="626" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2aa717d5-a60c-44df-9841-9d263a8f8839">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="desdeNroIng" class="java.lang.String">
+		<defaultValueExpression><![CDATA[000001]]></defaultValueExpression>
+	</parameter>
+	<parameter name="hastaNroIng" class="java.lang.String">
+		<defaultValueExpression><![CDATA[999999]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/home/henrypb/i-reportes/condes/"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select C4_NRO_INGRESO as nroIngreso,
+       C4_FECHA as fechaIng,
+       to_char( C4_FECHA,'dd')||'     '||to_char( C4_FECHA,'MM' )||'     '||to_char( C4_FECHA,'yyyy') as txtFechaIng,
+       C4_COD_CLIENTE as codCliente,
+       C4_NOMBRE_CLIENTE as nombreCliente,
+       C4_RAZON_SOCIAL as razonSocial,
+       C4_MONTO as monto,
+       C4_TIPO_DOC as tipoDoc,
+       C2_DESCRIPCION as descripcionDoc,
+       ( select ': '
+         from   CAJA05_DAT
+         where  C5_NRO_INGRESO = C4_NRO_INGRESO
+         and    C5_REF_DOC != '--incluir Doc--'
+         and    rowNum = 1 ) as dosPuntos,
+       C4_FECHA_TRANS as fechaTrans,
+       to_char( C4_FECHA_TRANS,'dd')||'           '||to_char( C4_FECHA_TRANS,'MM' )||'           '||to_char( C4_FECHA_TRANS,'yyyy') as txtFechaTrans,
+       C4_COD_BANCO as bancoDeposito,
+       'DEP. '||C4_NRO_PLANILLA as nroPlanilla,
+       substr( C1_COD_CONTABLE,1,5)||' '||substr(C1_COD_CONTABLE,6,4) as codContable,
+       nvl(C4_OBSERVACION,' ') as observacion
+from   CAJA04_DAT, BAN01_DAT, CAJA02_DAT
+where  C4_COD_BANCO = C1_COD_BANCO
+and    C4_NRO_INGRESO between $P{desdeNroIng} and $P{hastaNroIng}
+and    C4_TIPO_DOC = C2_TIPO_DOC]]>
+	</queryString>
+	<field name="NROINGRESO" class="java.lang.String"/>
+	<field name="FECHAING" class="java.sql.Timestamp"/>
+	<field name="TXTFECHAING" class="java.lang.String"/>
+	<field name="CODCLIENTE" class="java.lang.String"/>
+	<field name="NOMBRECLIENTE" class="java.lang.String"/>
+	<field name="RAZONSOCIAL" class="java.lang.String"/>
+	<field name="MONTO" class="java.math.BigDecimal"/>
+	<field name="TIPODOC" class="java.lang.String"/>
+	<field name="DESCRIPCIONDOC" class="java.lang.String"/>
+	<field name="DOSPUNTOS" class="java.lang.String"/>
+	<field name="FECHATRANS" class="java.sql.Timestamp"/>
+	<field name="TXTFECHATRANS" class="java.lang.String"/>
+	<field name="BANCODEPOSITO" class="java.lang.String"/>
+	<field name="NROPLANILLA" class="java.lang.String"/>
+	<field name="CODCONTABLE" class="java.lang.String"/>
+	<field name="OBSERVACION" class="java.lang.String"/>
+	<sortField name="FECHAING"/>
+	<group name="FECHAING">
+		<groupExpression><![CDATA[$F{FECHAING}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="112" splitType="Stretch">
+			<textField>
+				<reportElement uuid="986c7a7b-5296-454a-b80f-e96ac32e462a" x="246" y="88" width="208" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Monospaced" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TXTFECHAING}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="279" splitType="Stretch">
+			<textField>
+				<reportElement uuid="724ae932-64c6-42e9-b0f4-acf9a5cfad43" x="11" y="61" width="537" height="20"/>
+				<textElement>
+					<font fontName="Monospaced" size="12" isBold="false" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOMBRECLIENTE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9d5b553a-a7f7-4798-bf79-34cc41133e7c" x="12" y="107" width="139" height="20"/>
+				<textElement>
+					<font fontName="Monospaced" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DESCRIPCIONDOC}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6937b452-ef2a-4c98-b8fa-05c9f85b99df" x="362" y="163" width="239" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Monospaced" size="12" isBold="false" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TXTFECHATRANS}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement uuid="97bde02e-8deb-4b89-ae3f-ec09ff9af00b" x="437" y="33" width="168" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Monospaced" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MONTO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5f425d1b-1399-4807-af88-73323def3a28" x="0" y="237" width="149" height="20"/>
+				<textElement>
+					<font fontName="Monospaced" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CODCONTABLE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5905347f-9cef-4b32-b042-051b46cfb290" x="12" y="129" width="425" height="20"/>
+				<textElement>
+					<font fontName="Monospaced" size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{OBSERVACION}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="a3601d38-ce1a-4c18-927b-d258bc33bacf" x="527" y="237" width="33" height="20"/>
+				<textElement>
+					<font fontName="Monospaced" size="13" isBold="false"/>
+				</textElement>
+				<text><![CDATA[X]]></text>
+			</staticText>
+			<textField pattern="#,##0.00">
+				<reportElement uuid="d202abbc-8dc1-440d-b5e3-35f904b84761" x="406" y="237" width="100" height="20"/>
+				<textElement textAlignment="Right">
+					<font fontName="Monospaced" size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MONTO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="289c9678-9461-4f47-89dd-a50ea6af0a99" x="149" y="237" width="83" height="20"/>
+				<textElement>
+					<font fontName="Monospaced"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NROPLANILLA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f4971605-672a-4b43-a984-f5bdacfae8e1" x="232" y="237" width="174" height="20"/>
+				<textElement>
+					<font fontName="Monospaced"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOMBRECLIENTE}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement uuid="1bac1e12-e7ad-40a0-904b-90790da9a8f9" x="163" y="107" width="83" height="20"/>
+				<subreportParameter name="nroIngreso">
+					<subreportParameterExpression><![CDATA[$F{NROINGRESO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "subreporteCaja05.jasper"]]></subreportExpression>
+			</subreport>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="ca1d9c7b-6d40-4ec9-955a-3f74fb881320" x="152" y="108" width="11" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{DOSPUNTOS}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

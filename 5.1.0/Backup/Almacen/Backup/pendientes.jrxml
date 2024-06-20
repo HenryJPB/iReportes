@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="pendientes" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f6f553c9-b691-45c7-8440-1a524a312368">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Detalle" uuid="64354b6f-6933-4611-aa79-919b46752b38">
+		<queryString language="xPath">
+			<![CDATA[/Requisicion/producto]]>
+		</queryString>
+		<field name="PRODU_ID" class="java.lang.String">
+			<fieldDescription><![CDATA[PRODU_ID]]></fieldDescription>
+		</field>
+		<field name="CANTIDAD" class="java.lang.String">
+			<fieldDescription><![CDATA[CANTIDAD]]></fieldDescription>
+		</field>
+		<field name="TIPO" class="java.lang.String">
+			<fieldDescription><![CDATA[TIPO]]></fieldDescription>
+		</field>
+		<field name="C1_DESCRIPCION" class="java.lang.String">
+			<fieldDescription><![CDATA[C1_DESCRIPCION]]></fieldDescription>
+		</field>
+		<field name="REQUINUMERO" class="java.lang.String">
+			<fieldDescription><![CDATA[REQUINUMERO]]></fieldDescription>
+		</field>
+		<field name="FECHA" class="java.util.Date">
+			<fieldDescription><![CDATA[FECHA]]></fieldDescription>
+		</field>
+	</subDataset>
+	<queryString language="xPath">
+		<![CDATA[/Requisicion/Datos]]>
+	</queryString>
+	<field name="DESDEFECHA" class="java.lang.String">
+		<fieldDescription><![CDATA[DESDEFECHA]]></fieldDescription>
+	</field>
+	<field name="HASTAFECHA" class="java.lang.String">
+		<fieldDescription><![CDATA[HASTAFECHA]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="127" splitType="Stretch">
+			<textField>
+				<reportElement uuid="6a4d7e07-f56c-496c-ac42-3b936f3332a8" x="435" y="104" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{HASTAFECHA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="161412a9-fb80-4602-b5de-23e78195e111" x="73" y="99" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DESDEFECHA}]]></textFieldExpression>
+			</textField>
+			<image>
+				<reportElement uuid="5fa51e07-f80f-425d-9982-d12ce508107e" x="21" y="10" width="69" height="72"/>
+				<imageExpression><![CDATA["images.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="a74bb028-136e-459b-8064-730f5bddf86c" x="142" y="28" width="293" height="54"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial Narrow" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Requisiciónes Pendientes]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="eaa8fb69-b9b4-44bf-acc1-191430773c4e" x="21" y="99" width="52" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Desde :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d2ce574d-8458-4013-93d6-1f0453364504" x="391" y="104" width="44" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Hasta :]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="0d769be0-d052-4392-bd6a-016182c1f46d" x="445" y="28" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d1b76be3-aecb-496f-95fb-27e70cb2b098" x="435" y="62" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Pagina "+$V{PAGE_NUMBER}+" De"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="b786a20c-63c0-47e2-9ae1-881a356588a2" x="515" y="62" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="101" splitType="Stretch">
+			<componentElement>
+				<reportElement uuid="3e0c0a3b-758f-4586-9891-a9adf0bfc78b" key="table" style="table" x="0" y="0" width="555" height="84"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Detalle" uuid="74597fe4-5761-4014-aa10-d9450dae4a38">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).dataSource("/Requisicion/producto")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="90" uuid="6e3969b5-50bd-4f89-be6b-ec4842397645">
+						<jr:columnHeader height="20" rowSpan="1">
+							<staticText>
+								<reportElement uuid="b0387acd-6ad2-4273-b961-63a7f813d63c" x="0" y="0" width="90" height="16"/>
+								<textElement textAlignment="Center">
+									<font size="11" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Codigo]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter height="30" rowSpan="1"/>
+						<jr:detailCell height="30" rowSpan="1">
+							<textField>
+								<reportElement uuid="b86108e9-d338-4f46-b8cf-99a41bc5293e" x="0" y="0" width="90" height="20"/>
+								<textElement textAlignment="Center"/>
+								<textFieldExpression><![CDATA[$F{PRODU_ID}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="e01f31dd-1679-484a-802d-b522462097a6">
+						<jr:columnHeader height="20" rowSpan="1">
+							<staticText>
+								<reportElement uuid="478c7d02-c4e9-4474-8dcc-8b650579a135" x="2" y="0" width="88" height="16"/>
+								<textElement textAlignment="Center">
+									<font size="11" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Descripcion]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter height="30" rowSpan="1"/>
+						<jr:detailCell height="30" rowSpan="1">
+							<textField>
+								<reportElement uuid="dde3f103-3602-4d51-b82e-883695a69570" x="0" y="0" width="90" height="20"/>
+								<textElement textAlignment="Center"/>
+								<textFieldExpression><![CDATA[$F{C1_DESCRIPCION}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="1c255178-9044-4ef9-8354-a442a69af007">
+						<jr:columnHeader height="20" rowSpan="1">
+							<staticText>
+								<reportElement uuid="ff6dcf2d-1731-46df-b1b8-3ff57dfbf87f" x="0" y="0" width="90" height="16"/>
+								<textElement textAlignment="Center">
+									<font size="11" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Cantidad]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter height="30" rowSpan="1"/>
+						<jr:detailCell height="30" rowSpan="1">
+							<textField>
+								<reportElement uuid="ee802e39-04bb-4081-9405-948cd431e319" x="0" y="0" width="90" height="20"/>
+								<textElement textAlignment="Center"/>
+								<textFieldExpression><![CDATA[$F{CANTIDAD}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="fb4f21a8-8ddf-428b-8e4b-cfc5d4e4e9f9">
+						<jr:columnHeader height="20" rowSpan="1">
+							<staticText>
+								<reportElement uuid="50606b5a-cc0e-4b59-9d59-8b33bba93b83" x="0" y="0" width="90" height="16"/>
+								<textElement textAlignment="Center">
+									<font size="11" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Tipo]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter height="30" rowSpan="1"/>
+						<jr:detailCell height="30" rowSpan="1">
+							<textField>
+								<reportElement uuid="2db1bc68-bb4b-42ce-99db-25c21fce8166" x="0" y="0" width="90" height="20"/>
+								<textElement textAlignment="Center"/>
+								<textFieldExpression><![CDATA[$F{TIPO}.equals("1") ? "URGENTE" : "ORDINARIO"]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="df345d60-b58d-4d5d-822c-1264c809b1ef">
+						<jr:columnHeader height="20" rowSpan="1">
+							<staticText>
+								<reportElement uuid="629f600a-9a17-4bab-8070-bcc8c0dd0a5b" x="0" y="0" width="90" height="16"/>
+								<textElement textAlignment="Center">
+									<font size="11" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Requisicón]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter height="30" rowSpan="1"/>
+						<jr:detailCell height="30" rowSpan="1">
+							<textField>
+								<reportElement uuid="c63e439c-753d-4710-988e-b93013baec96" x="0" y="0" width="90" height="20"/>
+								<textElement textAlignment="Center"/>
+								<textFieldExpression><![CDATA[$F{REQUINUMERO}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="327ad1cd-692d-4b46-92c3-1f986484354e">
+						<jr:columnHeader height="20" rowSpan="1">
+							<staticText>
+								<reportElement uuid="2bcd4fc9-c516-4a90-b1b2-9184b9b4faa9" x="0" y="0" width="90" height="16"/>
+								<textElement textAlignment="Center">
+									<font size="11" isBold="true"/>
+								</textElement>
+								<text><![CDATA[Fecha]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter height="30" rowSpan="1"/>
+						<jr:detailCell height="30" rowSpan="1">
+							<textField>
+								<reportElement uuid="cfc71fe1-c1a7-4707-9082-8d18d28616f8" x="0" y="0" width="90" height="20"/>
+								<textElement textAlignment="Center"/>
+								<textFieldExpression><![CDATA[$F{FECHA}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="84" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteClientesActivos" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="183b67b0-b10d-403f-8032-1331584afeec">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="214"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString>
+		<![CDATA[select CODIGO,
+       NOMBRE_CLI_PROV as Nombre,
+       CEDULA as Rif
+from   CXCD_DAT
+order  by CODIGO]]>
+	</queryString>
+	<field name="CODIGO" class="java.lang.String"/>
+	<field name="NOMBRE" class="java.lang.String"/>
+	<field name="RIF" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="b9999972-f1ba-48b4-84b8-b4d53d439293" style="Title" x="232" y="0" width="301" height="62"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[CLIENTES ACTIVOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0d9da2e8-00ba-4bbb-8399-a5737a45b5b4" style="SubTitle" x="232" y="62" width="323" height="22"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[DERIVADOS SIDERURGICOS, C.A.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a1a1517e-d473-4979-8479-442052f7a724" x="172" y="95" width="383" height="23"/>
+				<textElement textAlignment="Center">
+					<font size="10" isBold="true" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Proportional"/>
+				</textElement>
+				<text><![CDATA[Relacion Maestra de Clientes Activos]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement uuid="598efc8d-7db7-474c-8a5a-6c1ea49eafef" positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="ca6fdb56-4dca-49de-b4d5-486f6df796d4" style="Column header" x="0" y="0" width="267" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[CODIGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b6d6f9d3-c224-44f1-be35-ece6463ae220" style="Column header" x="267" y="0" width="267" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="feaf49fb-4a39-4e98-a9fc-f0c2baa1bb5a" style="Column header" x="534" y="0" width="267" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[RIF]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement uuid="65a80b38-3a3a-417f-a117-bda5634b1b04" style="Row" mode="Opaque" x="0" y="0" width="802" height="15"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="1420574f-1024-4bbb-9078-d8e5b507c3e0" style="Detail" x="0" y="0" width="267" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{CODIGO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="4818a4cc-9ccb-4be9-83e5-cc5791038a61" style="Detail" x="267" y="0" width="267" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{NOMBRE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="f0154a7d-f25a-4b17-a417-656e7fb074c7" style="Detail" x="534" y="0" width="267" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{RIF}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement uuid="56fc8c9a-7884-4e1a-b98d-8126b674445c" positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement uuid="f81efe41-ca00-4e6c-9fbe-72440f254615" mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF"/>
+				<textField evaluationTime="Report">
+					<reportElement uuid="95d78117-0f74-4629-a698-f46839e1f97e" style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="1365dcc6-3763-4836-97c1-702d330c276d" style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="05df4551-bd09-4b54-bc1c-be6e3715b155" style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

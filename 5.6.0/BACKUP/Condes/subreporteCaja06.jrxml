@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="subreporteCaja06" language="groovy" pageWidth="300" pageHeight="802" columnWidth="300" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="c128dfdf-d6f3-455b-8fa2-614298b3098e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="nroIngreso" class="java.lang.String">
+		<defaultValueExpression><![CDATA[$F{C6_NRO_INGRESO}]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select C6_NRO_CHEQUE as cheque,
+       C6_BANCO as bancoDeposito,
+       C6_MONTO as monto,
+       C6_NRO_INGRESO
+from   CAJA06_DAT
+where  C6_NRO_INGRESO = $P{nroIngreso}
+order  by C6_BANCO, C6_NRO_CHEQUE]]>
+	</queryString>
+	<field name="CHEQUE" class="java.lang.String"/>
+	<field name="BANCODEPOSITO" class="java.lang.String"/>
+	<field name="MONTO" class="java.math.BigDecimal"/>
+	<field name="C6_NRO_INGRESO" class="java.lang.String"/>
+	<detail>
+		<band height="28" splitType="Stretch">
+			<textField>
+				<reportElement uuid="980298c0-bd10-44de-9992-53995f187061" x="0" y="0" width="100" height="12"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{CHEQUE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="41381719-d10a-479f-b5b5-063ab8cfd200" x="0" y="12" width="267" height="15"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{BANCODEPOSITO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

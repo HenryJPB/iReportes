@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportIngCaja" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2aa717d5-a60c-44df-9841-9d263a8f8839">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="desdeNroIng" class="java.lang.String">
+		<defaultValueExpression><![CDATA[000001]]></defaultValueExpression>
+	</parameter>
+	<parameter name="hastaNroIng" class="java.lang.String">
+		<defaultValueExpression><![CDATA[999999]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select C4_FECHA as fechaIng,
+                NOMBRE_CLI_PROV as nombreCliente,
+                C4_COD_CLIENTE as codCliente,
+                C4_MONTO as monto,
+                C4_TIPO_DOC as tipoDoc,
+                C2_DESCRIPCION as descripcionDoc,
+                C4_FECHA_TRANS as fechaTrans,
+                C4_COD_BANCO as bancoDeposito,
+                C4_OBSERVACION as observacion
+from   CAJA04_DAT, CXCD_DAT, BAN01_DAT, CAJA02_DAT
+where  C4_COD_CLIENTE = CODIGO
+and    C4_COD_BANCO = C1_COD_BANCO
+and    C4_NRO_INGRESO between $P{desdeNroIng} and $P{hastaNroIng}
+and    C4_TIPO_DOC = C2_TIPO_DOC  ]]>
+	</queryString>
+	<field name="FECHAING" class="java.sql.Timestamp"/>
+	<field name="NOMBRECLIENTE" class="java.lang.String"/>
+	<field name="CODCLIENTE" class="java.lang.String"/>
+	<field name="MONTO" class="java.math.BigDecimal"/>
+	<field name="TIPODOC" class="java.lang.String"/>
+	<field name="DESCRIPCIONDOC" class="java.lang.String"/>
+	<field name="FECHATRANS" class="java.sql.Timestamp"/>
+	<field name="BANCODEPOSITO" class="java.lang.String"/>
+	<field name="OBSERVACION" class="java.lang.String"/>
+	<group name="FECHAING">
+		<groupExpression><![CDATA[$F{FECHAING}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="2f73c679-a844-4e4e-8b83-8498fd2289bf" x="462" y="27" width="123" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FECHAING}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="147" splitType="Stretch">
+			<textField>
+				<reportElement uuid="724ae932-64c6-42e9-b0f4-acf9a5cfad43" x="80" y="17" width="382" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOMBRECLIENTE}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="2cc8910f-c368-43ad-8107-4512b1b4cdbe" x="462" y="117" width="143" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FECHATRANS}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9d5b553a-a7f7-4798-bf79-34cc41133e7c" x="80" y="72" width="382" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DESCRIPCIONDOC}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

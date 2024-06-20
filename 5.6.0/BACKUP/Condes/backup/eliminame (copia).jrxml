@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="eliminame" language="groovy" columnCount="2" printOrder="Horizontal" pageWidth="595" pageHeight="842" columnWidth="100" columnSpacing="355" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2e6a7ca6-ef35-411a-8e96-9604ff8e4781">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select C5_REF_DOC as Fac,
+       C5_NRO_INGRESO as nroIngreso
+from   CAJA05_DAT
+where  C5_REF_DOC != '--incluir Doc--'
+--and    C5_NRO_INGRESO = '031497']]>
+	</queryString>
+	<field name="FAC" class="java.lang.String"/>
+	<field name="NROINGRESO" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="8a17f6fd-3637-4df9-a490-7f70fa8a9ac2" mode="Opaque" x="18" y="2" width="80" height="20" backcolor="#14E3EB"/>
+				<textElement/>
+				<text><![CDATA[FAC]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<textField>
+				<reportElement uuid="988517bd-fbbf-424c-a2a1-722954c2c750" x="18" y="7" width="80" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FAC}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

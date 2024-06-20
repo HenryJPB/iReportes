@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteIngCaja" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="19eb4308-b990-4a6e-88ee-c4b2c99c1c8e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="fecha1" class="java.util.Date">
+		<defaultValueExpression><![CDATA[01/01/2014]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fecha2" class="java.util.Date">
+		<defaultValueExpression><![CDATA[31/01/2014]]></defaultValueExpression>
+	</parameter>
+	<parameter name="nroIngreso1" class="java.lang.String">
+		<defaultValueExpression><![CDATA[000001]]></defaultValueExpression>
+	</parameter>
+	<parameter name="nroIngreso2" class="java.lang.String">
+		<defaultValueExpression><![CDATA[999999]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select C4_NRO_INGRESO as nroIng,
+       C4_FECHA as fechaIng,
+       C4_COD_CLIENTE as codCliente,
+       C4_NOMBRE_CLIENTE as nombreCliente,
+       C4_RAZON_SOCIAL as razonSocial,
+       C4_TIPO_DOC as tipoDoc,
+       '<<Documentos>>' as docuementos,
+       C4_TIPO_TRANS as tipoTrans,
+       C4_FECHA_TRANS as fechaTrans,
+       C4_COD_BANCO as bancoDeposito,
+       C4_NRO_PLANILLA as nroPlanilla,
+       '<<Cheques>>' as cheques,
+       C4_STATUS_REV as statusRev,
+       C4_STATUS_CONTABLE  as statusCont,
+       C4_OBSERVACION as observacion
+from   CAJA04_DAT
+where  C4_NRO_INGRESO between $P{nroIngreso1} and $P{nroIngreso2}
+and    C4_FECHA between $P{fecha1} and $P{fecha2}
+order  by C4_NRO_INGRESO, C4_FECHA]]>
+	</queryString>
+	<field name="NROING" class="java.lang.String"/>
+	<field name="FECHAING" class="java.util.Date"/>
+	<field name="NOMBRECLIENTE" class="java.lang.String"/>
+	<field name="CODCLIENTE" class="java.lang.String"/>
+	<field name="TIPODOC" class="java.lang.String"/>
+	<field name="DOCUEMENTOS" class="java.lang.String"/>
+	<field name="TIPOTRANS" class="java.lang.String"/>
+	<field name="FECHATRANS" class="java.util.Date"/>
+	<field name="BANCODEPOSITO" class="java.lang.String"/>
+	<field name="NROPLANILLA" class="java.lang.String"/>
+	<field name="CHEQUES" class="java.lang.String"/>
+	<field name="STATUSREV" class="java.lang.String"/>
+	<field name="STATUSCONT" class="java.lang.String"/>
+	<field name="OBSERVACION" class="java.lang.String"/>
+	<group name="NROING">
+		<groupExpression><![CDATA[$F{NROING}]]></groupExpression>
+		<groupHeader>
+			<band height="37">
+				<frame>
+					<reportElement uuid="9c3c7702-91cc-4ee7-bec6-52d405c70760" mode="Opaque" x="-21" y="7" width="843" height="24" forecolor="#B89F7D" backcolor="#F2EBDF"/>
+					<textField>
+						<reportElement uuid="6ffa08a8-9238-4553-9b40-db9e2cc391f0" style="SubTitle" x="28" y="0" width="755" height="24" forecolor="#736343"/>
+						<textElement>
+							<font isBold="true"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{NROING}]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="138" splitType="Stretch">
+			<image>
+				<reportElement uuid="26367a01-7d34-441d-b1e9-51eca1307709" x="0" y="0" width="122" height="98" isRemoveLineWhenBlank="true"/>
+				<imageExpression><![CDATA["logo-desica.bmp"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="95a1ccd6-e9c0-4d87-b1bb-1583cdb81e1b" style="Title" x="244" y="0" width="313" height="48"/>
+				<textElement verticalAlignment="Middle">
+					<font size="30" isItalic="false" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[GESTION DE CAJA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3307e95d-6770-4eef-89b4-0f8614b66214" style="SubTitle" x="282" y="48" width="244" height="22"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[CONTROL DE INGRESOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="50a56af5-1547-4c36-8fe5-6448e5c821ad" style="SubTitle" x="1" y="115" width="137" height="23"/>
+				<textElement>
+					<font fontName="Arial Black" size="16" isBold="false" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[NRO. INGRESO]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="db5be4bd-1d8c-485e-87ea-b5cade66bc6b" positionType="FixRelativeToBottom" x="1" y="115" width="802" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="44085b7a-4f13-4abf-8174-99ca45dd4559" style="SubTitle" x="263" y="79" width="55" height="19"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[DESDE: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ddfa0f33-809e-4b20-86f0-7d4d7233d439" style="SubTitle" x="411" y="79" width="61" height="19"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[HASTA: ]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="1778fae7-2ce7-4750-ba07-4a08fa4c2f78" x="327" y="79" width="69" height="20"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fecha1}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="96ca84eb-1588-4a8f-a0a6-20368de703a1" x="472" y="79" width="77" height="19"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fecha2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="18" splitType="Stretch">
+			<line>
+				<reportElement uuid="f847e047-2e6b-45db-a9fa-99f4a288d4fb" positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="ab1e607e-ab99-4837-8c4c-255fbb64388d" style="Column header" x="0" y="0" width="61" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[FECHAING]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="47c6a3ff-337d-4936-aece-5fff659e3876" style="Column header" x="61" y="0" width="61" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[NOMBRECLIENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d249a549-1fac-4008-9baf-1f3ebbb1a9d7" style="Column header" x="122" y="0" width="61" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[CODCLIENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2972ff0e-e487-4432-9054-3d39813965bd" style="Column header" x="183" y="0" width="61" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[TIPODOC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4fa956ad-2fe8-4cb5-a380-4cc57ebf5cca" style="Column header" x="244" y="0" width="61" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[DOCUEMENTOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5d678feb-8c3f-450e-b899-633b643fd2bb" style="Column header" x="305" y="0" width="61" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[TIPOTRANS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="25174698-bbd3-4c09-b88f-098385fe9686" style="Column header" x="366" y="0" width="61" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[FECHATRANS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="addc670d-076c-41e9-b50b-5c6b8f70bba0" style="Column header" x="427" y="0" width="61" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[BANCODEPOSITO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a7770da2-f944-4c1b-b20b-e28494c28500" style="Column header" x="488" y="0" width="61" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[NROPLANILLA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="17decd92-6ba0-4415-865f-99d0afac0ad1" style="Column header" x="549" y="0" width="61" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[CHEQUES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e6aae13e-2a75-4bf8-89c5-98d5c8fb1376" style="Column header" x="610" y="0" width="61" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[STATUSREV]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2edd139b-dbc3-4dfa-a935-faf47374f23a" style="Column header" x="671" y="0" width="61" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[STATUSCONT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="494dfdf1-bfff-4a2d-b5ea-6f969469ac4c" style="Column header" x="732" y="0" width="61" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[OBSERVACION]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement uuid="c3df3d47-1293-4f63-9417-372d242c69af" style="Row" mode="Opaque" x="0" y="0" width="802" height="15"/>
+				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy">
+					<reportElement uuid="3e1f4ed2-5a08-4b35-b0df-08706b69c5ca" style="Detail" x="0" y="0" width="61" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{FECHAING}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="2a8c2f51-a8e5-4ee3-888e-47cdc69efdde" style="Detail" x="61" y="0" width="61" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{NOMBRECLIENTE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="bbebf566-18d0-4739-90b3-3e4626c90c48" style="Detail" x="122" y="0" width="61" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{CODCLIENTE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="b05b5b39-4f4e-4f90-b10a-f2f886a032a7" style="Detail" x="183" y="0" width="61" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{TIPODOC}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="78e9df9b-52e7-472f-9706-4ecbb7acce5e" style="Detail" x="244" y="0" width="61" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{DOCUEMENTOS}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="23d166c5-f691-4990-aa4f-5fcb44b6b71a" style="Detail" x="305" y="0" width="61" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{TIPOTRANS}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy" isBlankWhenNull="false">
+					<reportElement uuid="c435adf6-a019-45d8-9a9e-cfcc3b53c109" style="Detail" x="366" y="0" width="61" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{FECHATRANS}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="adf5e249-994b-4a4f-964b-0159c65f2bd3" style="Detail" x="427" y="0" width="61" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{BANCODEPOSITO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="c9a53a78-7c8c-40da-b433-a064299acd2e" style="Detail" x="488" y="0" width="61" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{NROPLANILLA}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="64545534-8405-47a1-8d43-81820ca5731e" style="Detail" x="549" y="0" width="61" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{CHEQUES}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="9d8fd443-6fef-4a5a-922f-b8e1adb549b8" style="Detail" x="610" y="0" width="61" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{STATUSREV}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="1c2c2826-158b-453e-8111-5e12060d32ee" style="Detail" x="671" y="0" width="61" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{STATUSCONT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="ee5fa55e-babb-49de-93e1-1e5253f5decd" style="Detail" x="732" y="0" width="61" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{OBSERVACION}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement uuid="309cb152-9499-4257-af55-1848158cce3f" positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement uuid="73c30486-6d03-42cd-a33f-68c31e0c19d2" mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF"/>
+				<textField evaluationTime="Report">
+					<reportElement uuid="b7ed09aa-feaf-46b2-940e-a1e15928fe1d" style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="da95e56e-2921-447d-bf87-30f8801ccb89" style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="35511832-cb1d-4a2b-b9b8-0882eeb14b48" style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

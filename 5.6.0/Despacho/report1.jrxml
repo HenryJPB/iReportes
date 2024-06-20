@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="777" pageHeight="842" columnWidth="737" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3ac33824-92e5-44cc-8fdc-6eceb513f612">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="8"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT c1_guia AS nroGuia,
+               c1_fecha_guia AS fechaGuia,
+               c1_codigo_cliente  AS codigo,
+               nombre_cli_prov AS socioNegocio
+FROM    Guias01_dat, Cxcd_dat
+WHERE codigo = c1_codigo_cliente
+AND      c1_guia = '79288']]>
+	</queryString>
+	<field name="NROGUIA" class="java.lang.String"/>
+	<field name="FECHAGUIA" class="java.sql.Timestamp"/>
+	<field name="CODIGO" class="java.lang.String"/>
+	<field name="SOCIONEGOCIO" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="73" splitType="Stretch">
+			<textField>
+				<reportElement x="31" y="15" width="100" height="20" uuid="4cc2a883-7313-43f9-b1dc-99a40856d972"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="12" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NROGUIA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="162" y="15" width="100" height="20" uuid="f374600e-b82b-4f17-ae09-b0128ba008d3"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="12" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FECHAGUIA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="31" y="45" width="100" height="20" uuid="98dc7b00-de9d-43e2-a36f-04a6363aaf9b"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="12" isBold="false" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CODIGO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="162" y="45" width="367" height="20" uuid="99022ab4-73dc-4c02-a3c9-4ac7847caf34"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="12" isBold="true" pdfFontName="Times-Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{SOCIONEGOCIO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<staticText>
+				<reportElement x="72" y="11" width="190" height="19" uuid="bb42e575-f844-4b8c-bd3d-512f83b8f4bc"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="9" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Static text size 9]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="72" y="30" width="190" height="19" uuid="afd207f9-2344-40d6-bf10-5795fec39bae"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="10" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Static text size 10]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="72" y="49" width="190" height="19" uuid="d644abf2-5ea7-4c01-8cf6-e77a41d38c90"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="11" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Static text size 11]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="72" y="68" width="190" height="19" uuid="ad4b44d2-c15b-4718-93d9-e07bdcf723c9"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="12" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Static text size 12]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="72" y="87" width="190" height="19" uuid="04f017e8-2384-4096-b0a1-af8dc737a818"/>
+				<textElement>
+					<font fontName="DejaVu Serif" size="13" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Static text size 13]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

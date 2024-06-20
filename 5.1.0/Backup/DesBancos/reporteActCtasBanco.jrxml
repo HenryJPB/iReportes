@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteActCtasBanco" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="codBanco" class="java.lang.String">
+		<parameterDescription><![CDATA[Codigo del Banco?:]]></parameterDescription>
+		<defaultValueExpression><![CDATA["16"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="desdeFecha" class="java.util.Date">
+		<parameterDescription><![CDATA[Desde la fecha? (mm/dd/aaaa):]]></parameterDescription>
+		<defaultValueExpression><![CDATA[01/01/2012]]></defaultValueExpression>
+	</parameter>
+	<parameter name="hastaFecha" class="java.util.Date">
+		<parameterDescription><![CDATA[Hasta la fecha? (mm/dd/aaaa):]]></parameterDescription>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[select ( select nvl(sum(decode(C2_TIPO_CONTABLE,
+                                                'D',C3_MONTO,
+                                                -C3_MONTO )),0)
+                          from   BAN02_DAT,BAN03_DAT
+                          where  C3_COD_BANCO=$P{codBanco}
+                          and    C2_TIPO_MOV=C3_TIPO_MOV
+                          and    C3_FECHA< $P{desdeFecha} ) as saldoAnterior,
+          C3_COD_BANCO||' '||C1_NOMBRE_BANCO as banco,
+          C3_TIPO_MOV as tipoMov,
+          C3_FECHA as fecha,
+          C3_DESCRIP_OPERACION as descripcion,
+          decode( C2_TIPO_CONTABLE,'D',C3_MONTO) as debito,
+          decode( C2_TIPO_CONTABLE,'C',C3_MONTO) as credito,
+          decode( C2_TIPO_CONTABLE,
+                                 'D',C3_MONTO,
+                                 'C',(-1)*C3_MONTO ) as saldo
+from   BAN01_DAT, BAN03_DAT, BAN02_DAT
+where   C3_COD_BANCO = C1_COD_BANCO
+and    C3_COD_BANCO  = $P{codBanco}
+and    C3_FECHA >= $P{desdeFecha}
+and      C3_TIPO_MOV = C2_TIPO_MOV
+order by C3_COD_BANCO, C3_FECHA, C3_TIPO_MOV]]>
+	</queryString>
+	<field name="saldoAnterior" class="java.lang.Number"/>
+	<field name="BANCO" class="java.lang.String"/>
+	<field name="TIPOMOV" class="java.lang.String"/>
+	<field name="FECHA" class="java.util.Date"/>
+	<field name="DESCRIPCION" class="java.lang.String"/>
+	<field name="DEBITO" class="java.math.BigDecimal"/>
+	<field name="CREDITO" class="java.math.BigDecimal"/>
+	<field name="SALDO" class="java.math.BigDecimal"/>
+	<variable name="SALDO_1" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{SALDO}]]></variableExpression>
+	</variable>
+	<variable name="DEBITO_1" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{DEBITO}]]></variableExpression>
+	</variable>
+	<variable name="CREDITO_1" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{CREDITO}]]></variableExpression>
+	</variable>
+	<variable name="runningSaldo" class="java.lang.Number">
+		<variableExpression><![CDATA[$F{saldoAnterior}+$V{SALDO_1}]]></variableExpression>
+	</variable>
+	<group name="BANCO">
+		<groupExpression><![CDATA[$F{BANCO}]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<pageHeader>
+		<band height="68">
+			<staticText>
+				<reportElement x="0" y="5" width="307" height="20" forecolor="#550707"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DERIVADOS SIDERURGICOS,C.A.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="343" y="5" width="187" height="20" forecolor="#770101"/>
+				<textElement textAlignment="Left">
+					<font size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Estado de Cuenta]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Transparent" x="2" y="30" width="305" height="19" forecolor="#0650F0" backcolor="#E6E6E6"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{BANCO}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="380" y="29" width="58" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[$P{desdeFecha}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="343" y="29" width="35" height="20"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[desde: ]]></text>
+			</staticText>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement mode="Opaque" x="102" y="51" width="100" height="16" backcolor="#E0E3E3"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Number"><![CDATA[$F{saldoAnterior}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="51" width="100" height="16"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vienen:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="442" y="30" width="31" height="18"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[hasta: ]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="475" y="30" width="58" height="20"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[$P{hastaFecha}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="26">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="7" width="31" height="15" forecolor="#040607" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Left">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIPO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="31" y="7" width="52" height="15" forecolor="#040607" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Left">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="83" y="7" width="193" height="15" forecolor="#040607" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIPCION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="276" y="7" width="92" height="15" forecolor="#040607" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Right">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEBITO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="368" y="7" width="92" height="15" forecolor="#040607" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Right">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CREDITO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="460" y="7" width="92" height="15" forecolor="#040607" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Right">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SALDO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="22" width="553" height="1"/>
+			</line>
+			<line>
+				<reportElement x="2" y="6" width="553" height="1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="4" width="31" height="14"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{TIPOMOV}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy">
+				<reportElement x="33" y="4" width="62" height="14"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[$F{FECHA}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="100" y="4" width="207" height="14"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{DESCRIPCION}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="276" y="4" width="92" height="14"/>
+				<textElement textAlignment="Right">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{DEBITO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement x="368" y="4" width="92" height="14"/>
+				<textElement textAlignment="Right">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{CREDITO}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement x="460" y="4" width="92" height="14"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression class="java.lang.Number"><![CDATA[$V{runningSaldo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Right">
+					<font isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Pag. No. "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6"/>
+				<textElement/>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13"/>
+				<textElement/>
+				<textFieldExpression class="java.util.Date"><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="20" splitType="Stretch">
+			<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="276" y="4" width="92" height="12" forecolor="#06050B" backcolor="#D4D4D4"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{DEBITO_1}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="378" y="4" width="82" height="12" forecolor="#06050B" backcolor="#D4D4D4"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$V{CREDITO_1}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="471" y="2" width="81" height="16" forecolor="#1607F8" backcolor="#CBD1D3"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.Number"><![CDATA[$V{runningSaldo}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="2" y="0" width="553" height="1"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

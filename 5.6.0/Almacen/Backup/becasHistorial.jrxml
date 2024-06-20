@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="becasHistorial" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d3919a13-281c-4869-98a2-49b4876d5dfe">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="CEDULA" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT
+     estudiantes_becas_h.`CEDULA` AS estudiantes_becas_h_CEDULA,
+     estudiantes_becas_h.`ID_BECA` AS estudiantes_becas_h_ID_BECA,
+     estudiantes_becas_h.`PROMEDIO` AS estudiantes_becas_h_PROMEDIO,
+     estudiantes_becas_h.`ID_PERIODO` AS estudiantes_becas_h_ID_PERIODO,
+     estudiantes_becas_h.`ID_AREA_TRABAJO` AS estudiantes_becas_h_ID_AREA_TRABAJO,
+     estudiantes_becas_h.`FECHA` AS estudiantes_becas_h_FECHA,
+     becas.`ID` AS becas_ID,
+     becas.`DESCRIPCION` AS becas_DESCRIPCION,
+     becas.`MONTOS` AS becas_MONTOS,
+     becas.`REQUISITOS` AS becas_REQUISITOS,
+     becas.`PROMEDIO` AS becas_PROMEDIO,
+     becas.`HORAS_TRABAJO` AS becas_HORAS_TRABAJO,
+     periodo.`ID` AS periodo_ID,
+     periodo.`NOMBRE` AS periodo_NOMBRE,
+     areas_trabajo.`ID` AS areas_trabajo_ID,
+     areas_trabajo.`NOMBRE` AS areas_trabajo_NOMBRE,
+     estudiantes.`CEDULA` AS estudiantes_CEDULA,
+     estudiantes.`NOMBRES` AS estudiantes_NOMBRES,
+     estudiantes.`APELLIDOS` AS estudiantes_APELLIDOS,
+     estudiantes.`ID_CARRERA` AS estudiantes_ID_CARRERA,
+     estudiantes.`DIRECCION` AS estudiantes_DIRECCION,
+     estudiantes.`TELEFONO` AS estudiantes_TELEFONO,
+     estudiantes.`FECHA_NACIMIENTO` AS estudiantes_FECHA_NACIMIENTO
+FROM
+     `becas` becas INNER JOIN `estudiantes_becas_h` estudiantes_becas_h ON becas.`ID` = estudiantes_becas_h.`ID_BECA`
+     INNER JOIN `periodo` periodo ON estudiantes_becas_h.`ID_PERIODO` = periodo.`ID`
+     INNER JOIN `areas_trabajo` areas_trabajo ON estudiantes_becas_h.`ID_AREA_TRABAJO` = areas_trabajo.`ID`
+     INNER JOIN `estudiantes` estudiantes ON estudiantes_becas_h.`CEDULA` = estudiantes.`CEDULA`
+WHERE
+     estudiantes_becas_h.`CEDULA` = $P{CEDULA}]]>
+	</queryString>
+	<field name="estudiantes_becas_h_CEDULA" class="java.lang.Integer"/>
+	<field name="estudiantes_becas_h_ID_BECA" class="java.lang.Integer"/>
+	<field name="estudiantes_becas_h_PROMEDIO" class="java.lang.Double"/>
+	<field name="estudiantes_becas_h_ID_PERIODO" class="java.lang.Integer"/>
+	<field name="estudiantes_becas_h_ID_AREA_TRABAJO" class="java.lang.Integer"/>
+	<field name="estudiantes_becas_h_FECHA" class="java.sql.Timestamp"/>
+	<field name="becas_ID" class="java.lang.Integer"/>
+	<field name="becas_DESCRIPCION" class="java.lang.String"/>
+	<field name="becas_MONTOS" class="java.lang.Integer"/>
+	<field name="becas_REQUISITOS" class="java.lang.String"/>
+	<field name="becas_PROMEDIO" class="java.lang.Integer"/>
+	<field name="becas_HORAS_TRABAJO" class="java.lang.Integer"/>
+	<field name="periodo_ID" class="java.lang.Integer"/>
+	<field name="periodo_NOMBRE" class="java.lang.String"/>
+	<field name="areas_trabajo_ID" class="java.lang.Integer"/>
+	<field name="areas_trabajo_NOMBRE" class="java.lang.String"/>
+	<field name="estudiantes_CEDULA" class="java.lang.Integer"/>
+	<field name="estudiantes_NOMBRES" class="java.lang.String"/>
+	<field name="estudiantes_APELLIDOS" class="java.lang.String"/>
+	<field name="estudiantes_ID_CARRERA" class="java.lang.Integer"/>
+	<field name="estudiantes_DIRECCION" class="java.lang.String"/>
+	<field name="estudiantes_TELEFONO" class="java.lang.String"/>
+	<field name="estudiantes_FECHA_NACIMIENTO" class="java.sql.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="81" splitType="Stretch">
+			<textField>
+				<reportElement x="84" y="19" width="107" height="20" uuid="4711111b-2f72-44b9-870c-772f55fdba10"/>
+				<textFieldExpression><![CDATA[$F{estudiantes_becas_h_CEDULA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="12" y="19" width="60" height="20" uuid="edab4fa3-6f64-470b-b3e7-ade3b6516b80"/>
+				<text><![CDATA[Cedula]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="241" y="19" width="100" height="20" uuid="4dbc7491-9fe1-4ee8-ac1c-977fcf6f5180"/>
+				<textFieldExpression><![CDATA[$F{estudiantes_NOMBRES}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="395" y="19" width="100" height="20" uuid="0b80e6e6-4542-4b32-bc79-a1671331ad6f"/>
+				<textFieldExpression><![CDATA[$F{estudiantes_APELLIDOS}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="5" y="2" width="100" height="20" uuid="b44452ec-9619-4b06-81fb-f5d922d440eb"/>
+				<text><![CDATA[estudiantes_becas_h_ID_BECA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="135" y="2" width="100" height="20" uuid="5a2ff112-f4b6-4e8b-845d-6d40ddb74a57"/>
+				<text><![CDATA[estudiantes_becas_h_PROMEDIO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="274" y="2" width="100" height="20" uuid="903685b4-e37a-47a4-b931-c78f1d7e7358"/>
+				<text><![CDATA[areas_trabajo_NOMBRE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="425" y="2" width="100" height="20" uuid="e89f3ade-8015-49e5-9519-266d1d6df70a"/>
+				<text><![CDATA[estudiantes_becas_h_FECHA]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="44" splitType="Stretch">
+			<textField>
+				<reportElement x="5" y="10" width="100" height="20" uuid="ff4f2979-19bf-4f7d-b031-d7a4b70334dc"/>
+				<textFieldExpression><![CDATA[$F{estudiantes_becas_h_ID_BECA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="135" y="13" width="100" height="20" uuid="986fd569-66c8-473b-94f5-d94f26fe7307"/>
+				<textFieldExpression><![CDATA[$F{estudiantes_becas_h_PROMEDIO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="274" y="12" width="100" height="20" uuid="84a5a21d-c40f-4c9c-a076-9910b2496692"/>
+				<textFieldExpression><![CDATA[$F{areas_trabajo_NOMBRE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="425" y="14" width="100" height="20" uuid="92310b82-4dcf-412e-b420-9050646ac573"/>
+				<textFieldExpression><![CDATA[$F{estudiantes_becas_h_FECHA}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

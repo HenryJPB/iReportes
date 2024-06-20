@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportDirectorioTelefonico" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6d0df7bd-322c-421d-9e07-464c34ad38ca">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[select razon_social,
+               rif,
+               telfs
+from    dir_empresarial_dat
+order  by razon_social]]>
+	</queryString>
+	<field name="RAZON_SOCIAL" class="java.lang.String"/>
+	<field name="RIF" class="java.lang.String"/>
+	<field name="TELFS" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="92" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="8e66d57f-9a47-4100-8406-8ad0aa16e380" style="Title" x="34" y="59" width="521" height="33"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[DIRECTORIO EMPRESARIAL]]></text>
+			</staticText>
+			<image hAlign="Center">
+				<reportElement uuid="3d2fe21e-0c3f-4e26-9a30-10217fab3dc8" x="245" y="0" width="99" height="59"/>
+				<imageExpression><![CDATA["/home/henrypb/i-reportes/Agenda/Logo-desica.JPG"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement uuid="b2591ad8-5826-44c2-ab3f-476430aab19c" positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="75674274-d78a-4505-82e8-78491e3900c8" style="Column header" x="0" y="19" width="185" height="15" forecolor="#000000"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[RAZON_SOCIAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ccf2085d-e0ea-4038-a9b0-eefaa95c7213" style="Column header" x="185" y="19" width="185" height="15" forecolor="#000000"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[RIF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="80b971b5-b37e-4d0b-a147-2ec894ba5f50" style="Column header" x="370" y="19" width="185" height="15" forecolor="#000000"/>
+				<textElement>
+					<font size="13"/>
+				</textElement>
+				<text><![CDATA[TELFS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement uuid="e5d81c7b-b573-4650-976f-8aa836d1ac98" positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement uuid="3851354e-a31d-4eaf-bc99-d7923a95ac06" style="Detail" x="0" y="0" width="185" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{RAZON_SOCIAL}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement uuid="a6a40570-f9dd-4873-bc0d-6be48d824fab" style="Detail" x="185" y="0" width="185" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{RIF}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="14c4a9f3-f828-46c2-b762-cf1a940ecc39" style="Detail" x="370" y="0" width="185" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{TELFS}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement uuid="144c1a5d-11ee-4386-b81a-e7350257117b" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="bfee11d1-2390-4a83-97e7-50a27c4a63ae" style="Column header" x="433" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="8c1f47f0-ef1f-4e8e-8df3-b8859b59766a" style="Column header" x="513" y="0" width="40" height="20"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="2daf9fa6-7ce4-4981-93be-302ef7adefdb" style="Column header" x="0" y="0" width="197" height="20"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

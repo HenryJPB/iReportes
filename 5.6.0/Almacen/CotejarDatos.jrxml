@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CotejarDatos" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7ab30df3-829e-457e-a7e4-cda78620441a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[select KK_DAT.c5_codigo as cod_Item,
+       KK_DAT.c5_costo as Costo_Sistema,
+       TEMP_SUP05_DAT.c5_costo as Costo_Excel,
+       ( KK_DAT.c5_costo - TEMP_SUP05_DAT.c5_costo ) as Diferencia_Costo,
+       Abs(KK_DAT.c5_unidades) as Ajuste_Sistema,
+       Abs(TEMP_SUP05_DAT.c5_unidades) as Ajuste_Excel,
+       ( Abs(KK_DAT.c5_unidades) - Abs(TEMP_SUP05_DAT.c5_unidades) ) as Diferencia_Unid
+from   kk_dat, TEMP_SUP05_DAT
+where  KK_DAT.C5_CODIGO = TEMP_SUP05_DAT.C5_CODIGO
+order  by 1]]>
+	</queryString>
+	<field name="COD_ITEM" class="java.lang.String"/>
+	<field name="COSTO_SISTEMA" class="java.math.BigDecimal"/>
+	<field name="COSTO_EXCEL" class="java.math.BigDecimal"/>
+	<field name="DIFERENCIA_COSTO" class="java.math.BigDecimal"/>
+	<field name="AJUSTE_SISTEMA" class="java.math.BigDecimal"/>
+	<field name="AJUSTE_EXCEL" class="java.math.BigDecimal"/>
+	<field name="DIFERENCIA_UNID" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="93" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="8019b107-e4e5-4595-ab14-51a21d519b3d" style="Title" x="183" y="12" width="439" height="37"/>
+				<textElement verticalAlignment="Middle">
+					<font size="30" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Cotejar Datos de Inventario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c107d2d8-0485-4154-93db-8d567224a110" style="SubTitle" x="183" y="49" width="439" height="22"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Almacen de Suplidos y Repuestos al 30/10/2015.]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement uuid="e58ae1c5-7f9e-44a7-a425-a0261b5ffd77" positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="c632a9d4-3576-4b54-b5fd-4d8203a65c79" style="Column header" x="0" y="0" width="114" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[COD_ITEM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8e5b28be-2016-44df-9969-a0a72224490e" style="Column header" x="114" y="0" width="114" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[COSTO SISTEMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b9e96ea2-b8b2-4148-a889-ba7f527d123a" style="Column header" x="228" y="0" width="114" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[COSTO EXCEL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0cbc78cf-e93b-46d5-8e64-992b3421913c" style="Column header" x="342" y="0" width="114" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[DIF COSTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="36ba5e9a-c883-4a3b-8b71-621c73a393fc" style="Column header" x="456" y="0" width="114" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[AJUSTE SISTEMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="268aa5c1-1376-49f8-80c6-53db3ee8f01a" style="Column header" x="570" y="0" width="114" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[AJUSTE EXCEL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="085f8fb6-4e4a-4b61-ab57-b5ce7cfc36e7" style="Column header" x="684" y="0" width="114" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[DIF  AJUSTE]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement uuid="14725ab6-070a-45bf-bbfb-4267c82a3cd7" style="Row" mode="Opaque" x="0" y="0" width="802" height="15"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="e7f65dde-3513-4569-b00c-2bbef37880c3" style="Detail" x="0" y="0" width="114" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{COD_ITEM}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="f20053fa-5984-477e-9c5b-f2f3933ab4af" style="Detail" x="114" y="0" width="114" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{COSTO_SISTEMA}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="f721b392-1657-4c45-a62a-361cec354372" style="Detail" x="228" y="0" width="114" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{COSTO_EXCEL}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="608c8bb2-50db-4011-b8b4-d3d6eeed2fc0" style="Detail" x="342" y="0" width="114" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{DIFERENCIA_COSTO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="fa3fafc0-9e65-470a-b5ad-343a996e0438" style="Detail" x="456" y="0" width="114" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{AJUSTE_SISTEMA}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="5be025dd-c267-4c54-b1a6-766ee20f2400" style="Detail" x="570" y="0" width="114" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{AJUSTE_EXCEL}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="128ae61a-f45f-482c-8a5a-7c1f31e81864" style="Detail" x="684" y="0" width="114" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{DIFERENCIA_UNID}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="6" splitType="Stretch">
+			<line>
+				<reportElement uuid="1254cb07-7c85-45c1-86b9-858cffcddae7" positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement uuid="4897bb08-b53a-46cd-adf9-98c356f5ed9b" mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF"/>
+				<textField evaluationTime="Report">
+					<reportElement uuid="89c2314f-9a6d-4f44-9f65-6a1dfc62675f" style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="73881074-f5db-4790-8e0e-6f3d0850780f" style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="86256af4-cd9e-48e2-9783-007c30c15d73" style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

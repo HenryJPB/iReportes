@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteIngCaja_vExcel" language="groovy" pageWidth="1430" pageHeight="1000" orientation="Landscape" columnWidth="1390" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="19eb4308-b990-4a6e-88ee-c4b2c99c1c8e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="278"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="fecha1" class="java.util.Date">
+		<defaultValueExpression><![CDATA[01/01/2014]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fecha2" class="java.util.Date">
+		<defaultValueExpression><![CDATA[31/01/2014]]></defaultValueExpression>
+	</parameter>
+	<parameter name="nroIngreso1" class="java.lang.String">
+		<defaultValueExpression><![CDATA[000001]]></defaultValueExpression>
+	</parameter>
+	<parameter name="nroIngreso2" class="java.lang.String">
+		<defaultValueExpression><![CDATA[999999]]></defaultValueExpression>
+	</parameter>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/home/henrypb/i-reportes/condes/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="nroIngreso" class="java.lang.String" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[select C4_NRO_INGRESO as nroIng,
+       C4_FECHA as fechaIng,
+       nvl(C4_COD_CLIENTE,'-') as codCliente,
+       C4_NOMBRE_CLIENTE as nombreCliente,
+       C4_RAZON_SOCIAL as razonSocial,
+       C4_MONTO as monto,
+       C4_TIPO_DOC as tipoDoc,
+       C2_DESCRIPCION as mov_doc,
+       C4_TIPO_TRANS as tipoTrans,
+       C3_DESCRIPCION as mov_trans,
+       C4_FECHA_TRANS as fechaTrans,
+       C4_COD_BANCO as bancoDeposito,
+       C1_NOMBRE_BANCO as nombreBancoDep,
+       C4_NRO_PLANILLA as nroPlanilla,
+       C4_STATUS_REV as statusRev,
+       C4_STATUS_CONTABLE  as statusCont,
+       nvl(C4_OBSERVACION,' ') as observacion
+from   CAJA04_DAT, CAJA02_DAT, CAJA03_DAT, BAN01_DAT
+where  C4_NRO_INGRESO between $P{nroIngreso1} and $P{nroIngreso2}
+and    C4_FECHA between $P{fecha1} and $P{fecha2}
+and    C4_TIPO_DOC = C2_TIPO_DOC
+and    C4_TIPO_TRANS = C3_TIPO_TRANS
+and    C4_COD_BANCO = C1_COD_BANCO
+order  by C4_NRO_INGRESO, C4_FECHA]]>
+	</queryString>
+	<field name="NROING" class="java.lang.String"/>
+	<field name="FECHAING" class="java.util.Date"/>
+	<field name="NOMBRECLIENTE" class="java.lang.String"/>
+	<field name="CODCLIENTE" class="java.lang.String"/>
+	<field name="MONTO" class="java.lang.Double"/>
+	<field name="TIPODOC" class="java.lang.String"/>
+	<field name="MOV_DOC" class="java.lang.String"/>
+	<field name="TIPOTRANS" class="java.lang.String"/>
+	<field name="MOV_TRANS" class="java.lang.String"/>
+	<field name="FECHATRANS" class="java.util.Date"/>
+	<field name="BANCODEPOSITO" class="java.lang.String"/>
+	<field name="nombreBancoDep" class="java.lang.String"/>
+	<field name="NROPLANILLA" class="java.lang.String"/>
+	<field name="STATUSREV" class="java.lang.String"/>
+	<field name="STATUSCONT" class="java.lang.String"/>
+	<field name="OBSERVACION" class="java.lang.String"/>
+	<group name="NROING">
+		<groupExpression><![CDATA[$F{NROING}]]></groupExpression>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="102" splitType="Stretch">
+			<image>
+				<reportElement uuid="26367a01-7d34-441d-b1e9-51eca1307709" x="0" y="0" width="122" height="98" isRemoveLineWhenBlank="true"/>
+				<imageExpression><![CDATA["logo-desica.bmp"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="95a1ccd6-e9c0-4d87-b1bb-1583cdb81e1b" style="Title" x="526" y="0" width="313" height="48"/>
+				<textElement verticalAlignment="Middle">
+					<font size="30" isItalic="false" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[GESTION DE CAJA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3307e95d-6770-4eef-89b4-0f8614b66214" style="SubTitle" x="545" y="48" width="244" height="22"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[CONTROL DE INGRESOS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="44085b7a-4f13-4abf-8174-99ca45dd4559" style="SubTitle" x="526" y="79" width="55" height="19"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[DESDE: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="ddfa0f33-809e-4b20-86f0-7d4d7233d439" style="SubTitle" x="674" y="79" width="61" height="19"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[HASTA: ]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="1778fae7-2ce7-4750-ba07-4a08fa4c2f78" x="590" y="79" width="69" height="20"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fecha1}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="96ca84eb-1588-4a8f-a0a6-20368de703a1" x="735" y="79" width="77" height="19"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{fecha2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="49" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="ab1e607e-ab99-4837-8c4c-255fbb64388d" style="Column header" x="62" y="29" width="61" height="15" forecolor="#000000"/>
+				<textElement/>
+				<text><![CDATA[FECHA ING]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="47c6a3ff-337d-4936-aece-5fff659e3876" style="Column header" x="126" y="29" width="178" height="15" forecolor="#000000"/>
+				<textElement/>
+				<text><![CDATA[NOMBRE CLIE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="d249a549-1fac-4008-9baf-1f3ebbb1a9d7" style="Column header" x="314" y="28" width="52" height="15" forecolor="#000000"/>
+				<textElement/>
+				<text><![CDATA[CODIGO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6f6bc160-026a-41e1-b181-48533f18e2c4" style="Column header" x="366" y="15" width="82" height="14" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[TIPO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="4fa956ad-2fe8-4cb5-a380-4cc57ebf5cca" style="Column header" x="366" y="28" width="145" height="15" forecolor="#000000"/>
+				<textElement/>
+				<text><![CDATA[ DOCUMENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="addc670d-076c-41e9-b50b-5c6b8f70bba0" style="Column header" x="892" y="16" width="101" height="15" forecolor="#000000"/>
+				<textElement/>
+				<text><![CDATA[DEPOSITADO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a7770da2-f944-4c1b-b20b-e28494c28500" style="Column header" x="1006" y="28" width="50" height="15" forecolor="#000000"/>
+				<textElement/>
+				<text><![CDATA[PLANILLA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="17decd92-6ba0-4415-865f-99d0afac0ad1" style="Column header" x="1061" y="28" width="80" height="15" forecolor="#000000"/>
+				<textElement>
+					<font size="12" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[BANCO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="bc5e8632-97d5-4db5-a36d-76478e8c6b15" style="Column header" x="739" y="14" width="82" height="14" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[TIPO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="5c039cc9-36cf-4a88-b6b7-6515823ece38" style="Column header" x="739" y="28" width="95" height="15" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+				<textElement/>
+				<text><![CDATA[TRANSACCION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="69f597a2-f759-46c6-bb6a-d5951c6d23f7" style="Column header" x="1061" y="14" width="80" height="15" forecolor="#000000"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[NRO.CHEQUE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a18b2f6f-d75c-47bd-95af-f3e7e40ff311" style="Column header" x="892" y="28" width="101" height="15" isPrintWhenDetailOverflows="true" forecolor="#000000"/>
+				<textElement/>
+				<text><![CDATA[EN:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f4a51e53-2b5e-4bff-8027-5c8999b6fe5f" style="Column header" x="636" y="31" width="93" height="15" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[MONTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e6aae13e-2a75-4bf8-89c5-98d5c8fb1376" style="Column header" x="1223" y="29" width="66" height="15" forecolor="#000000"/>
+				<textElement/>
+				<text><![CDATA[Revisado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2edd139b-dbc3-4dfa-a935-faf47374f23a" style="Column header" x="1300" y="28" width="91" height="15" forecolor="#000000"/>
+				<textElement/>
+				<text><![CDATA[Contabilizado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="27962d71-0e84-44f8-847e-e292ec14c68d" style="Column header" x="1" y="28" width="61" height="15" forecolor="#000000"/>
+				<textElement/>
+				<text><![CDATA[NRO. ING.]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="7bf8fd5b-d246-43b6-a83d-ec0a47765ed3" positionType="FixRelativeToBottom" x="2" y="48" width="1389" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement uuid="b1f28037-fec6-4207-b02e-24763e70990b" positionType="FixRelativeToBottom" x="2" y="13" width="1389" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="e4c04b4d-66d3-460e-89eb-b125700543ed" style="Column header" x="513" y="28" width="79" height="14" isPrintInFirstWholeBand="true" forecolor="#000000"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[REF DOC]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement uuid="c14e8c75-fc47-4ebf-be1e-c80955b9956e" x="368" y="0" width="143" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{MOV_DOC}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="29e600f6-5817-404e-b056-81a1f19e07b0" mode="Transparent" x="1225" y="3" width="42" height="20"/>
+			</rectangle>
+			<rectangle>
+				<reportElement uuid="841deff9-6933-44f8-aadb-7c5d57fbf9a1" mode="Transparent" x="1302" y="3" width="42" height="20"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="44ba83be-2ce0-496a-afff-128a76fc50b9" x="1" y="3" width="61" height="15"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NROING}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy">
+				<reportElement uuid="3e1f4ed2-5a08-4b35-b0df-08706b69c5ca" style="Detail" x="62" y="3" width="61" height="15"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FECHAING}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="45265f11-7f4b-45a6-b05b-a445e8f68dca" x="892" y="6" width="101" height="14"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{nombreBancoDep}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="c9a53a78-7c8c-40da-b433-a064299acd2e" style="Detail" x="1006" y="3" width="50" height="15"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NROPLANILLA}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="2a8c2f51-a8e5-4ee3-888e-47cdc69efdde" style="Detail" x="126" y="3" width="178" height="15"/>
+				<textElement>
+					<font fontName="SansSerif" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOMBRECLIENTE}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="bbebf566-18d0-4739-90b3-3e4626c90c48" style="Detail" x="313" y="0" width="52" height="15"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CODCLIENTE}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00">
+				<reportElement uuid="93495aab-5d9e-4501-bae1-a2c6ff119928" x="636" y="6" width="89" height="12"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{MONTO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4763e9e5-5f10-477c-824d-b9ff33a4b07a" x="739" y="8" width="95" height="12"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{MOV_TRANS}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement uuid="04af6369-7da4-4656-b919-e53a51975542" x="1061" y="0" width="154" height="20"/>
+				<subreportParameter name="nroIngreso">
+					<subreportParameterExpression><![CDATA[$F{NROING}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "subreporteCaja06.jasper"]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement uuid="dd8ec396-1b67-4fed-bc42-46b58e5a7b7b" x="524" y="0" width="67" height="15"/>
+				<subreportParameter name="nroIngreso">
+					<subreportParameterExpression><![CDATA[$F{NROING}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "subreporteCaja05H.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

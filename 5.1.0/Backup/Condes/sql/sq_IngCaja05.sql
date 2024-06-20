@@ -1,0 +1,4 @@
+select C5_REF_DOC as Fac, 
+                C5_NRO_INGRESO as nroIngreso
+from    CAJA05_DAT
+where   C5_REF_DOC != '--incluir Doc--' 

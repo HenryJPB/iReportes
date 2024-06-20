@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1NomMariaDB" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="17da7997-b346-4b08-ba5b-ff107ae0eb9e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT rif, alias, fecha_nac, edad
+FROM    Nomina_dat
+ORDER  BY edad]]>
+	</queryString>
+	<field name="rif" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="alias" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="fecha_nac" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="edad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="sysDate" class="java.util.Date"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="42" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="65" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="c70b4b0c-d013-4750-b0a9-96b1b2d20560" x="114" y="21" width="354" height="20"/>
+				<textElement>
+					<font fontName="Andale Mono" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[** PRUEBA LISTADO DE NOMINA MariaDB **]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="a12136fd-4a23-4cb1-a937-675f605349aa" x="0" y="9" width="555" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="3d89b84a-0ef9-4326-97b1-943ac618a718" x="0" y="64" width="555" height="1"/>
+			</line>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="070201cd-659f-46a0-9379-3e89ef516069" x="226" y="44" width="146" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="735254e5-3079-437c-8b64-9bea7e6a7dd2" x="14" y="15" width="100" height="20"/>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Rif]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1c2e1daf-9bbe-411b-923b-bd9a46eb865e" x="126" y="15" width="100" height="20"/>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Nombre ( alias )]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="18dd8832-4f7b-4a1c-8222-771a96c63294" x="261" y="15" width="100" height="20"/>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Fecha Nac]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="44286871-0ccd-40d3-9da0-536938548b4d" x="408" y="15" width="100" height="20"/>
+				<textElement>
+					<font isBold="true" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Edad]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement uuid="5480c7b2-931d-44e1-8547-339f5ea8ff7b" x="14" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{rif}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="cda7b705-ce7d-4927-9731-dd6fad14d720" x="126" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{alias}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1aa96aeb-9593-4604-a95e-81b02e064634" x="261" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{fecha_nac}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="6e48e3fe-c3c1-422d-955c-bd10c595c2bb" x="408" y="0" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{edad}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement uuid="daaa17b0-63ce-45c1-9ab5-0e7601d1e289" x="272" y="18" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="d5f7ced5-668e-42e6-b5c2-a401d1865511" x="201" y="18" width="60" height="20"/>
+				<textElement/>
+				<text><![CDATA[Pag. Nro:]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

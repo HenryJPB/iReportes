@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="DotacionUniforme" language="groovy" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fe235c16-a6df-4672-a37b-c36dc1c8fea8">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="titulos" hAlign="Center" fontName="Arial" fontSize="10" isBold="true" isStrikeThrough="false"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="TABLE" forecolor="#FFFFFF" backcolor="#666666" fill="Solid" radius="1" scaleImage="Clip" hAlign="Center" vAlign="Top" pattern="" fontName="Arial" fontSize="9" isBold="true">
+		<pen lineWidth="1.0" lineStyle="Dashed" lineColor="#000000"/>
+		<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+			<pen lineWidth="1.0" lineStyle="Dashed" lineColor="#666666"/>
+			<topPen lineWidth="1.0" lineStyle="Dashed" lineColor="#666666"/>
+			<leftPen lineWidth="1.0" lineStyle="Dashed" lineColor="#666666"/>
+			<bottomPen lineWidth="1.0" lineStyle="Dashed" lineColor="#666666"/>
+			<rightPen lineWidth="1.0" lineStyle="Dashed" lineColor="#666666"/>
+		</box>
+		<paragraph lineSpacing="Single"/>
+	</style>
+	<style name="IMPRESORA" fontName="Serif"/>
+	<subDataset name="DotacionUniformeDetalle" uuid="c9d63bad-9bbd-43b9-a193-38d308864d91">
+		<parameter name="REQUI_ID_EMPLEADO" class="java.lang.Integer"/>
+		<parameter name="MAQUINA" class="java.lang.String"/>
+		<parameter name="CENTRO_COSTO" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[SELECT
+     DOTACIONUNIFORME_DETALLE."REQUI_ID" AS DOTACIONUNIFORME_DETALLE_REQUI,
+     DOTACIONUNIFORME_DETALLE."REQUI_ID_EMPLEADO" AS DOTACIONUNIFORME_DETALLE_REQUI,
+     DOTACIONUNIFORME_DETALLE."NRO_EMPLEADO" AS DOTACIONUNIFORME_DETALLE_NRO_E,
+     DOTACIONUNIFORME_DETALLE."COD_SUP" AS DOTACIONUNIFORME_DETALLE_COD_S,
+     DOTACIONUNIFORME_DETALLE."CANTIDAD" AS DOTACIONUNIFORME_DETALLE_CANTI,
+     DOTACIONUNIFORME_DETALLE."C1_DESCRIPCION" AS DOTACIONUNIFORME_DETALLE_C1_DE,
+     DOTACIONUNIFORME_DETALLE."C1_UM" AS DOTACIONUNIFORME_DETALLE_C1_UM
+FROM
+     "OPS$CONTAB"."DOTACIONUNIFORME_DETALLE" DOTACIONUNIFORME_DETALLE
+where DOTACIONUNIFORME_DETALLE.REQUI_ID_EMPLEADO=$P{REQUI_ID_EMPLEADO}]]>
+		</queryString>
+		<field name="DOTACIONUNIFORME_DETALLE_REQUI" class="java.lang.Integer"/>
+		<field name="DOTACIONUNIFORME_DETALLE_NRO_E" class="java.lang.String"/>
+		<field name="DOTACIONUNIFORME_DETALLE_COD_S" class="java.lang.String"/>
+		<field name="DOTACIONUNIFORME_DETALLE_CANTI" class="java.lang.Integer"/>
+		<field name="DOTACIONUNIFORME_DETALLE_C1_DE" class="java.lang.String"/>
+		<field name="DOTACIONUNIFORME_DETALLE_C1_UM" class="java.lang.String"/>
+	</subDataset>
+	<queryString>
+		<![CDATA[SELECT
+     DOTACIONUNIFORME."REQUI_ID_EMPLEADO" ,
+     DOTACIONUNIFORME."NRO_EMPLEADO" ,
+     DOTACIONUNIFORME."REQUI_NUMERO",
+     DOTACIONUNIFORME."CORRELATIVO",
+     DOTACIONUNIFORME."FECHA",
+     DOTACIONUNIFORME."NUMERO",
+     DOTACIONUNIFORME."NOMBRE",
+     DOTACIONUNIFORME."TURNO",
+     DOTACIONUNIFORME."NIVEL_ORGANI",
+     DOTACIONUNIFORME."DESCRIPCION",
+     DOTACIONUNIFORME."RECEP_ID",
+     DOTACIONUNIFORME."GRUPO"
+FROM
+     "OPS$CONTAB"."DOTACIONUNIFORME" DOTACIONUNIFORME
+where
+       DOTACIONUNIFORME."REQUI_NUMERO"= 12016
+ORDER BY DOTACIONUNIFORME."GRUPO",DOTACIONUNIFORME."TURNO",DOTACIONUNIFORME."NRO_EMPLEADO"]]>
+	</queryString>
+	<field name="REQUI_ID_EMPLEADO" class="java.lang.Integer"/>
+	<field name="NRO_EMPLEADO" class="java.lang.String"/>
+	<field name="REQUI_NUMERO" class="java.lang.Integer"/>
+	<field name="CORRELATIVO" class="java.lang.String"/>
+	<field name="FECHA" class="java.sql.Timestamp"/>
+	<field name="NUMERO" class="java.lang.String"/>
+	<field name="NOMBRE" class="java.lang.String"/>
+	<field name="TURNO" class="java.lang.String"/>
+	<field name="NIVEL_ORGANI" class="java.lang.String"/>
+	<field name="DESCRIPCION" class="java.lang.String"/>
+	<field name="RECEP_ID" class="java.lang.Integer"/>
+	<field name="GRUPO" class="java.lang.Integer"/>
+	<variable name="CORRELATIVO" class="java.lang.Integer">
+		<variableExpression><![CDATA[$V{CORRELATIVO}+1]]></variableExpression>
+		<initialValueExpression><![CDATA[100]]></initialValueExpression>
+	</variable>
+	<group name="DEPARTAMENTO">
+		<groupExpression><![CDATA[$F{NIVEL_ORGANI}]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="TURNO">
+		<groupExpression><![CDATA[$F{TURNO}]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="64a8ffbe-3501-4e6f-9da5-c0fb64f11687" x="0" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="7b835b4d-9a95-4e96-94af-bb5c03658f9a" x="80" y="0" width="40" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="243" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="8ea28e5b-8615-4043-83f9-ea14c40fed64" x="1" y="63" width="89" height="11"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[SOLICITADO POR :]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="27e24d22-617b-4a13-abc4-0d3af19063ca" x="120" y="63" width="222" height="11"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NOMBRE}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="e2ec9114-d8bd-4ee0-8d8e-2d42eccd2826" style="IMPRESORA" x="171" y="0" width="196" height="32"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[DERIVADOS SIDERURGICOS, C.A
+ALMACEN DE SUPLIDOS Y REPUESTOS
+SOLICITUD DE UNIFORME]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="c9f573b4-ce06-4731-9e8c-3c841faba81f" style="titulos" x="467" y="0" width="34" height="11"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{REQUI_NUMERO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="322433b5-87bc-4629-9aab-f6ef0c555553" x="467" y="0" width="10" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Cambria" size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[-]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2a681dd7-f7ad-419f-92f3-1a6215ac68ea" x="405" y="19" width="52" height="13"/>
+				<textElement textAlignment="Center">
+					<font fontName="Cambria" size="11" isBold="false"/>
+				</textElement>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9fd51c43-30b5-47ea-b72c-09d2723fe864" style="IMPRESORA" x="421" y="0" width="16" height="11"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[N°]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="d590bb5f-2450-47e4-aac2-03551908f587" x="90" y="63" width="30" height="12"/>
+				<textElement>
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NRO_EMPLEADO}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement uuid="a9b83308-2a0f-4a59-ae85-7bb0ca07cbe0" key="table 1" x="36" y="85" width="536" height="92"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="DotacionUniformeDetalle" uuid="a9481b70-a104-410e-a280-756541a317a6">
+						<datasetParameter name="REQUI_ID_EMPLEADO">
+							<datasetParameterExpression><![CDATA[$F{REQUI_ID_EMPLEADO}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="MAQUINA">
+							<datasetParameterExpression><![CDATA[$F{DESCRIPCION}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="CENTRO_COSTO">
+							<datasetParameterExpression><![CDATA[$F{NIVEL_ORGANI}+"20022"]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="41" uuid="45b16d61-20e2-4fad-a203-4a655f7c6896">
+						<jr:columnHeader height="29" rowSpan="2">
+							<box topPadding="0" leftPadding="0" rightPadding="0">
+								<pen lineWidth="0.0" lineStyle="Dashed"/>
+								<topPen lineWidth="0.5" lineStyle="Dashed"/>
+								<leftPen lineWidth="0.5" lineStyle="Dashed"/>
+								<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+								<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+							</box>
+							<staticText>
+								<reportElement uuid="e96b10e7-5285-4b73-899c-465a7b97792b" x="0" y="0" width="41" height="13"/>
+								<textElement textAlignment="Center">
+									<font fontName="Arial" size="9" isBold="false"/>
+								</textElement>
+								<text><![CDATA[CODIGO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="14" rowSpan="1">
+							<box>
+								<pen lineStyle="Dashed"/>
+								<topPen lineStyle="Dashed"/>
+								<leftPen lineWidth="0.5" lineStyle="Dashed"/>
+								<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+								<rightPen lineStyle="Dashed"/>
+							</box>
+							<textField>
+								<reportElement uuid="bd073220-94a7-4000-ac41-d1ade950f27e" x="0" y="0" width="41" height="13"/>
+								<textElement textAlignment="Center">
+									<font fontName="Arial" size="9" isBold="false"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{DOTACIONUNIFORME_DETALLE_COD_S}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="44" uuid="85f4b26e-9bae-44b1-98bd-993350f2294f">
+						<jr:columnHeader height="29" rowSpan="2">
+							<box>
+								<pen lineStyle="Dashed"/>
+								<topPen lineWidth="0.5" lineStyle="Dashed"/>
+								<leftPen lineStyle="Dashed"/>
+								<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+								<rightPen lineStyle="Dashed"/>
+							</box>
+							<staticText>
+								<reportElement uuid="6db8357c-76e5-4461-bf7b-20e2b7b9c85d" x="0" y="0" width="44" height="13"/>
+								<textElement textAlignment="Center">
+									<font fontName="Arial" size="9" isBold="false"/>
+								</textElement>
+								<text><![CDATA[UNIDAD]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="14" rowSpan="1">
+							<box>
+								<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+							</box>
+							<textField>
+								<reportElement uuid="ef917d8b-4709-4395-a9d8-0e068afc873f" x="0" y="0" width="44" height="13"/>
+								<textElement textAlignment="Center">
+									<font fontName="Arial" size="9" isBold="false"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{DOTACIONUNIFORME_DETALLE_C1_UM}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="215" uuid="139f390e-c97d-43e4-9f60-9ac8eb439450">
+						<jr:columnHeader height="29" rowSpan="2">
+							<box>
+								<pen lineWidth="0.0" lineStyle="Dashed"/>
+								<topPen lineWidth="0.5" lineStyle="Dashed"/>
+								<leftPen lineWidth="0.0" lineStyle="Dashed"/>
+								<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+								<rightPen lineWidth="0.0" lineStyle="Dashed"/>
+							</box>
+							<staticText>
+								<reportElement uuid="21fcc46d-3ea1-4f54-99bc-37eec3dec50c" x="0" y="0" width="215" height="13"/>
+								<textElement textAlignment="Center">
+									<font fontName="Arial" size="9" isBold="false"/>
+								</textElement>
+								<text><![CDATA[DESCRIPCION]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="14" rowSpan="1">
+							<box topPadding="1" leftPadding="0" bottomPadding="0" rightPadding="0">
+								<pen lineWidth="0.75"/>
+								<topPen lineWidth="0.0" lineStyle="Dashed"/>
+								<leftPen lineWidth="0.0" lineStyle="Solid"/>
+								<bottomPen lineWidth="0.75" lineStyle="Dashed"/>
+								<rightPen lineWidth="0.0"/>
+							</box>
+							<textField>
+								<reportElement uuid="d81bb937-d38d-448a-bc10-c9a9cc959001" x="0" y="0" width="215" height="13"/>
+								<textElement textAlignment="Center">
+									<font fontName="Arial" size="9" isBold="false"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{DOTACIONUNIFORME_DETALLE_C1_DE}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:columnGroup width="118" uuid="856e3b1a-5b68-41ba-8407-fdebdd73633d">
+						<jr:columnGroup width="118" uuid="c3bb20fb-be2b-4986-8c46-60694f95bcc2">
+							<jr:columnHeader height="13" rowSpan="1">
+								<box>
+									<pen lineStyle="Dashed"/>
+									<topPen lineWidth="0.5" lineStyle="Dashed"/>
+									<leftPen lineStyle="Dashed"/>
+									<bottomPen lineStyle="Dashed"/>
+									<rightPen lineStyle="Dashed"/>
+								</box>
+								<staticText>
+									<reportElement uuid="f42e024a-9ccf-4c53-9521-187099aac2d5" x="1" y="0" width="117" height="13"/>
+									<textElement textAlignment="Center">
+										<font fontName="Arial" isBold="false"/>
+									</textElement>
+									<text><![CDATA[CANTIDAD]]></text>
+								</staticText>
+							</jr:columnHeader>
+							<jr:column width="55" uuid="90597f35-64b6-4317-96d0-70365a327fe0">
+								<jr:columnHeader height="16" rowSpan="1">
+									<box>
+										<pen lineStyle="Dashed"/>
+										<topPen lineWidth="0.5" lineStyle="Dashed"/>
+										<leftPen lineWidth="0.5" lineStyle="Dashed"/>
+										<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+										<rightPen lineWidth="0.5" lineStyle="Dashed"/>
+									</box>
+									<staticText>
+										<reportElement uuid="999ad1a0-9f9a-453a-9677-81113ca202a4" x="1" y="0" width="49" height="15"/>
+										<textElement textAlignment="Center">
+											<font fontName="Arial" size="8"/>
+										</textElement>
+										<text><![CDATA[SOLICITADA]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell height="14" rowSpan="1">
+									<box>
+										<pen lineStyle="Dashed"/>
+										<topPen lineStyle="Dashed"/>
+										<leftPen lineWidth="0.5" lineStyle="Dashed"/>
+										<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+										<rightPen lineWidth="0.5" lineStyle="Dashed"/>
+									</box>
+									<textField>
+										<reportElement uuid="51660503-682f-4adc-92fa-380b94694401" x="0" y="0" width="55" height="13"/>
+										<textElement textAlignment="Center">
+											<font fontName="Arial" isBold="false"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{DOTACIONUNIFORME_DETALLE_CANTI}]]></textFieldExpression>
+									</textField>
+								</jr:detailCell>
+							</jr:column>
+							<jr:column width="63" uuid="a04a67b3-56fc-4b77-bd7e-b1a967631595">
+								<jr:columnHeader height="16" rowSpan="1">
+									<box>
+										<pen lineStyle="Dashed"/>
+										<topPen lineWidth="0.5" lineStyle="Dashed"/>
+										<leftPen lineWidth="0.5" lineStyle="Dashed"/>
+										<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+										<rightPen lineWidth="0.5" lineStyle="Dashed"/>
+									</box>
+									<staticText>
+										<reportElement uuid="31d748cd-7cd1-475a-ae4d-81c5a97ec0ae" x="4" y="0" width="59" height="15"/>
+										<textElement textAlignment="Center">
+											<font size="8"/>
+										</textElement>
+										<text><![CDATA[DESPACHADA]]></text>
+									</staticText>
+								</jr:columnHeader>
+								<jr:detailCell height="14" rowSpan="1">
+									<box>
+										<pen lineWidth="0.0" lineStyle="Dashed"/>
+										<topPen lineWidth="0.0" lineStyle="Dashed"/>
+										<leftPen lineWidth="0.5" lineStyle="Dashed"/>
+										<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+										<rightPen lineWidth="0.5" lineStyle="Dashed"/>
+									</box>
+								</jr:detailCell>
+							</jr:column>
+						</jr:columnGroup>
+					</jr:columnGroup>
+					<jr:column width="71" uuid="623a195a-215d-4408-8c5e-fa1a72815917">
+						<jr:tableHeader height="0" rowSpan="1"/>
+						<jr:tableFooter height="0" rowSpan="1"/>
+						<jr:columnHeader height="29" rowSpan="2">
+							<box>
+								<topPen lineWidth="0.5" lineStyle="Dashed"/>
+								<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+								<rightPen lineWidth="0.5" lineStyle="Dashed"/>
+							</box>
+							<staticText>
+								<reportElement uuid="18ce46ac-b847-41ea-9496-c9f26c35e916" x="0" y="0" width="71" height="28"/>
+								<textElement textAlignment="Center">
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<text><![CDATA[CENTRO DE COSTO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter height="0" rowSpan="1"/>
+						<jr:detailCell height="14" rowSpan="1">
+							<box>
+								<pen lineStyle="Dashed"/>
+								<topPen lineStyle="Dashed"/>
+								<leftPen lineStyle="Dashed"/>
+								<bottomPen lineWidth="0.5" lineStyle="Dashed"/>
+								<rightPen lineWidth="0.5" lineStyle="Dashed"/>
+							</box>
+							<textField>
+								<reportElement uuid="723698e7-26b5-4a4e-9ca6-b3470f502d51" x="0" y="0" width="71" height="13"/>
+								<textElement textAlignment="Center">
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$P{CENTRO_COSTO}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement uuid="5b352d28-0088-4aac-a018-77c0f5d147de" x="421" y="70" width="40" height="11"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[TURNO :]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="65488f02-f00d-4c99-8a84-e0dc6b9770eb" x="461" y="70" width="17" height="11"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TURNO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="8c24a0ca-8056-450c-b5ed-e3fbd37c5731" x="421" y="48" width="33" height="15"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<text><![CDATA[DPTO :]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="9b98866a-a018-4325-828b-f25e7f808894" x="458" y="48" width="27" height="15"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{NIVEL_ORGANI}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="15ae7b10-a343-4350-8375-17d69ca5528a" x="457" y="32" width="104" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="f743ea8d-b064-4285-a5e6-c0702b76650e" x="484" y="18" width="1" height="14"/>
+			</line>
+			<line>
+				<reportElement uuid="7a5a8197-226d-4b6f-ab39-6040ac69ab39" x="507" y="18" width="1" height="14"/>
+			</line>
+			<line>
+				<reportElement uuid="6a3f95f9-8b0c-41ce-a522-bc959b8bbe55" x="70" y="209" width="114" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="d548fb63-5d14-4b20-bb85-c9edfd99d2e1" x="1" y="194" width="69" height="15"/>
+				<textElement/>
+				<text><![CDATA[APROBADO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6d3c7904-2475-40a4-a28c-77be61996033" x="208" y="194" width="69" height="15"/>
+				<textElement/>
+				<text><![CDATA[ENTREGADO]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="3ade6ab1-7ad9-4e73-bcc8-3b0f161a82ff" x="277" y="209" width="114" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="7967af08-9271-4cf6-936a-83f41b732568" x="405" y="196" width="55" height="15"/>
+				<textElement/>
+				<text><![CDATA[RECIBIDO]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="04b0bbac-d67d-4098-9657-bf55e22fa756" x="459" y="209" width="114" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement uuid="8cefb1d9-eb50-43a5-8668-bff99525d48e" x="-18" y="229" width="614" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Dashed"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement uuid="f0d76c02-0d70-4ceb-b044-7f08f5d38b82" x="490" y="39" width="83" height="46"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{DESCRIPCION}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c2a26c1d-34d0-4d36-afbb-7065743390b7" x="0" y="39" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{GRUPO}.equals(1)? "PA-AN":$F{GRUPO}.equals(2)? "DA-RA":$F{GRUPO}.equals(3)? "RI-JH":$F{GRUPO}.equals(4)? "":""]]></textFieldExpression>
+			</textField>
+			<textField pattern="000">
+				<reportElement uuid="157408f1-1c4b-4b71-afc9-041a635009e6" x="444" y="0" width="23" height="11"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{CORRELATIVO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

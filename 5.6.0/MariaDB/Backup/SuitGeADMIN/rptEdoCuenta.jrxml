@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rptEdoCuenta" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ef2ca097-a4fa-4498-b30b-63f6c0dc37f3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<parameter name="p_rifAsociado" class="java.lang.String"/>
+	<parameter name="p_fecha1" class="java.util.Date"/>
+	<parameter name="p_fecha2" class="java.util.Date"/>
+	<queryString>
+		<![CDATA[SELECT  rifAsociado, ( SELECT nombre FROM Asociados WHERE rif = rifAsociado ) AS nombre,
+
+         ( SELECT IFNULL( SUM( ( CASE tipoDoc
+                                  WHEN "VENTA" THEN total
+                                  WHEN "NDD" THEN total
+                                  WHEN "NCD" THEN total
+                                  ELSE 0.00
+                                END )  -
+                             (  CASE tipoDoc
+                                    WHEN "COMPRA" THEN total
+                                    WHEN "NDC" THEN total
+                                    WHEN "NCC" THEN total
+                                    ELSE 0.00
+                                END ) ),0 )
+                         FROM   Transacciones
+                         WHERE  rifAsociado = $P{p_rifAsociado}
+                         AND    fecha < $P{p_fecha1} ) AS saldoAnteriorFac,
+
+         ( SELECT IFNULL( SUM( ( CASE T.tipoDoc
+                                    WHEN "VENTA" THEN M.total
+                                    WHEN "NDD" THEN M.total
+                                    WHEN "NCD" THEN M.total
+                                    ELSE 0.00
+                                END ) -
+                             (  CASE
+                                    WHEN  T.tipoDoc = "COMPRA" THEN M.total
+                                    WHEN  T.tipoDoc = "NDC" THEN M.total
+                                    WHEN  T.tipoDoc = "NCC" THEN M.total
+                                    WHEN ISNULL(NULLIF(T.tipoDoc,'')) = 1 THEN M.total
+                                    ELSE 0.00
+                                END ) ),0 )  FROM Movimientos M LEFT JOIN Transacciones T
+                        ON     M.nroDoc = T.nroDoc AND M.rifAsociado = T.rifAsociado
+                        WHERE  M.rifAsociado = $P{p_rifAsociado}
+                        AND    M.fecha < $P{p_fecha1}  ) AS saldoAnteriorPago,
+
+     ( ( SELECT IFNULL( SUM( ( CASE tipoDoc
+                                    WHEN "VENTA" THEN total
+                                    WHEN "NDD" THEN total
+                                    WHEN "NCD" THEN total
+                                    ELSE 0.00
+                               END ) -
+                             ( CASE tipoDoc
+                                    WHEN "COMPRA" THEN total
+                                    WHEN "NDC" THEN total
+                                    WHEN "NCC" THEN total
+                                    ELSE 0.00
+                                END ) ),0 )
+                         FROM   Transacciones
+                         WHERE  rifAsociado = $P{p_rifAsociado}
+                         AND    fecha < $P{p_fecha1} )
+                         -
+        ( SELECT IFNULL( SUM( ( CASE T.tipoDoc
+                                    WHEN "VENTA" THEN M.total
+                                    WHEN "NDD" THEN M.total
+                                    WHEN "NCD" THEN M.total
+                                    ELSE 0.00
+                                END ) -
+                            (   CASE
+                                    WHEN T.tipoDoc = "COMPRA" THEN M.total
+                                    WHEN T.tipoDoc = "NDC" THEN M.total
+                                    WHEN T.tipoDoc = "NCC" THEN M.total
+                                    WHEN ISNULL(NULLIF(T.tipoDoc,'')) = 1 THEN M.total
+                                    ELSE 0.00
+                                END ) ),0 )
+                        FROM   Movimientos M LEFT JOIN Transacciones T
+                        ON     M.nroDoc = T.nroDoc AND M.rifAsociado = T.rifAsociado
+                        WHERE  M.rifAsociado = $P{p_rifAsociado}
+                        AND    M.fecha < $P{p_fecha1} ) ) AS saldoAnterior,
+
+
+        nroDoc, tipoDoc, factura, fecha, descripcion, debe, haber, ( debe - haber ) as saldo
+
+FROM    ( SELECT  rifAsociado, "" AS nombre,  nroDoc, tipoDoc, "" AS factura, fecha, descripcion,
+                    ( CASE tipoDoc
+                        WHEN "VENTA" THEN total
+                        WHEN "NDD" THEN total
+                        WHEN "NCD" THEN total
+                        ELSE 0.00
+                      END ) AS debe,
+                    ( CASE tipoDoc
+                        WHEN "COMPRA" THEN total
+                        WHEN "NDC" THEN total
+                        WHEN "NCC" THEN total
+                        ELSE 0.00
+                      END ) AS haber
+          FROM    Transacciones
+          UNION
+          SELECT M.rifAsociado,"", M.nroMov, "PAGO", T.nroDoc, M.fecha, M.descripcion,
+                    ( CASE
+                        WHEN T.tipoDoc = "COMPRA" THEN M.total
+                        WHEN T.tipoDoc = "NDC" THEN M.total
+                        WHEN T.tipoDoc = "NCC" THEN M.total
+                        ELSE 0.00
+                      END ) as debe,
+                    ( CASE
+                        WHEN T.tipoDoc = "VENTA" THEN M.total
+                        WHEN T.tipoDoc = "NDD" THEN M.total
+                         WHEN T.tipoDoc = "NCD" THEN M.total
+                        WHEN ISNULL(NULLIF(T.tipoDoc,'')) = 1 THEN M.total
+                        ELSE 0.00
+                     END ) as haber
+        FROM   Movimientos M LEFT JOIN Transacciones T
+        ON     M.nroDoc = T.nroDoc AND M.rifAsociado = T.rifAsociado )  MiTablaVirtual
+WHERE  rifAsociado = $P{p_rifAsociado}
+AND    fecha BETWEEN $P{p_fecha1} AND $P{p_fecha2}
+ORDER BY fecha]]>
+	</queryString>
+	<field name="rifAsociado" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="saldoAnteriorFac" class="java.lang.Double"/>
+	<field name="saldoAnteriorPago" class="java.lang.Double"/>
+	<field name="saldoAnterior" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nroDoc" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tipoDoc" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="factura" class="java.lang.String"/>
+	<field name="fecha" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="debe" class="java.lang.Double"/>
+	<field name="haber" class="java.lang.Double"/>
+	<field name="saldo" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="sumDebe" class="java.lang.Double" resetType="Group" resetGroup="nombre" calculation="Sum">
+		<variableExpression><![CDATA[$F{debe}]]></variableExpression>
+		<initialValueExpression><![CDATA[0.00]]></initialValueExpression>
+	</variable>
+	<variable name="sumHaber" class="java.lang.Double" resetType="Group" resetGroup="nombre" calculation="Sum">
+		<variableExpression><![CDATA[$F{haber}]]></variableExpression>
+		<initialValueExpression><![CDATA[0.00]]></initialValueExpression>
+	</variable>
+	<variable name="sumSaldo" class="java.lang.Double" resetType="Group" resetGroup="nombre" calculation="Sum">
+		<variableExpression><![CDATA[$F{saldo}]]></variableExpression>
+		<initialValueExpression><![CDATA[]]></initialValueExpression>
+	</variable>
+	<variable name="saldoAsociado" class="java.lang.Double" resetType="Group" resetGroup="nombre">
+		<variableExpression><![CDATA[$F{saldoAnterior}+$V{sumSaldo}]]></variableExpression>
+	</variable>
+	<variable name="runningSaldo" class="java.lang.Double" resetType="Group" resetGroup="nombre">
+		<variableExpression><![CDATA[$F{saldoAnterior}+$V{sumSaldo}]]></variableExpression>
+	</variable>
+	<group name="nombre">
+		<groupExpression><![CDATA[$F{nombre}]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+		<groupFooter>
+			<band height="58">
+				<textField pattern="#,##0.00;(#,##0.00)">
+					<reportElement x="414" y="0" width="49" height="20" uuid="ac3903ef-1b87-48ef-b9ef-9f88d3617e71"/>
+					<textElement textAlignment="Right">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{sumDebe}]]></textFieldExpression>
+				</textField>
+				<textField pattern="#,##0.00;(-#,##0.00)">
+					<reportElement x="465" y="0" width="48" height="20" uuid="d48c09c1-1b3d-4f93-a34c-bc73f43e0a66"/>
+					<textElement textAlignment="Right">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{sumHaber}]]></textFieldExpression>
+				</textField>
+				<rectangle radius="10">
+					<reportElement mode="Transparent" x="197" y="6" width="160" height="50" uuid="c265f6ba-6dfe-47c3-af25-0b9d71f36503"/>
+				</rectangle>
+				<staticText>
+					<reportElement x="214" y="17" width="132" height="20" uuid="24a32629-2bcf-46dc-9708-0df647ff9329"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[SALDO ASOCIADO]]></text>
+				</staticText>
+				<textField pattern="#,##0.00;(#,##0.00)">
+					<reportElement style="SubTitle" x="229" y="36" width="100" height="20" uuid="cce58f77-021e-442b-93f4-b3c1739b4096"/>
+					<textElement textAlignment="Center">
+						<font size="13" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{saldoAsociado}]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="130" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="5" y="111" width="69" height="15" forecolor="#000000" uuid="b87dc08e-2c35-40e1-8c2b-91b6f81f6fa7"/>
+				<text><![CDATA[nroDoc]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="76" y="111" width="54" height="15" forecolor="#000000" uuid="2b597616-be7d-4ea9-ae21-33bdc1afef42"/>
+				<text><![CDATA[tipoDoc]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="133" y="111" width="69" height="15" forecolor="#000000" uuid="279bee62-0ef9-4c9f-a0dc-e978833d45c6"/>
+				<text><![CDATA[factura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="205" y="111" width="69" height="15" forecolor="#000000" uuid="26ed8858-10b5-49f4-871e-eb88227bc137"/>
+				<text><![CDATA[fecha]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="274" y="111" width="140" height="15" forecolor="#000000" uuid="c80acf74-3146-48b1-9390-a722fed3c0c2"/>
+				<text><![CDATA[descripcion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="414" y="111" width="49" height="15" forecolor="#000000" uuid="216c6a41-b9ee-45f6-9ac7-c63978fdad15"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[debe]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="465" y="111" width="40" height="15" forecolor="#000000" uuid="99bd2375-2139-420f-aba4-146a2d2a2af4"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[haber]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="SubTitle" x="130" y="65" width="420" height="24" forecolor="#FF0000" uuid="b7b07783-ca4a-4488-9f4d-0c2177edc3a6"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="SubTitle" x="0" y="40" width="420" height="22" uuid="995e6de5-67ab-48de-9f24-1c8e56341c60"/>
+				<text><![CDATA[C x Cobrar / Pagar del Asociado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Title" x="157" y="0" width="263" height="40" uuid="ca7a948e-3eca-408d-a8e0-b5c94cda32b8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Suit-Ge-Admin]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="SubTitle" x="0" y="65" width="120" height="24" forecolor="#FF0000" uuid="e514d591-aa1a-4209-a8cf-374590d96e90"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{rifAsociado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="506" y="111" width="50" height="15" forecolor="#000000" uuid="fd657640-a638-4848-ae3f-8628785d9bce"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Saldo]]></text>
+			</staticText>
+			<line>
+				<reportElement style="Column header" positionType="FixRelativeToBottom" mode="Transparent" x="1" y="111" width="555" height="1" uuid="45ee3555-6472-499d-abd7-f8931192b0e3"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Double" lineColor="#130707"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement style="Column header" positionType="FixRelativeToBottom" mode="Transparent" x="1" y="129" width="555" height="1" uuid="f3b76246-fccd-4c54-9a94-dd05b26737dc"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineStyle="Double" lineColor="#120808"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="438" y="91" width="54" height="20" uuid="73cf9561-23f7-4d6a-8286-9087a676cbc7"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[vienen: ]]></text>
+			</staticText>
+			<textField pattern="#,##0.00;(#,##0.00)">
+				<reportElement style="Column header" x="494" y="91" width="59" height="20" uuid="449ee48f-bf29-4486-bd8d-b67720b8000d"/>
+				<textElement textAlignment="Right" markup="styled">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{saldoAnterior}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement mode="Transparent" x="430" y="89" width="126" height="21" uuid="a0c96fff-7540-44bb-b6ea-64009f5cde61"/>
+			</rectangle>
+			<staticText>
+				<reportElement style="SubTitle" x="1" y="93" width="44" height="15" uuid="07013ac0-88aa-4fd6-8eb5-7ef2b5c6c9fa"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Desde: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="134" y="93" width="15" height="15" uuid="63ce9725-d573-4065-9d2a-374ffcfc9a38"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[al  ]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="48" y="93" width="75" height="20" uuid="21b1f107-9c4b-4a79-ad44-1e1fdf5d7716"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{p_fecha1}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="159" y="93" width="75" height="20" uuid="f9f2151c-fc5a-4fe8-a4b5-834cb3a10bf8"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{p_fecha2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="17" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="0769d97f-90d0-4644-a6b0-0ef938be241a"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="5" y="0" width="69" height="15" uuid="cb762080-355a-406f-a900-91678d2e192f"/>
+				<textFieldExpression><![CDATA[$F{nroDoc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="76" y="0" width="54" height="15" uuid="32ba9ddb-3250-4aa8-91ee-eab82fa3c541"/>
+				<textFieldExpression><![CDATA[$F{tipoDoc}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement style="Detail" x="133" y="0" width="69" height="15" uuid="4bdc96bf-08f2-4f20-beec-2cbcb44a66b5"/>
+				<textFieldExpression><![CDATA[$F{factura}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement style="Detail" x="205" y="0" width="69" height="15" uuid="271da535-6700-4fe8-90c6-f1d4bdf34e7d"/>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="274" y="0" width="140" height="15" uuid="f7f80e9f-a724-4029-9ddf-f730751f5882"/>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+				<reportElement style="Detail" x="414" y="0" width="49" height="15" uuid="3a90ae90-0ca3-42cf-bf30-4386deda50d6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{debe}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;(#,##0.00)" isBlankWhenNull="true">
+				<reportElement style="Detail" x="465" y="0" width="40" height="15" uuid="9de894fa-b25b-4617-bfa1-d66029b0a661"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{haber}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;(#,##0.00)">
+				<reportElement style="SubTitle" x="505" y="0" width="50" height="15" uuid="aca2234c-78ae-436d-96e1-bdadd1bde935"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{runningSaldo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="7c7b1b99-83b1-4f4d-941c-d5fd2c224a8e"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="b6f7f4ba-93c6-4f6e-a7dd-0362c52c87c1"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="3d1e9bc8-efa3-4024-9e89-b13d8bfc26f6"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="0e616f51-f716-497c-a86b-8503297138fb"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

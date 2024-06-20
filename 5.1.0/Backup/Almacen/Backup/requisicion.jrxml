@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="recepcion" pageWidth="792" pageHeight="612" orientation="Landscape" columnWidth="771" leftMargin="14" rightMargin="7" topMargin="5" bottomMargin="5" uuid="e6b50eb1-31a9-4829-a398-7194b49232e0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab Data Text" hAlign="Center"/>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Texto" hAlign="Center" fontSize="11" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<style name="table 3">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Detalle" uuid="f287dd4a-a690-44af-8220-65b2e4d8bf52">
+		<queryString language="xPath">
+			<![CDATA[/Requisicion/producto]]>
+		</queryString>
+		<field name="SUP01_DAT_C1_UM" class="java.lang.String">
+			<fieldDescription><![CDATA[SUP01_DAT_C1_UM]]></fieldDescription>
+		</field>
+		<field name="ALMAC_REQUI_DETALLE_CANTIDAD" class="java.lang.String">
+			<fieldDescription><![CDATA[ALMAC_REQUI_DETALLE_CANTIDAD]]></fieldDescription>
+		</field>
+		<field name="SUP01_DAT_C1_DESCRIPCION" class="java.lang.String">
+			<fieldDescription><![CDATA[SUP01_DAT_C1_DESCRIPCION]]></fieldDescription>
+		</field>
+	</subDataset>
+	<queryString language="xPath">
+		<![CDATA[/Requisicion/Datos]]>
+	</queryString>
+	<field name="REQUINUMERO" class="java.lang.String">
+		<fieldDescription><![CDATA[REQUINUMERO]]></fieldDescription>
+	</field>
+	<field name="DESCRIPCION" class="java.lang.String">
+		<fieldDescription><![CDATA[DESCRIPCION]]></fieldDescription>
+	</field>
+	<group name="ALMC_REQUI_ID">
+		<groupExpression><![CDATA[]]></groupExpression>
+	</group>
+	<group name="ALMAC_REQUI_DETALLE_ID">
+		<groupExpression><![CDATA[]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="111" splitType="Stretch">
+			<rectangle>
+				<reportElement uuid="0d887f95-a763-47b9-9457-af6b3c9c9673" x="0" y="0" width="771" height="90" backcolor="#FFFFFF"/>
+				<graphicElement>
+					<pen lineWidth="1.25"/>
+				</graphicElement>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="80b129f3-ea03-4bfd-963d-ebf32e5d07ec" x="237" y="0" width="384" height="29"/>
+				<textElement textAlignment="Center">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REQUISICIÓN DE MATERIALES]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="aa1140ca-b949-46b2-a4e7-8b4a3ca4db66" x="681" y="30" width="84" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{REQUINUMERO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="a515147b-ebce-4500-a768-4512d202b0e7" x="661" y="30" width="21" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[N°]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fecb7e3d-2c61-4493-a532-7233eadf0ac1" x="220" y="29" width="370" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Derivados Siderúrgicos, C.A. (DESICA).]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="167da59e-d4a4-4077-a6b8-dded5abae067" x="220" y="49" width="370" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Zona Industrial II Comdibar, Calle6, Parcelas 5 y 6, Barquisimeto, Edo. Lara]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="61e9e533-b7f7-41ef-adc7-cea465b2f261" x="220" y="69" width="370" height="20"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Tlf.:(0251)269.06.62 - 269.13.55 Fax:(0251)269.28.65]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3b8f70f0-8b64-4ffa-b80c-cdfd0490daa0" x="11" y="70" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[RIF: J-08503850-7]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="d5dcb60b-a4ed-48ce-8b95-3ad198714f2d" x="33" y="11" width="61" height="59"/>
+				<imageExpression><![CDATA["images.jpg"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement uuid="438c5e29-387e-40ac-9f2e-60f38e726084" x="677" y="50" width="84" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="9cdd9d0e-b82d-4a17-a2d5-6e592cd86f96" x="655" y="1" width="1" height="89"/>
+			</line>
+			<staticText>
+				<reportElement uuid="00cb0c5b-04f3-418e-8a28-be8ebe34c0fa" x="0" y="90" width="149" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Departamento Solicitante :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c65fe4ce-27a2-484c-919c-9c9fadb85d39" x="163" y="90" width="598" height="20"/>
+				<textElement>
+					<font size="11"/>
+				</textElement>
+				<text><![CDATA[Almacen de suplidos  y repuestos.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="57f2d2b1-1adb-4df3-9ce7-238dcfbf396d" x="661" y="11" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[RC-CO4.6-03]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="1" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="189" splitType="Stretch">
+			<componentElement>
+				<reportElement uuid="ad38e6c8-8ec2-4e9a-950e-b05617265230" key="table 5" style="table 5" x="0" y="0" width="772" height="67"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="Detalle" uuid="b154ff97-3886-4257-905f-56b997123ad6">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).dataSource("/Requisicion/producto")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="46" uuid="1a76d0a6-87bc-4465-8661-4fcda359d449">
+						<jr:columnHeader style="table 5_TD" height="15" rowSpan="1">
+							<staticText>
+								<reportElement uuid="200f3f43-f86c-4540-9a77-4e56c46d9f18" style="Texto" x="0" y="0" width="45" height="14"/>
+								<textElement/>
+								<text><![CDATA[Unidad]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 5_TD" height="44" rowSpan="1">
+							<textField>
+								<reportElement uuid="c79635a8-b851-4d81-a61b-a14547c847b6" x="1" y="10" width="45" height="20"/>
+								<textElement textAlignment="Center"/>
+								<textFieldExpression><![CDATA[$F{SUP01_DAT_C1_UM}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="32" uuid="ae57edfa-9fca-4b5d-9881-ec9f7c1733b7">
+						<jr:columnHeader style="table 5_TD" height="15" rowSpan="1">
+							<staticText>
+								<reportElement uuid="e93807b2-22a5-44b8-8ca2-e853a8ee393c" style="Texto" x="0" y="0" width="31" height="14"/>
+								<textElement/>
+								<text><![CDATA[Cand.]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 5_TD" height="44" rowSpan="1">
+							<textField>
+								<reportElement uuid="0778e4ce-9206-4824-a6b1-c50406dbc998" x="0" y="10" width="31" height="20"/>
+								<textElement textAlignment="Center"/>
+								<textFieldExpression><![CDATA[$F{ALMAC_REQUI_DETALLE_CANTIDAD}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="456" uuid="e4a91585-fbcd-4ae8-944f-708e200110ce">
+						<jr:columnHeader style="table 5_TD" height="15" rowSpan="1">
+							<staticText>
+								<reportElement uuid="e1bb6e5d-4b99-4780-a281-3a57a182d2a7" style="Texto" x="0" y="0" width="455" height="14"/>
+								<textElement/>
+								<text><![CDATA[Descripción]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 5_TD" height="44" rowSpan="1">
+							<textField>
+								<reportElement uuid="b521c73c-b819-4a65-9cc4-7c6e200e2a32" x="0" y="0" width="455" height="44"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{SUP01_DAT_C1_DESCRIPCION}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="121" uuid="bcd84034-cc93-4837-906e-0ca75f52889f">
+						<jr:columnHeader style="table 5_TD" height="15" rowSpan="1">
+							<staticText>
+								<reportElement uuid="aaaf68bc-9a67-481e-af57-d9ad75768500" style="Texto" x="0" y="0" width="121" height="14"/>
+								<textElement/>
+								<text><![CDATA[Proveedor]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 5_TD" height="44" rowSpan="1">
+							<line>
+								<reportElement uuid="22c5d0de-8475-4f75-8236-215a6472c538" mode="Opaque" x="0" y="15" width="121" height="1"/>
+							</line>
+							<line>
+								<reportElement uuid="dd0d2d04-8410-4a5a-963f-cd33bf27be07" x="0" y="30" width="121" height="1"/>
+							</line>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="91" uuid="7a598180-5bdd-465c-b4b1-20ed78821d6c">
+						<jr:columnHeader style="table 5_TD" height="15" rowSpan="1">
+							<staticText>
+								<reportElement uuid="38888938-ffd8-488a-8a55-d4bce4c690db" style="Texto" x="0" y="0" width="90" height="14"/>
+								<textElement textAlignment="Center"/>
+								<text><![CDATA[Precio/Und]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 5_TD" height="44" rowSpan="1">
+							<line>
+								<reportElement uuid="087ec3ef-e349-461a-a749-2e0486f72a0a" x="0" y="15" width="90" height="1"/>
+							</line>
+							<line>
+								<reportElement uuid="1ae6cc16-bc10-498f-8545-066db9bb53a9" x="0" y="30" width="90" height="1"/>
+							</line>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="173">
+			<staticText>
+				<reportElement uuid="9fae347e-9cd0-430c-8b96-8fc5897718ca" x="0" y="26" width="83" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Solicitado por :]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="6afe3b09-c299-407f-8b54-2168e614d889" x="83" y="45" width="143" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="dd8d869d-050e-4192-9db5-e6b55e7fe624" x="33" y="50" width="43" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha :]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="23354873-b898-4d7b-b4f8-fbc030e38cf2" x="83" y="67" width="109" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="d3e9d66d-52c9-4267-9f1f-20608d666369" x="122" y="49" width="1" height="19"/>
+			</line>
+			<line>
+				<reportElement uuid="682c6f67-c02d-4447-a733-2ad393a2f053" x="161" y="49" width="1" height="18"/>
+			</line>
+			<line>
+				<reportElement uuid="5bd97579-475f-48b4-8fa5-5d89ffde239d" x="433" y="51" width="1" height="18"/>
+			</line>
+			<line>
+				<reportElement uuid="723d459a-2b1d-4e86-a004-7c21502b50a5" x="364" y="69" width="100" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="af07e41a-525a-4079-b0d2-a94c38ce059d" x="313" y="51" width="43" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha :]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="80138a62-009c-41eb-b3ab-3d15d17f655d" x="394" y="50" width="1" height="19"/>
+			</line>
+			<line>
+				<reportElement uuid="ed011b92-889d-4e1f-881c-01f7ae472523" x="356" y="44" width="143" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="4fda7cdd-6bf2-4548-943f-9813e4a7fc17" x="273" y="28" width="83" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Aprobado por :]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="e3b08b99-ebaf-4e67-a31e-c8223e9d40e7" x="684" y="50" width="1" height="19"/>
+			</line>
+			<line>
+				<reportElement uuid="b2582a05-efa8-40cd-9335-2da2be256386" x="644" y="43" width="121" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="434337a7-25bf-4c43-8dc5-7792f92c111d" x="597" y="49" width="43" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha :]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="9a7d7fdf-52ea-4f8e-8db0-e8fbdf39a0ac" x="718" y="49" width="1" height="18"/>
+			</line>
+			<staticText>
+				<reportElement uuid="2b37a099-9425-4862-b970-837d20ecf416" x="557" y="25" width="83" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Aprobado por :]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="f6614ad3-d656-4cec-9af1-90a84a1478e1" x="644" y="67" width="99" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="ef809d72-214e-4ce4-9448-e70438aca5df" x="254" y="12" width="2" height="67"/>
+			</line>
+			<line>
+				<reportElement uuid="3112ab8d-cac2-4ef6-9812-5947959bff15" x="0" y="79" width="772" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="94e42039-375e-47f0-834c-3ee570110f91" x="557" y="12" width="1" height="68"/>
+			</line>
+			<staticText>
+				<reportElement uuid="f97c5906-cea7-428b-848e-06971c70703b" x="0" y="80" width="94" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Observaciones :]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="512de284-08c4-4501-84aa-65e9aef32093" x="-1" y="12" width="772" height="1"/>
+			</line>
+			<textField>
+				<reportElement uuid="8effaab6-49ce-4fb9-b8d8-788d580114b1" x="94" y="79" width="667" height="35"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{DESCRIPCION}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="688e21e8-a176-42aa-a7ce-211985427ade" x="771" y="12" width="1" height="121"/>
+			</line>
+			<line>
+				<reportElement uuid="94b01a89-fc91-4790-a4cd-25d6d182dfdd" x="0" y="118" width="772" height="1"/>
+			</line>
+			<line>
+				<reportElement uuid="f37456db-b86f-4947-bb60-644057e2ca4e" x="-1" y="137" width="772" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="63825e12-00a8-415b-accb-0cffec519036" x="294" y="118" width="100" height="20"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ALMACEN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f3ea835c-08a8-4e4e-9c30-b251b40a5796" x="163" y="137" width="422" height="36"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Esta solicitud debe estar aprobada para su procesamiento. Recuerde entregar la copia en el Dpto. Almacén de Suplidos y Repuestos.]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

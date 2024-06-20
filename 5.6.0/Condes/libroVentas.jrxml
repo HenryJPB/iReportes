@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="LibroVentas" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="3cdd909a-4367-4b31-a9e3-a418f38a80fb">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#FFFFFF" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString>
+		<![CDATA[select Nro_Oper, Fecha_Documento, Referencia, Tipo_Trans, Tipo_Mov, NoControlFiscalFac,
+       NoControlFiscalNota, NoComprobRetIva, Codigo_Cliente, Nombre,
+       Rif, Contribuyente, Total_Factura, Total_Factura_Exp, BaseCont,
+       AlicuotaCont, IvaCont, BaseNoCont, AlicuotaNoCont, IvaNoCont
+
+from
+     ( select (RowNum+0) as Nro_Oper, to_date(EMISION_DOC,'DD-MM-YY') Fecha_Documento,
+       CXCE_DAT.REFERENCIA_DOC Referencia,
+       '01-Reg' as Tipo_Trans,
+       TIPO_MOV,
+       decode( TIPO_MOV,'FAC', C7_NCF ) as NoControlFiscalFac,
+       decode( TIPO_MOV,'N/D', C1_NCF ) as NoControlFiscalNota,
+       null as NoComprobRetIva,
+       C7_CODIGO_ClIENTE as Codigo_Cliente,
+       NOMBRE_CLI_PROV Nombre,
+       CEDULA as Rif,
+       Contribuyente,
+       decode(ORIGEN,'E',0.00,
+              SALDO_ORIG_DOC) Total_Factura,
+       decode(ORIGEN,'E',SALDO_ORIG_DOC,
+              0.00) Total_Factura_Exp,
+       /*1*/ decode(ORIGEN,'E',0.00,
+			     'N',SALDO_ORIG_DOC, 0.00)*(1/(1+(0.12))) BaseCont,
+       (0.12) as AlicuotaCont,
+       /*2*/ decode(ORIGEN,'E',0.00, 'N',SALDO_ORIG_DOC, 0.00)*(1/(1+(0.12)))*(0.12) IvaCont,
+       /*3*/ decode(ORIGEN,'E',0.00, 'N',0.00, SALDO_ORIG_DOC)*(1/(1+(0.12))) BaseNoCont,
+       (0.12) as AlicuotaNoCont,
+       /*4*/ decode(ORIGEN,'E',0.00, 'N',0.00, SALDO_ORIG_DOC)*(1/(1+(0.12)))*(0.12) IvaNoCont
+       from   CXCE_DAT, CXCD_DAT, INV07_DAT, NOTA01_DAT
+       where  CODIGO_CLIENTE = CODIGO
+       and    ( C7_FACTURA = '0'||CXCE_DAT.REFERENCIA_DOC
+                          or
+                C1_NO_NOTA =  CXCE_DAT.REFERENCIA_DOC )
+       and    to_date(EMISION_DOC,'dd-MM-yyyy') between '01-JUN-13' and '16-JUN-13'
+       and    C1_FECHA_NOTA between '01-JUN-13' and '16-JUN-13'
+       and    TIPO_MOV in ('N/D','FAC','N/C')
+       UNION
+       select 0, to_date(FECHA_TRANS,'yyyy-MM-dd'),
+       CXCF_DAT.REFERENCIA_DOC,
+       '01-Reg',
+       TIPO_TRANS,
+       decode( TIPO_TRANS,'N/D', C1_NCF ),
+       decode( TIPO_TRANS,'N/C', C1_NCF ),
+       NRO_COMPROB_RET_IVA,
+       CODIGO,
+       NOMBRE_CLI_PROV,
+       CEDULA,
+       Contribuyente,
+       -decode(ORIGEN,'E',0.00,MONTO_TRANS),
+       -decode(ORIGEN,'E',MONTO_TRANS,0.00),
+       /*1*/ -decode(ORIGEN,'E',0.00,
+                     'N',MONTO_TRANS,
+                      0.00)*(1/(1+(0.12))),
+       (0.12),
+       /*2*/ -decode(ORIGEN,'E',0.00,
+                     'N',MONTO_TRANS,
+                      0.00)*(1/(1+(0.12)))*(0.12),
+       /*3*/ -decode(ORIGEN,'E',0.00,
+                     'N',0.00,
+                      MONTO_TRANS)*(1/(1+(0.12))),
+       (0.12),
+       /*4*/ -decode(ORIGEN,'E',0.00,
+                     'N',0.00,
+                      MONTO_TRANS)*(1/(1+(0.12)))*(0.12)
+       from   CXCF_DAT, CXCD_DAT, NOTA01_DAT
+       where  CLIENTE = CODIGO
+       and    to_date(FECHA_TRANS,'yyyy-MM-dd') between '01-JUN-13' and '16-JUN-13'
+       and    TIPO_TRANS in ('N/D','FAC','N/C')
+       and    C1_NO_NOTA = CXCF_DAT.REFERENCIA_DOC
+)
+order  by Nro_Oper, Fecha_Documento, Referencia, Tipo_Trans]]>
+	</queryString>
+	<field name="NRO_OPER" class="java.math.BigDecimal"/>
+	<field name="FECHA_DOCUMENTO" class="java.sql.Timestamp"/>
+	<field name="REFERENCIA" class="java.lang.String"/>
+	<field name="TIPO_TRANS" class="java.lang.String"/>
+	<field name="TIPO_MOV" class="java.lang.String"/>
+	<field name="NOCONTROLFISCALFAC" class="java.lang.String"/>
+	<field name="NOCONTROLFISCALNOTA" class="java.lang.String"/>
+	<field name="NOCOMPROBRETIVA" class="java.lang.String"/>
+	<field name="CODIGO_CLIENTE" class="java.lang.String"/>
+	<field name="NOMBRE" class="java.lang.String"/>
+	<field name="RIF" class="java.lang.String"/>
+	<field name="CONTRIBUYENTE" class="java.lang.String"/>
+	<field name="TOTAL_FACTURA" class="java.math.BigDecimal"/>
+	<field name="TOTAL_FACTURA_EXP" class="java.math.BigDecimal"/>
+	<field name="BASECONT" class="java.math.BigDecimal"/>
+	<field name="ALICUOTACONT" class="java.math.BigDecimal"/>
+	<field name="IVACONT" class="java.math.BigDecimal"/>
+	<field name="BASENOCONT" class="java.math.BigDecimal"/>
+	<field name="ALICUOTANOCONT" class="java.math.BigDecimal"/>
+	<field name="IVANOCONT" class="java.math.BigDecimal"/>
+	<background>
+		<band height="575" splitType="Stretch">
+			<image vAlign="Bottom">
+				<reportElement uuid="f7d83850-3988-4026-ad21-687d066bfc7a" mode="Opaque" x="0" y="234" width="85" height="241" backcolor="#000000"/>
+				<imageExpression><![CDATA["silhouette2.jpg"]]></imageExpression>
+			</image>
+			<rectangle>
+				<reportElement uuid="f8128581-8cd1-4495-9aff-2dbcf86e0415" x="-20" y="234" width="20" height="241" backcolor="#000000"/>
+				<graphicElement>
+					<pen lineWidth="0.0"/>
+				</graphicElement>
+			</rectangle>
+			<frame>
+				<reportElement uuid="cab19f1b-1808-405d-94c7-3acc179a9710" mode="Opaque" x="-20" y="475" width="105" height="100" backcolor="#666666"/>
+				<textField>
+					<reportElement uuid="fdeba297-39dd-44b3-aba7-9fae1fbfd283" style="Column header" x="0" y="0" width="104" height="73" forecolor="#000000"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="58" isBold="true" pdfFontName="Helvetica-Bold"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report">
+					<reportElement uuid="f6c6fbf9-b7fe-4851-85f0-f14ad4c2d1fd" style="Column header" x="0" y="77" width="104" height="20" forecolor="#000000"/>
+					<box leftPadding="4" rightPadding="4"/>
+					<textElement textAlignment="Center">
+						<font size="16" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement uuid="e9ac9b84-eb8b-4c6f-b28c-c074dc1518a0" mode="Transparent" x="42" y="73" width="20" height="1" backcolor="#FFFFFF"/>
+				</line>
+			</frame>
+		</band>
+	</background>
+	<title>
+		<band height="104" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="4bc6fe33-ad71-4c93-8fd0-60def7f6fdf6" style="Title" x="0" y="0" width="802" height="67"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="54" isBold="false" pdfFontName="Helvetica"/>
+				</textElement>
+				<text><![CDATA[SILHOUETTE TITLE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="cf808edf-fd17-4cae-9980-aeeb6c2b80e0" style="SubTitle" x="232" y="67" width="568" height="37"/>
+				<textElement textAlignment="Right">
+					<font size="26"/>
+				</textElement>
+				<text><![CDATA[Silhouette SubTitle]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement uuid="0f7e5313-faa6-4e7f-8bbb-c89f90a7c7b9" mode="Opaque" x="97" y="5" width="705" height="20" backcolor="#666666"/>
+				<staticText>
+					<reportElement uuid="8a23164a-264d-446f-9e37-d082b58b2d66" style="Column header" x="0" y="0" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[NRO_OPER]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="cac15a9e-80e7-4d91-994b-14d0bda7c552" style="Column header" x="35" y="0" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[FECHA_DOCUMENTO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="86c3fe56-55cf-43eb-a101-56f75bb2314a" style="Column header" x="70" y="0" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[REFERENCIA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="7506ab96-732c-4a5f-a541-f20298cf3d32" style="Column header" x="105" y="0" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[TIPO_TRANS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="38e2c3de-d5ac-47c0-80b8-13624e13aeb7" style="Column header" x="140" y="0" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[TIPO_MOV]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="8259b1c0-acf0-401c-a632-d6545f184f97" style="Column header" x="175" y="0" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[NOCONTROLFISCALFAC]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="cbe7ca29-c232-4283-ac66-ca6809eeccf2" style="Column header" x="210" y="0" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[NOCONTROLFISCALNOTA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="000dbfc0-9646-413a-8625-ef15059858ad" style="Column header" x="245" y="0" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[NOCOMPROBRETIVA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="0024a62d-286b-436a-bb1f-3a9cbc984c9f" style="Column header" x="280" y="0" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[CODIGO_CLIENTE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="af941773-35b6-4ecc-a192-bda495c35c7f" style="Column header" x="315" y="0" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[NOMBRE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="190208bc-af14-416e-88ef-677716ad75a5" style="Column header" x="350" y="0" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[RIF]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="37b9a506-aaf5-45a9-b4a1-9dd823812a3e" style="Column header" x="385" y="0" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[CONTRIBUYENTE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="ecc95d91-f7e0-42a5-b0f2-89a9b4b81431" style="Column header" x="420" y="0" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[TOTAL_FACTURA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="6ce6da8f-121e-41c8-b19d-044aec6b67df" style="Column header" x="455" y="0" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[TOTAL_FACTURA_EXP]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="6345b440-2860-41d1-b7a1-af440e40b7d8" style="Column header" x="490" y="0" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[BASECONT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="b7d79fcd-5f22-42a5-afa7-bceef4c8f39d" style="Column header" x="525" y="0" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[ALICUOTACONT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="314d635a-e399-4c13-a600-2cc67af2143a" style="Column header" x="560" y="0" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[IVACONT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="a3862f01-5609-443c-8396-d8b37145c415" style="Column header" x="595" y="0" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[BASENOCONT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="4e6b28db-6182-4379-b9d3-893cefce6b3a" style="Column header" x="630" y="0" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[ALICUOTANOCONT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="f284f236-151b-4617-97a7-931b9b86bec1" style="Column header" x="665" y="0" width="35" height="15"/>
+					<textElement/>
+					<text><![CDATA[IVANOCONT]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<frame>
+				<reportElement uuid="d205874c-8ddc-4e4e-b5df-60ca48a384d2" x="97" y="1" width="705" height="15"/>
+				<textField isBlankWhenNull="false">
+					<reportElement uuid="fb1dc6bd-5bd1-46e2-be0b-d0b7f09d0986" style="Detail" mode="Opaque" x="0" y="0" width="35" height="15"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{NRO_OPER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="1127b3e3-8e10-4bbd-b875-cf30fa3628a5" style="Detail" x="35" y="0" width="35" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{FECHA_DOCUMENTO}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="a3825a79-f3c7-4cda-8370-7378490dfe2f" style="Detail" x="70" y="0" width="35" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{REFERENCIA}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="5041f650-b4eb-41f1-b480-b547d9a2fe1c" style="Detail" x="105" y="0" width="35" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{TIPO_TRANS}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="69f5aad5-25a2-4a64-9d07-8cc2613d4b1b" style="Detail" x="140" y="0" width="35" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{TIPO_MOV}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="c1a0277d-c6de-433b-86cb-308145fd70dd" style="Detail" x="175" y="0" width="35" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{NOCONTROLFISCALFAC}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="59167201-3ec6-4f53-9b0b-7aae390ac7ea" style="Detail" x="210" y="0" width="35" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{NOCONTROLFISCALNOTA}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="4830c264-078f-4ba5-b462-ea6c124e56e3" style="Detail" x="245" y="0" width="35" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{NOCOMPROBRETIVA}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="ce2880c8-ff10-47ef-8d81-d6bd5efc3c8b" style="Detail" x="280" y="0" width="35" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{CODIGO_CLIENTE}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="67df0726-b6c0-419d-a500-c96ad8f6fef1" style="Detail" x="315" y="0" width="35" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{NOMBRE}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="925b29e0-c01d-4101-89fc-cb72a8bd85b7" style="Detail" x="350" y="0" width="35" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{RIF}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="9377b563-940e-4b2c-a7e7-7cf9e226f88a" style="Detail" x="385" y="0" width="35" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{CONTRIBUYENTE}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="43603625-e402-4a52-b4cc-4d16288d2566" style="Detail" x="420" y="0" width="35" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{TOTAL_FACTURA}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="8de8aad4-3caf-4a34-83a7-73a7c5c32edd" style="Detail" x="455" y="0" width="35" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{TOTAL_FACTURA_EXP}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="c1852df7-7233-4359-a0f6-70f4172e7e27" style="Detail" x="490" y="0" width="35" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{BASECONT}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="0c7923df-3c95-4b1b-8857-e7286f2a97be" style="Detail" x="525" y="0" width="35" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{ALICUOTACONT}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="fe863052-aacc-4c6c-a761-3328621106e4" style="Detail" x="560" y="0" width="35" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{IVACONT}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="52e901ca-5a29-404c-9e8a-dc51d69bf54e" style="Detail" x="595" y="0" width="35" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{BASENOCONT}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="b1fe5664-1d5b-4c09-a58d-a7863418d36f" style="Detail" x="630" y="0" width="35" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{ALICUOTANOCONT}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="cf70c1f7-d45c-4d7a-a45f-acdf30f7fcb3" style="Detail" x="665" y="0" width="35" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{IVANOCONT}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<line>
+				<reportElement uuid="a6e37486-1877-4dc3-a845-83f2b7a2a985" positionType="FixRelativeToBottom" x="97" y="16" width="705" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="39" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="d6337c05-39c9-49cb-b318-59b2f00efbf8" style="Column header" x="671" y="0" width="131" height="20" forecolor="#000000"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="2bf822d2-e5ac-46bd-a30b-89ba2309eac0" x="96" y="0" width="267" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Silhouette Title Report]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

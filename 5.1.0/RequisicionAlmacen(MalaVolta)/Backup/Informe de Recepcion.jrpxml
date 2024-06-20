@@ -1,0 +1,1090 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperPrint xmlns="http://jasperreports.sourceforge.net/jasperreports/print" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/print http://jasperreports.sourceforge.net/xsd/jasperprint.xsd" name="Informe de Recepcion" pageWidth="612" pageHeight="792" topMargin="20" leftMargin="20" bottomMargin="20" rightMargin="20" locale="es_VE" timezone="America/Caracas">
+	<property name="net.sf.jasperreports.export.xml.start.page.index" value="0"/>
+	<property name="net.sf.jasperreports.export.xml.end.page.index" value="0"/>
+	<property name="net.sf.jasperreports.export.xml.page.count" value="1"/>
+	<origin band="background"/>
+	<origin band="title"/>
+	<origin band="pageHeader"/>
+	<origin band="columnHeader"/>
+	<origin band="detail"/>
+	<origin band="columnFooter"/>
+	<origin band="pageFooter"/>
+	<origin band="summary"/>
+	<origin report="Informe32de32Recepcion_RECEP_1376512068571_38234" group="__SummaryGroup" band="groupHeader"/>
+	<origin report="Informe32de32Recepcion_RECEP_1376512068571_38234" group="__SummaryGroup" band="groupFooter"/>
+	<origin report="Informe32de32Recepcion_RECEP_1376512068571_38234" band="title"/>
+	<origin report="Informe32de32Recepcion_RECEP_1376512068571_38234" band="columnHeader"/>
+	<origin report="Informe32de32Recepcion_RECEP_1376512068571_38234" band="detail"/>
+	<origin report="Informe32de32Recepcion_RECEP_1376512068571_38234" band="pageFooter"/>
+	<origin report="Informe32de32Recepcion_RECEP_1376512068571_38234" band="lastPageFooter"/>
+	<origin report="Informe32de32Recepcion_RECEP_1376512068571_38234" band="summary"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab Data Text" hAlign="Center"/>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 8">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 8_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 8_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 8_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 9">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 9_TH" mode="Opaque" backcolor="#C3C3D9">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 9_CH" mode="Opaque" backcolor="#E6E6FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 9_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 10">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 10_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 10_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 10_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<page>
+		<image scaleImage="RetainShape" hAlign="Left" vAlign="Top">
+			<reportElement uuid="2f122b30-8ba3-4607-9fcc-16c15410592e" x="20" y="20" width="66" height="80" origin="2" srcId="1"/>
+			<imageSource isEmbedded="true">
+				<![CDATA[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
+DBDH4LGM3d60DcmhCAP/2Q==]]>
+			</imageSource>
+		</image>
+		<text textAlignment="Center" textHeight="22.640625" lineSpacingFactor="1.2578125" leadingOffset="-3.9550781">
+			<reportElement uuid="cb6f66cb-a74c-4161-a981-d5911b1caa44" x="153" y="47" width="239" height="33" origin="2" srcId="2"/>
+			<font size="18" isBold="true"/>
+			<textContent><![CDATA[INFORME DE RECEPCIÓN]]></textContent>
+		</text>
+		<text textHeight="13.8359375" lineSpacingFactor="1.2578125" leadingOffset="-2.4169922">
+			<reportElement uuid="b402dfef-12ed-4c19-b68f-7b8d2bf36508" x="433" y="20" width="70" height="20" origin="2" srcId="3"/>
+			<font size="11" isBold="true"/>
+			<textContent><![CDATA[RC-AL4.6-01]]></textContent>
+		</text>
+		<text textHeight="17.609375">
+			<reportElement uuid="be821fa3-d4b1-412b-9513-549723364754" x="433" y="47" width="23" height="20" forecolor="#FF3333" origin="2" srcId="4"/>
+			<font size="14" isBold="true"/>
+			<textContent><![CDATA[N° 	]]></textContent>
+		</text>
+		<text textAlignment="Left" textHeight="17.609375" lineSpacingFactor="1.2578125" leadingOffset="-3.0761719">
+			<reportElement uuid="a1a56460-a026-4b09-bea9-f4456e2dee47" x="474" y="47" width="70" height="20" forecolor="#FF3333" origin="2" srcId="5"/>
+			<font size="14" isBold="true" isItalic="false"/>
+			<textContent><![CDATA[2]]></textContent>
+		</text>
+		<text textHeight="13.8359375" lineSpacingFactor="1.2578125" leadingOffset="-2.4169922">
+			<reportElement uuid="5ceb9a0d-2f32-475e-9480-29a362d2fe91" x="433" y="80" width="41" height="20" origin="2" srcId="6"/>
+			<font size="11" isBold="true"/>
+			<textContent><![CDATA[Fecha:]]></textContent>
+		</text>
+		<text textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.sql.Timestamp" pattern="dd/MM/yyyy">
+			<reportElement uuid="92f8ec4b-d3f8-4b4d-9a95-6f4313f0f77e" x="474" y="80" width="70" height="20" origin="2" srcId="7"/>
+			<textContent><![CDATA[08/08/2013]]></textContent>
+		</text>
+		<rectangle radius="0">
+			<reportElement uuid="5204f255-4af6-4b39-948b-aacbade0cfc3" x="20" y="115" width="555" height="20" origin="2" srcId="8"/>
+		</rectangle>
+		<text textHeight="13.8359375" lineSpacingFactor="1.2578125" leadingOffset="-2.4169922">
+			<reportElement uuid="559c6c48-2e98-4559-9f48-a27b0cad5cb1" x="20" y="115" width="66" height="20" origin="2" srcId="9"/>
+			<font size="11" isBold="true"/>
+			<textContent><![CDATA[Proveedor :]]></textContent>
+		</text>
+		<text textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+			<reportElement uuid="db229ae7-4849-4c68-9eb9-fbaa6f571198" x="86" y="115" width="243" height="20" origin="2" srcId="10"/>
+			<textContent><![CDATA[2]]></textContent>
+		</text>
+		<text textHeight="13.8359375" lineSpacingFactor="1.2578125" leadingOffset="-2.4169922">
+			<reportElement uuid="dc594fe7-2ab1-4462-85ae-d9feaca15f82" x="333" y="115" width="45" height="20" origin="2" srcId="11"/>
+			<font size="11" isBold="true"/>
+			<textContent><![CDATA[O.C.N° :]]></textContent>
+		</text>
+		<line>
+			<reportElement uuid="d6957408-f6f9-4a31-b103-9987da33788f" x="329" y="115" width="1" height="20" origin="2" srcId="12"/>
+		</line>
+		<text textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+			<reportElement uuid="5d5cecaf-cf43-4e8b-9dae-241d9291851d" x="378" y="115" width="68" height="20" origin="2" srcId="13"/>
+			<textContent><![CDATA[1]]></textContent>
+		</text>
+		<line>
+			<reportElement uuid="a58b75b0-fc7e-4a01-b485-9a5ce9ca18a0" x="446" y="115" width="1" height="20" origin="2" srcId="14"/>
+		</line>
+		<text textHeight="13.8359375" lineSpacingFactor="1.2578125" leadingOffset="-2.4169922">
+			<reportElement uuid="d795dce7-ba64-45e5-9258-ab6a6a9e587d" x="456" y="115" width="47" height="20" origin="2" srcId="15"/>
+			<font size="11" isBold="true"/>
+			<textContent><![CDATA[Fact. N°]]></textContent>
+		</text>
+		<text textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+			<reportElement uuid="82106691-ca0a-49bb-9d3b-e079e2c38b7b" x="503" y="115" width="72" height="20" origin="2" srcId="16"/>
+			<textContent><![CDATA[1]]></textContent>
+		</text>
+		<frame>
+			<reportElement uuid="34dd4563-8c0b-46dc-92e5-6509ca9fc7f4" key="table 11" x="20" y="144" width="558" height="154" origin="4" srcId="17">
+				<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="34dd4563-8c0b-46dc-92e5-6509ca9fc7f4"/>
+			</reportElement>
+			<frame>
+				<reportElement uuid="6fffa3bd-e743-4ca9-81d1-c009c2fd7a0a" x="0" y="0" width="22" height="30" origin="10" srcId="36">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_IT_33086582_0"/>
+				</reportElement>
+			</frame>
+			<frame>
+				<reportElement uuid="6f76104e-ceec-4385-b07e-133646193edf" style="table 9_TD" x="0" y="30" width="22" height="30" origin="11" srcId="37">
+					<property name="net.sf.jasperreports.export.headertoolbar.cellID" value="IT_33086582_0"/>
+					<property name="net.sf.jasperreports.export.html.class" value="jrcolHeader interactiveElement"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="bc1584b8-3685-4af8-a83a-c61a95e6a886"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="34dd4563-8c0b-46dc-92e5-6509ca9fc7f4"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="0"/>
+				</reportElement>
+				<genericElement>
+					<reportElement uuid="68ef3ee5-b5af-4028-9596-61e848265768" mode="Transparent" x="0" y="0" width="1" height="1" origin="11" srcId="38">
+						<property name="net.sf.jasperreports.export.headertoolbar.can.sort" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.filter" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.format.conditionally" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.field.or.variable" value="IT"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnType" value="Variable"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.filter.type" value="Numeric"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="bc1584b8-3685-4af8-a83a-c61a95e6a886"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="0"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnName" value="IT"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="34dd4563-8c0b-46dc-92e5-6509ca9fc7f4"/>
+					</reportElement>
+					<genericElementType namespace="http://jasperreports.sourceforge.net/jasperreports" name="headertoolbar"/>
+					<genericElementParameter name="column.0|bc1584b8-3685-4af8-a83a-c61a95e6a886|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[IT]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="sortColumnLabel">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[IT]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.1|6ee5bb95-c0f2-482f-a5a9-34843a043706|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[    DESCRIPCIÓN]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.3|bab82720-a0b3-4e49-a420-773f3926b586|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[CÓDIGO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.5|178a946f-fb5f-4b15-ae89-085aeaac0133|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[COSTO UNITARIO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.6|93294594-d546-4713-810c-6836196d3d14|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[COSTO TOTAL]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.4|6f58c0db-edb4-4644-8fed-64d8e2c69f8a|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[CANT.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.2|44f31487-caf4-4f55-b726-15ea9033f98e|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[UND.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+				</genericElement>
+				<text textAlignment="Center" textHeight="13.8359375" lineSpacingFactor="1.2578125" leadingOffset="-2.4169922">
+					<reportElement uuid="4c60a320-9eab-43b3-b3ff-895c21978f51" x="0" y="0" width="20" height="18" origin="11" srcId="39"/>
+					<font size="11" isBold="true"/>
+					<textContent><![CDATA[IT]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="6d320ae6-b946-4d7e-8daf-dc1350d360e7" style="table 9_TD" x="22" y="30" width="239" height="30" origin="11" srcId="40">
+					<property name="net.sf.jasperreports.export.headertoolbar.cellID" value="SUP01_DAT_C1_DESCRIPCION_22149434_0"/>
+					<property name="net.sf.jasperreports.export.html.class" value="jrcolHeader interactiveElement"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="6ee5bb95-c0f2-482f-a5a9-34843a043706"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="34dd4563-8c0b-46dc-92e5-6509ca9fc7f4"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="1"/>
+				</reportElement>
+				<genericElement>
+					<reportElement uuid="124bf723-aa06-414e-9d7f-25718b9c11c1" mode="Transparent" x="0" y="0" width="1" height="1" origin="11" srcId="41">
+						<property name="net.sf.jasperreports.export.headertoolbar.can.sort" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.filter" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.format.conditionally" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.field.or.variable" value="SUP01_DAT_C1_DESCRIPCION"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnType" value="Field"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.filter.type" value="Text"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="6ee5bb95-c0f2-482f-a5a9-34843a043706"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="1"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnName" value="SUP01_DAT_C1_DESCRIPCION"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="34dd4563-8c0b-46dc-92e5-6509ca9fc7f4"/>
+					</reportElement>
+					<genericElementType namespace="http://jasperreports.sourceforge.net/jasperreports" name="headertoolbar"/>
+					<genericElementParameter name="column.0|bc1584b8-3685-4af8-a83a-c61a95e6a886|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[IT]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="sortColumnLabel">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[    DESCRIPCIÓN]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.1|6ee5bb95-c0f2-482f-a5a9-34843a043706|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[    DESCRIPCIÓN]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.3|bab82720-a0b3-4e49-a420-773f3926b586|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[CÓDIGO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.5|178a946f-fb5f-4b15-ae89-085aeaac0133|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[COSTO UNITARIO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.6|93294594-d546-4713-810c-6836196d3d14|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[COSTO TOTAL]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.4|6f58c0db-edb4-4644-8fed-64d8e2c69f8a|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[CANT.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.2|44f31487-caf4-4f55-b726-15ea9033f98e|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[UND.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+				</genericElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+					<reportElement uuid="9477ff76-58bf-4186-a752-ddd111842181" x="0" y="0" width="237" height="18" origin="11" srcId="42"/>
+					<textContent><![CDATA[    DESCRIPCIÓN]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="d72d8d5c-030a-4f13-a71a-86a04f58de28" style="table 9_TD" x="261" y="30" width="44" height="30" origin="11" srcId="43">
+					<property name="net.sf.jasperreports.export.headertoolbar.cellID" value="SUP01_DAT_C1_UM_12671954_0"/>
+					<property name="net.sf.jasperreports.export.html.class" value="jrcolHeader interactiveElement"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="44f31487-caf4-4f55-b726-15ea9033f98e"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="34dd4563-8c0b-46dc-92e5-6509ca9fc7f4"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="2"/>
+				</reportElement>
+				<genericElement>
+					<reportElement uuid="edc6af87-058b-489b-b073-6fb268be18fe" mode="Transparent" x="0" y="0" width="1" height="1" origin="11" srcId="44">
+						<property name="net.sf.jasperreports.export.headertoolbar.can.sort" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.filter" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.format.conditionally" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.field.or.variable" value="SUP01_DAT_C1_UM"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnType" value="Field"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.filter.type" value="Text"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="44f31487-caf4-4f55-b726-15ea9033f98e"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="2"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnName" value="SUP01_DAT_C1_UM"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="34dd4563-8c0b-46dc-92e5-6509ca9fc7f4"/>
+					</reportElement>
+					<genericElementType namespace="http://jasperreports.sourceforge.net/jasperreports" name="headertoolbar"/>
+					<genericElementParameter name="column.0|bc1584b8-3685-4af8-a83a-c61a95e6a886|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[IT]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="sortColumnLabel">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[UND.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.1|6ee5bb95-c0f2-482f-a5a9-34843a043706|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[    DESCRIPCIÓN]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.3|bab82720-a0b3-4e49-a420-773f3926b586|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[CÓDIGO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.5|178a946f-fb5f-4b15-ae89-085aeaac0133|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[COSTO UNITARIO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.6|93294594-d546-4713-810c-6836196d3d14|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[COSTO TOTAL]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.4|6f58c0db-edb4-4644-8fed-64d8e2c69f8a|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[CANT.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.2|44f31487-caf4-4f55-b726-15ea9033f98e|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[UND.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+				</genericElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+					<reportElement uuid="a35fcdf1-593a-4c18-98b2-12529257fd28" x="0" y="0" width="43" height="18" origin="11" srcId="45"/>
+					<textContent><![CDATA[UND.]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="4a33b3fd-78ea-4be7-8d60-aea114ee910b" style="table 9_TD" x="305" y="30" width="73" height="30" origin="11" srcId="46">
+					<property name="net.sf.jasperreports.export.headertoolbar.cellID" value="ALMAC_RECEP_DETALLE_PRODU_ID_7562102_0"/>
+					<property name="net.sf.jasperreports.export.html.class" value="jrcolHeader interactiveElement"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="bab82720-a0b3-4e49-a420-773f3926b586"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="34dd4563-8c0b-46dc-92e5-6509ca9fc7f4"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="3"/>
+				</reportElement>
+				<genericElement>
+					<reportElement uuid="60c70036-fbae-4c22-9b95-a181d73d5a69" mode="Transparent" x="0" y="0" width="1" height="1" origin="11" srcId="47">
+						<property name="net.sf.jasperreports.export.headertoolbar.can.sort" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.filter" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.format.conditionally" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.field.or.variable" value="ALMAC_RECEP_DETALLE_PRODU_ID"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnType" value="Field"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.filter.type" value="Text"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="bab82720-a0b3-4e49-a420-773f3926b586"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="3"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnName" value="ALMAC_RECEP_DETALLE_PRODU_ID"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="34dd4563-8c0b-46dc-92e5-6509ca9fc7f4"/>
+					</reportElement>
+					<genericElementType namespace="http://jasperreports.sourceforge.net/jasperreports" name="headertoolbar"/>
+					<genericElementParameter name="column.0|bc1584b8-3685-4af8-a83a-c61a95e6a886|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[IT]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="sortColumnLabel">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[CÓDIGO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.1|6ee5bb95-c0f2-482f-a5a9-34843a043706|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[    DESCRIPCIÓN]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.3|bab82720-a0b3-4e49-a420-773f3926b586|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[CÓDIGO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.5|178a946f-fb5f-4b15-ae89-085aeaac0133|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[COSTO UNITARIO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.6|93294594-d546-4713-810c-6836196d3d14|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[COSTO TOTAL]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.4|6f58c0db-edb4-4644-8fed-64d8e2c69f8a|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[CANT.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.2|44f31487-caf4-4f55-b726-15ea9033f98e|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[UND.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+				</genericElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+					<reportElement uuid="101245d9-5b4f-4f0c-b1c6-3aed469be9d8" x="0" y="0" width="71" height="18" origin="11" srcId="48"/>
+					<textContent><![CDATA[CÓDIGO]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="214e197c-7314-47f3-8494-f74cbbc179dc" style="table 9_TD" x="378" y="30" width="38" height="30" origin="11" srcId="49">
+					<property name="net.sf.jasperreports.export.headertoolbar.cellID" value="ALMAC_RECEP_DETALLE_CANTIDAD_25627257_0"/>
+					<property name="net.sf.jasperreports.export.html.class" value="jrcolHeader interactiveElement"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="6f58c0db-edb4-4644-8fed-64d8e2c69f8a"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="34dd4563-8c0b-46dc-92e5-6509ca9fc7f4"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="4"/>
+				</reportElement>
+				<genericElement>
+					<reportElement uuid="29a292cf-1da6-42e6-8913-69298ef18e92" mode="Transparent" x="0" y="0" width="1" height="1" origin="11" srcId="50">
+						<property name="net.sf.jasperreports.export.headertoolbar.can.sort" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.filter" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.format.conditionally" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.field.or.variable" value="ALMAC_RECEP_DETALLE_CANTIDAD"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnType" value="Field"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.filter.type" value="Numeric"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="6f58c0db-edb4-4644-8fed-64d8e2c69f8a"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="4"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnName" value="ALMAC_RECEP_DETALLE_CANTIDAD"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="34dd4563-8c0b-46dc-92e5-6509ca9fc7f4"/>
+					</reportElement>
+					<genericElementType namespace="http://jasperreports.sourceforge.net/jasperreports" name="headertoolbar"/>
+					<genericElementParameter name="column.0|bc1584b8-3685-4af8-a83a-c61a95e6a886|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[IT]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="sortColumnLabel">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[CANT.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.1|6ee5bb95-c0f2-482f-a5a9-34843a043706|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[    DESCRIPCIÓN]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.3|bab82720-a0b3-4e49-a420-773f3926b586|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[CÓDIGO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.5|178a946f-fb5f-4b15-ae89-085aeaac0133|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[COSTO UNITARIO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.6|93294594-d546-4713-810c-6836196d3d14|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[COSTO TOTAL]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.4|6f58c0db-edb4-4644-8fed-64d8e2c69f8a|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[CANT.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.2|44f31487-caf4-4f55-b726-15ea9033f98e|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[UND.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+				</genericElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+					<reportElement uuid="328981f5-410c-468d-a857-471f6a497dca" x="0" y="0" width="37" height="18" origin="11" srcId="51"/>
+					<textContent><![CDATA[CANT.]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="6ae9f40f-ee29-4cd6-ac5e-8bde9d769d0e" style="table 9_TD" x="416" y="30" width="71" height="30" origin="11" srcId="52">
+					<property name="net.sf.jasperreports.export.headertoolbar.cellID" value="ALMAC_RECEP_DETALLE_PRECIO_12619972_0"/>
+					<property name="net.sf.jasperreports.export.html.class" value="jrcolHeader interactiveElement"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="178a946f-fb5f-4b15-ae89-085aeaac0133"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="34dd4563-8c0b-46dc-92e5-6509ca9fc7f4"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="5"/>
+				</reportElement>
+				<genericElement>
+					<reportElement uuid="8c31a383-34fa-4b83-959b-9fab4d1e8717" mode="Transparent" x="0" y="0" width="1" height="1" origin="11" srcId="53">
+						<property name="net.sf.jasperreports.export.headertoolbar.can.sort" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.filter" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.format.conditionally" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.field.or.variable" value="ALMAC_RECEP_DETALLE_PRECIO"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnType" value="Field"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.filter.type" value="Numeric"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="178a946f-fb5f-4b15-ae89-085aeaac0133"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="5"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnName" value="ALMAC_RECEP_DETALLE_PRECIO"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="34dd4563-8c0b-46dc-92e5-6509ca9fc7f4"/>
+					</reportElement>
+					<genericElementType namespace="http://jasperreports.sourceforge.net/jasperreports" name="headertoolbar"/>
+					<genericElementParameter name="column.0|bc1584b8-3685-4af8-a83a-c61a95e6a886|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[IT]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="sortColumnLabel">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[COSTO UNITARIO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.1|6ee5bb95-c0f2-482f-a5a9-34843a043706|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[    DESCRIPCIÓN]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.3|bab82720-a0b3-4e49-a420-773f3926b586|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[CÓDIGO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.5|178a946f-fb5f-4b15-ae89-085aeaac0133|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[COSTO UNITARIO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.6|93294594-d546-4713-810c-6836196d3d14|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[COSTO TOTAL]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.4|6f58c0db-edb4-4644-8fed-64d8e2c69f8a|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[CANT.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.2|44f31487-caf4-4f55-b726-15ea9033f98e|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[UND.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+				</genericElement>
+				<text textAlignment="Center" textHeight="25.15625" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+					<reportElement uuid="6a75407f-e208-43b1-8ce9-767483ceed6b" x="0" y="0" width="70" height="30" origin="11" srcId="54"/>
+					<textContent><![CDATA[COSTO UNITARIO]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="932b6869-bdc0-451e-898f-dee22ff58aa4" style="table 9_TD" x="487" y="30" width="71" height="30" origin="11" srcId="55">
+					<property name="net.sf.jasperreports.export.headertoolbar.cellID" value="6_6317961_0"/>
+					<property name="net.sf.jasperreports.export.html.class" value="jrcolHeader interactiveElement"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="93294594-d546-4713-810c-6836196d3d14"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="34dd4563-8c0b-46dc-92e5-6509ca9fc7f4"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="6"/>
+				</reportElement>
+				<genericElement>
+					<reportElement uuid="d006e4c1-8c3f-4349-8144-5a922e95a119" mode="Transparent" x="0" y="0" width="1" height="1" origin="11" srcId="56">
+						<property name="net.sf.jasperreports.export.headertoolbar.can.sort" value="false"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.filter" value="false"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.format.conditionally" value="false"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="93294594-d546-4713-810c-6836196d3d14"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="6"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnName" value="6"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="34dd4563-8c0b-46dc-92e5-6509ca9fc7f4"/>
+					</reportElement>
+					<genericElementType namespace="http://jasperreports.sourceforge.net/jasperreports" name="headertoolbar"/>
+					<genericElementParameter name="column.0|bc1584b8-3685-4af8-a83a-c61a95e6a886|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[IT]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="sortColumnLabel">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[COSTO TOTAL]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.1|6ee5bb95-c0f2-482f-a5a9-34843a043706|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[    DESCRIPCIÓN]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.3|bab82720-a0b3-4e49-a420-773f3926b586|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[CÓDIGO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.5|178a946f-fb5f-4b15-ae89-085aeaac0133|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[COSTO UNITARIO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.6|93294594-d546-4713-810c-6836196d3d14|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[COSTO TOTAL]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.4|6f58c0db-edb4-4644-8fed-64d8e2c69f8a|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[CANT.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.2|44f31487-caf4-4f55-b726-15ea9033f98e|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[UND.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+				</genericElement>
+				<text textAlignment="Center" textHeight="25.15625" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+					<reportElement uuid="8dd1cfc4-6304-49c1-9d38-6f225abd44bc" x="0" y="0" width="68" height="30" origin="11" srcId="57"/>
+					<textContent><![CDATA[COSTO TOTAL]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="0d404743-99fd-45a0-bb74-4e41bf448892" style="table 9_TD" x="0" y="60" width="22" height="21" origin="12" srcId="58">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_IT_33086582_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.lang.Double" pattern="#00">
+					<reportElement uuid="13c4e791-429d-4a67-9f90-9d0a3ed67601" x="0" y="0" width="20" height="20" origin="12" srcId="59"/>
+					<textContent><![CDATA[01]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="6d1befcd-c912-4481-aac8-b2f8d55c48d8" style="table 9_TD" x="22" y="60" width="239" height="21" origin="12" srcId="60">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_SUP01_DAT_C1_DESCRIPCION_22149434_0"/>
+				</reportElement>
+				<text textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+					<reportElement uuid="aa775ebb-3fba-40b9-8968-b9e6f8b20cf4" x="0" y="0" width="237" height="20" origin="12" srcId="61"/>
+					<textContent><![CDATA[AVELLANADOR 40MM]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="a85d7700-6096-4dae-ac68-51970e3005d5" style="table 9_TD" x="261" y="60" width="44" height="21" origin="12" srcId="62">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_SUP01_DAT_C1_UM_12671954_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+					<reportElement uuid="1c9d17ed-3be7-47f5-a7bc-295a4aa13bd2" x="0" y="0" width="43" height="20" origin="12" srcId="63"/>
+					<textContent><![CDATA[piezas]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="63e42084-a4c1-43a5-9515-1203ccff2fd6" style="table 9_TD" x="305" y="60" width="73" height="21" origin="12" srcId="64">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_ALMAC_RECEP_DETALLE_PRODU_ID_7562102_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+					<reportElement uuid="b1b8ef24-859f-492c-bd49-c473d6a0e176" x="0" y="0" width="71" height="20" origin="12" srcId="65"/>
+					<textContent><![CDATA[11663]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="167de8c1-75be-4524-a9a7-c956aa8c8325" style="table 9_TD" x="378" y="60" width="38" height="21" origin="12" srcId="66">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_ALMAC_RECEP_DETALLE_CANTIDAD_25627257_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.math.BigDecimal">
+					<reportElement uuid="51b18b17-1736-4ebd-961c-60a736fd6280" x="1" y="0" width="36" height="20" origin="12" srcId="67"/>
+					<textContent><![CDATA[20]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="5d816e41-d012-46dd-a7ea-957936410d8b" style="table 9_TD" x="416" y="60" width="71" height="21" origin="12" srcId="68">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_ALMAC_RECEP_DETALLE_PRECIO_12619972_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.lang.Double" pattern="#,##0.00">
+					<reportElement uuid="ba3ce501-1f35-446e-841e-5824fbdbbc62" x="0" y="0" width="70" height="20" origin="12" srcId="69"/>
+					<textContent><![CDATA[50,00]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="e211be48-03a9-44a1-8994-c7c2c486cc95" style="table 9_TD" x="487" y="60" width="71" height="21" origin="12" srcId="70">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_6_6317961_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.lang.Double" pattern="#,##0.00">
+					<reportElement uuid="4a178a2d-7803-428e-805b-c26b235f1b15" x="0" y="0" width="71" height="20" origin="12" srcId="71"/>
+					<textContent><![CDATA[1.000,00]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="0d404743-99fd-45a0-bb74-4e41bf448892" style="table 9_TD" x="0" y="81" width="22" height="21" origin="12" srcId="58">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_IT_33086582_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.lang.Double" pattern="#00">
+					<reportElement uuid="13c4e791-429d-4a67-9f90-9d0a3ed67601" x="0" y="0" width="20" height="20" origin="12" srcId="59"/>
+					<textContent><![CDATA[02]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="6d1befcd-c912-4481-aac8-b2f8d55c48d8" style="table 9_TD" x="22" y="81" width="239" height="21" origin="12" srcId="60">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_SUP01_DAT_C1_DESCRIPCION_22149434_0"/>
+				</reportElement>
+				<text textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+					<reportElement uuid="aa775ebb-3fba-40b9-8968-b9e6f8b20cf4" x="0" y="0" width="237" height="20" origin="12" srcId="61"/>
+					<textContent><![CDATA[LAMINA H.N 0.90X100X200 CAL.20]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="a85d7700-6096-4dae-ac68-51970e3005d5" style="table 9_TD" x="261" y="81" width="44" height="21" origin="12" srcId="62">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_SUP01_DAT_C1_UM_12671954_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+					<reportElement uuid="1c9d17ed-3be7-47f5-a7bc-295a4aa13bd2" x="0" y="0" width="43" height="20" origin="12" srcId="63"/>
+					<textContent><![CDATA[piezas]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="63e42084-a4c1-43a5-9515-1203ccff2fd6" style="table 9_TD" x="305" y="81" width="73" height="21" origin="12" srcId="64">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_ALMAC_RECEP_DETALLE_PRODU_ID_7562102_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+					<reportElement uuid="b1b8ef24-859f-492c-bd49-c473d6a0e176" x="0" y="0" width="71" height="20" origin="12" srcId="65"/>
+					<textContent><![CDATA[11693]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="167de8c1-75be-4524-a9a7-c956aa8c8325" style="table 9_TD" x="378" y="81" width="38" height="21" origin="12" srcId="66">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_ALMAC_RECEP_DETALLE_CANTIDAD_25627257_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.math.BigDecimal">
+					<reportElement uuid="51b18b17-1736-4ebd-961c-60a736fd6280" x="1" y="0" width="36" height="20" origin="12" srcId="67"/>
+					<textContent><![CDATA[40]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="5d816e41-d012-46dd-a7ea-957936410d8b" style="table 9_TD" x="416" y="81" width="71" height="21" origin="12" srcId="68">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_ALMAC_RECEP_DETALLE_PRECIO_12619972_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.lang.Double" pattern="#,##0.00">
+					<reportElement uuid="ba3ce501-1f35-446e-841e-5824fbdbbc62" x="0" y="0" width="70" height="20" origin="12" srcId="69"/>
+					<textContent><![CDATA[1,00]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="e211be48-03a9-44a1-8994-c7c2c486cc95" style="table 9_TD" x="487" y="81" width="71" height="21" origin="12" srcId="70">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_6_6317961_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.lang.Double" pattern="#,##0.00">
+					<reportElement uuid="4a178a2d-7803-428e-805b-c26b235f1b15" x="0" y="0" width="71" height="20" origin="12" srcId="71"/>
+					<textContent><![CDATA[40,00]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="7d93230c-413f-4e85-a5e5-4d7f5b08cb0c" x="0" y="102" width="558" height="22" origin="9" srcId="26"/>
+				<box padding="0">
+					<pen lineWidth="0.0"/>
+				</box>
+				<frame>
+					<reportElement uuid="a97523b1-2e5e-42f9-8f6a-b33fe3626f25" x="0" y="0" width="22" height="22" origin="9" srcId="27">
+						<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_IT_33086582_0"/>
+					</reportElement>
+				</frame>
+				<frame>
+					<reportElement uuid="e4700e75-d733-4ffa-8e97-4eb4d9cceaa7" x="22" y="0" width="239" height="22" origin="9" srcId="28">
+						<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_SUP01_DAT_C1_DESCRIPCION_22149434_0"/>
+					</reportElement>
+				</frame>
+				<frame>
+					<reportElement uuid="49b36834-bb6d-4240-95f2-2f942d18dc35" x="261" y="0" width="44" height="22" origin="9" srcId="29">
+						<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_SUP01_DAT_C1_UM_12671954_0"/>
+					</reportElement>
+				</frame>
+				<frame>
+					<reportElement uuid="815a2d89-9f7e-4f0f-955c-ed31908011cf" x="305" y="0" width="73" height="22" origin="9" srcId="30">
+						<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_ALMAC_RECEP_DETALLE_PRODU_ID_7562102_0"/>
+					</reportElement>
+				</frame>
+				<frame>
+					<reportElement uuid="9cd7edf5-2570-4a30-94ab-8c546fd6f63e" x="378" y="0" width="38" height="22" origin="9" srcId="31">
+						<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_ALMAC_RECEP_DETALLE_CANTIDAD_25627257_0"/>
+					</reportElement>
+				</frame>
+				<frame>
+					<reportElement uuid="4da08f5e-626a-4ab9-a05b-9521bddb8b88" x="416" y="0" width="71" height="22" origin="9" srcId="32">
+						<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_ALMAC_RECEP_DETALLE_PRECIO_12619972_0"/>
+					</reportElement>
+					<text textAlignment="Center" textHeight="13.8359375" lineSpacingFactor="1.2578125" leadingOffset="-2.4169922">
+						<reportElement uuid="1a5b9608-cbe3-470d-83f5-b8dba584f95f" x="0" y="0" width="71" height="20" origin="9" srcId="33"/>
+						<font size="11" isBold="true"/>
+						<textContent><![CDATA[TOTAL Bsf.]]></textContent>
+					</text>
+				</frame>
+				<frame>
+					<reportElement uuid="d624a6fe-c695-40de-b09c-9133c3ffdf31" style="table 9_TD" x="487" y="0" width="71" height="22" origin="9" srcId="34">
+						<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_6_6317961_0"/>
+					</reportElement>
+					<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.lang.Float" pattern="#,##0.00">
+						<reportElement uuid="b51ff079-5361-4814-8d4f-5a4c77e7458d" x="0" y="0" width="71" height="20" origin="9" srcId="35"/>
+						<box>
+							<pen lineStyle="Double"/>
+							<topPen lineStyle="Double"/>
+							<leftPen lineStyle="Double"/>
+							<bottomPen lineWidth="1.5" lineStyle="Solid"/>
+							<rightPen lineStyle="Dashed"/>
+						</box>
+						<textContent><![CDATA[1.040,00]]></textContent>
+					</text>
+				</frame>
+			</frame>
+			<frame>
+				<reportElement uuid="5f7229ba-6255-4ab6-8632-8a6a3b8f2c00" x="0" y="124" width="22" height="30" origin="15" srcId="81">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_IT_33086582_0"/>
+				</reportElement>
+			</frame>
+			<frame>
+				<reportElement uuid="74f4051b-c14c-4841-a6bf-a30737881b6b" x="487" y="124" width="71" height="30" origin="15" srcId="82">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_6_6317961_0"/>
+				</reportElement>
+			</frame>
+		</frame>
+		<text textHeight="13.8359375" lineSpacingFactor="1.2578125" leadingOffset="-2.4169922">
+			<reportElement uuid="40fb4587-ff19-4063-8dc7-d93b46fbbabd" x="20" y="682" width="100" height="20" origin="6" srcId="18"/>
+			<font size="11" isBold="true"/>
+			<textContent><![CDATA[Elaborado por:]]></textContent>
+		</text>
+		<line>
+			<reportElement uuid="aef3bc66-019a-4b4c-9bf1-55410b8c5fe0" x="35" y="735" width="197" height="1" origin="6" srcId="19"/>
+		</line>
+		<text textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+			<reportElement uuid="ed118600-b4c6-4687-aecc-f1ec4a73af13" x="35" y="746" width="226" height="20" origin="6" srcId="20"/>
+			<font isBold="true"/>
+			<textContent><![CDATA[Dpt. de Almacén de Suplidos y Repuestos]]></textContent>
+		</text>
+		<text textHeight="13.8359375" lineSpacingFactor="1.2578125" leadingOffset="-2.4169922">
+			<reportElement uuid="02b13061-a26b-4d28-a7ab-10bb8ff8f222" x="329" y="682" width="100" height="20" origin="6" srcId="21"/>
+			<font size="11" isBold="true"/>
+			<textContent><![CDATA[Revisado por:]]></textContent>
+		</text>
+		<line>
+			<reportElement uuid="00c51226-afc5-40a1-bf61-0b42b9f92b26" x="329" y="736" width="197" height="1" origin="6" srcId="22"/>
+		</line>
+		<text textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+			<reportElement uuid="76f3fb6c-2c73-4dbb-9f99-710933cf4499" x="329" y="747" width="226" height="20" origin="6" srcId="23"/>
+			<font isBold="true"/>
+			<textContent><![CDATA[Dpt. de Contabilidad y Costos]]></textContent>
+		</text>
+	</page>
+</jasperPrint>

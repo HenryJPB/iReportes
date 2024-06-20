@@ -1,0 +1,1412 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperPrint xmlns="http://jasperreports.sourceforge.net/jasperreports/print" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/print http://jasperreports.sourceforge.net/xsd/jasperprint.xsd" name="INDICADORES" pageWidth="792" pageHeight="332" topMargin="20" leftMargin="20" bottomMargin="20" rightMargin="20" orientation="Landscape" locale="es_VE" timezone="America/Caracas">
+	<property name="net.sf.jasperreports.export.xml.start.page.index" value="0"/>
+	<property name="net.sf.jasperreports.export.xml.end.page.index" value="0"/>
+	<property name="net.sf.jasperreports.export.xml.page.count" value="1"/>
+	<origin band="background"/>
+	<origin band="title"/>
+	<origin band="pageHeader"/>
+	<origin band="columnHeader"/>
+	<origin band="detail"/>
+	<origin band="columnFooter"/>
+	<origin band="pageFooter"/>
+	<origin report="INDICADORES_productosEntregados_1376922399203_766168" group="__SummaryGroup" band="groupHeader"/>
+	<origin report="INDICADORES_productosEntregados_1376922399203_766168" group="__SummaryGroup" band="groupFooter"/>
+	<origin report="INDICADORES_productosEntregados_1376922399203_766168" band="columnHeader"/>
+	<origin report="INDICADORES_productosEntregados_1376922399203_766168" band="detail"/>
+	<origin report="INDICADORES_productosEntregados_1376922399203_766168" band="pageFooter"/>
+	<origin report="INDICADORES_productosEntregados_1376922399203_766168" band="lastPageFooter"/>
+	<origin report="INDICADORES_productosEntregados_1376922399203_766168" band="summary"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#FFBFBF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<page>
+		<rectangle radius="0">
+			<reportElement uuid="82226ab5-7c7b-4514-aa4b-760c351e0c86" x="54" y="41" width="690" height="71" origin="2" srcId="1"/>
+			<graphicElement>
+				<pen lineWidth="2.25"/>
+			</graphicElement>
+		</rectangle>
+		<text textAlignment="Center" textHeight="17.609375" lineSpacingFactor="1.2578125" leadingOffset="-3.0761719">
+			<reportElement uuid="fc198674-f6ab-4228-a676-ba9ad9205cbe" x="182" y="51" width="392" height="20" forecolor="#3333FF" origin="2" srcId="2"/>
+			<font size="14" isBold="true"/>
+			<textContent><![CDATA[TIEMPO DEL CICLO DE COMPRAS]]></textContent>
+		</text>
+		<image scaleImage="RetainShape" hAlign="Left" vAlign="Top">
+			<reportElement uuid="52a94781-bdc0-447f-a59e-8f5709ff8089" x="54" y="41" width="66" height="71" origin="2" srcId="3"/>
+			<imageSource isEmbedded="true">
+				<![CDATA[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
+DBDH4LGM3d60DcmhCAP/2Q==]]>
+			</imageSource>
+		</image>
+		<rectangle radius="0">
+			<reportElement uuid="cf455529-2475-417f-8be7-dbb1c01c88c9" x="559" y="41" width="185" height="71" origin="2" srcId="4"/>
+		</rectangle>
+		<rectangle radius="0">
+			<reportElement uuid="59ee371d-e1ba-416a-90f7-40503dba3110" x="559" y="71" width="100" height="41" origin="2" srcId="5"/>
+		</rectangle>
+		<rectangle radius="0">
+			<reportElement uuid="a1814dc8-ff07-4a8c-972d-9729040c38e1" x="659" y="71" width="85" height="41" origin="2" srcId="6"/>
+		</rectangle>
+		<text textAlignment="Center" textHeight="13.8359375" lineSpacingFactor="1.2578125" leadingOffset="-2.4169922">
+			<reportElement uuid="532c027b-1d98-4f77-92a0-ebc24d3d52bc" x="559" y="87" width="100" height="20" origin="2" srcId="7"/>
+			<font size="11" isBold="true"/>
+			<textContent><![CDATA[META (Dias)]]></textContent>
+		</text>
+		<text textAlignment="Center" textHeight="13.8359375" lineSpacingFactor="1.2578125" leadingOffset="-2.4169922">
+			<reportElement uuid="b408dddd-a316-4c50-9ee3-4bdffaff1e28" x="559" y="51" width="58" height="20" origin="2" srcId="8"/>
+			<font size="11" isBold="true"/>
+			<textContent><![CDATA[MES]]></textContent>
+		</text>
+		<text textAlignment="Center" textHeight="13.8359375" lineSpacingFactor="1.2578125" leadingOffset="-2.4169922">
+			<reportElement uuid="3d3633c3-ffcb-4d5e-9e57-76fb013e4ace" x="659" y="87" width="85" height="20" origin="2" srcId="9"/>
+			<font size="11" isBold="true"/>
+			<textContent><![CDATA[10]]></textContent>
+		</text>
+		<text textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.util.Date" pattern="dd/MM/yyyy">
+			<reportElement uuid="619c447f-cb6e-473b-9c72-1a46682d0ca0" x="617" y="51" width="100" height="20" origin="2" srcId="10"/>
+			<textContent><![CDATA[19/08/2013]]></textContent>
+		</text>
+		<frame>
+			<reportElement uuid="a6ccc345-6cc6-4d60-81a7-5403cbeb89c3" key="table 3" style="table 3" x="54" y="133" width="679" height="179" origin="4" srcId="11">
+				<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="a6ccc345-6cc6-4d60-81a7-5403cbeb89c3"/>
+			</reportElement>
+			<frame>
+				<reportElement uuid="1f12695f-2468-44f4-908c-146bc7840331" style="table 3_TD" x="0" y="0" width="61" height="33" origin="9" srcId="26">
+					<property name="net.sf.jasperreports.export.headertoolbar.cellID" value="REQUINUMERO_23212128_0"/>
+					<property name="net.sf.jasperreports.export.html.class" value="jrcolHeader interactiveElement"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="51986313-6990-4901-af72-2d656a2135ba"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="a6ccc345-6cc6-4d60-81a7-5403cbeb89c3"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="0"/>
+				</reportElement>
+				<genericElement>
+					<reportElement uuid="e4b51910-37e8-4acd-9272-cca879eeb2dd" mode="Transparent" x="0" y="0" width="1" height="1" origin="9" srcId="27">
+						<property name="net.sf.jasperreports.export.headertoolbar.can.sort" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.filter" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.format.conditionally" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.field.or.variable" value="REQUINUMERO"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnType" value="Field"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.filter.type" value="Numeric"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="51986313-6990-4901-af72-2d656a2135ba"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="0"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnName" value="REQUINUMERO"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="a6ccc345-6cc6-4d60-81a7-5403cbeb89c3"/>
+					</reportElement>
+					<genericElementType namespace="http://jasperreports.sourceforge.net/jasperreports" name="headertoolbar"/>
+					<genericElementParameter name="column.3|2dac5f74-c098-424e-808f-17281fc01740|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[NOMBRE (SUPLIDO O REPUESTO)]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="sortColumnLabel">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[REQ.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.6|8ea896f3-e16a-4273-8f4b-8e642668b452|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[DIAS]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.7|9c0ee287-63d8-4f23-a137-7d456891e325|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[TIPO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.4|47697358-61ed-4423-b6c3-f781ece83679|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[F REQ.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.9|d4d8e3f8-7774-4c01-bacb-9f6a071bbd85|true"/>
+					<genericElementParameter name="column.1|031e8096-8bc5-469a-832f-f9687650a285|false">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[OC]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.8|1965719e-5948-4cb9-be3e-46edda764e75|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[INF. DE RECEP.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.2|1671b02d-32de-4243-bb13-7a552f990da7|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[TIPO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.5|d88b98ea-730a-44db-a3b1-ed4a67479c1a|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[F RECEP.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.0|51986313-6990-4901-af72-2d656a2135ba|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[REQ.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+				</genericElement>
+				<text textAlignment="Center" textHeight="13.8359375" lineSpacingFactor="1.2578125" leadingOffset="-2.4169922">
+					<reportElement uuid="99fcabb0-a7fb-4ac9-931b-4a4e51c57a98" x="0" y="0" width="61" height="16" origin="9" srcId="28"/>
+					<font size="11" isBold="true"/>
+					<textContent><![CDATA[REQ.]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="0caa5985-11c9-4143-8064-d5c42e6be1a2" style="table 3_TD" x="61" y="0" width="41" height="33" origin="9" srcId="29">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcolHeader"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="031e8096-8bc5-469a-832f-f9687650a285"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.cellID" value="1_22425590"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="a6ccc345-6cc6-4d60-81a7-5403cbeb89c3"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="1"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="13.8359375" lineSpacingFactor="1.2578125" leadingOffset="-2.4169922">
+					<reportElement uuid="d98398da-b550-4d80-87bf-ca6811297420" x="0" y="0" width="39" height="16" origin="9" srcId="30"/>
+					<font size="11" isBold="true"/>
+					<textContent><![CDATA[OC]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="3e456c4f-025e-432b-9b78-4d9777fb7569" style="table 3_TD" x="102" y="0" width="70" height="33" origin="9" srcId="31">
+					<property name="net.sf.jasperreports.export.headertoolbar.cellID" value="2_23511869_0"/>
+					<property name="net.sf.jasperreports.export.html.class" value="jrcolHeader interactiveElement"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="1671b02d-32de-4243-bb13-7a552f990da7"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="a6ccc345-6cc6-4d60-81a7-5403cbeb89c3"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="2"/>
+				</reportElement>
+				<genericElement>
+					<reportElement uuid="8e248cea-7aa3-490d-855d-aaf3164f0232" mode="Transparent" x="0" y="0" width="1" height="1" origin="9" srcId="32">
+						<property name="net.sf.jasperreports.export.headertoolbar.can.sort" value="false"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.filter" value="false"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.format.conditionally" value="false"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="1671b02d-32de-4243-bb13-7a552f990da7"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="2"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnName" value="2"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="a6ccc345-6cc6-4d60-81a7-5403cbeb89c3"/>
+					</reportElement>
+					<genericElementType namespace="http://jasperreports.sourceforge.net/jasperreports" name="headertoolbar"/>
+					<genericElementParameter name="column.3|2dac5f74-c098-424e-808f-17281fc01740|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[NOMBRE (SUPLIDO O REPUESTO)]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="sortColumnLabel">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[TIPO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.6|8ea896f3-e16a-4273-8f4b-8e642668b452|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[DIAS]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.7|9c0ee287-63d8-4f23-a137-7d456891e325|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[TIPO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.4|47697358-61ed-4423-b6c3-f781ece83679|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[F REQ.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.9|d4d8e3f8-7774-4c01-bacb-9f6a071bbd85|true"/>
+					<genericElementParameter name="column.1|031e8096-8bc5-469a-832f-f9687650a285|false">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[OC]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.8|1965719e-5948-4cb9-be3e-46edda764e75|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[INF. DE RECEP.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.2|1671b02d-32de-4243-bb13-7a552f990da7|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[TIPO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.5|d88b98ea-730a-44db-a3b1-ed4a67479c1a|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[F RECEP.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.0|51986313-6990-4901-af72-2d656a2135ba|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[REQ.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+				</genericElement>
+				<text textAlignment="Center" textHeight="13.8359375" lineSpacingFactor="1.2578125" leadingOffset="-2.4169922">
+					<reportElement uuid="24ef162c-6d68-4304-b734-13c401ba3aa1" x="0" y="0" width="69" height="16" origin="9" srcId="33"/>
+					<font size="11" isBold="true"/>
+					<textContent><![CDATA[TIPO]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="837b7204-4523-4011-9b15-c13bba0ab203" style="table 3_TD" x="172" y="0" width="220" height="33" origin="9" srcId="34">
+					<property name="net.sf.jasperreports.export.headertoolbar.cellID" value="C1_DESCRIPCION_26996749_0"/>
+					<property name="net.sf.jasperreports.export.html.class" value="jrcolHeader interactiveElement"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="2dac5f74-c098-424e-808f-17281fc01740"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="a6ccc345-6cc6-4d60-81a7-5403cbeb89c3"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="3"/>
+				</reportElement>
+				<genericElement>
+					<reportElement uuid="eb1f2b4a-9a7b-4bb2-b913-e6e64d11efb7" mode="Transparent" x="0" y="0" width="1" height="1" origin="9" srcId="35">
+						<property name="net.sf.jasperreports.export.headertoolbar.can.sort" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.filter" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.format.conditionally" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.field.or.variable" value="C1_DESCRIPCION"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnType" value="Field"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.filter.type" value="Text"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="2dac5f74-c098-424e-808f-17281fc01740"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="3"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnName" value="C1_DESCRIPCION"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="a6ccc345-6cc6-4d60-81a7-5403cbeb89c3"/>
+					</reportElement>
+					<genericElementType namespace="http://jasperreports.sourceforge.net/jasperreports" name="headertoolbar"/>
+					<genericElementParameter name="column.3|2dac5f74-c098-424e-808f-17281fc01740|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[NOMBRE (SUPLIDO O REPUESTO)]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="sortColumnLabel">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[NOMBRE (SUPLIDO O REPUESTO)]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.6|8ea896f3-e16a-4273-8f4b-8e642668b452|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[DIAS]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.7|9c0ee287-63d8-4f23-a137-7d456891e325|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[TIPO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.4|47697358-61ed-4423-b6c3-f781ece83679|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[F REQ.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.9|d4d8e3f8-7774-4c01-bacb-9f6a071bbd85|true"/>
+					<genericElementParameter name="column.1|031e8096-8bc5-469a-832f-f9687650a285|false">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[OC]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.8|1965719e-5948-4cb9-be3e-46edda764e75|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[INF. DE RECEP.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.2|1671b02d-32de-4243-bb13-7a552f990da7|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[TIPO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.5|d88b98ea-730a-44db-a3b1-ed4a67479c1a|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[F RECEP.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.0|51986313-6990-4901-af72-2d656a2135ba|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[REQ.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+				</genericElement>
+				<text textAlignment="Center" textHeight="13.8359375" lineSpacingFactor="1.2578125" leadingOffset="-2.4169922">
+					<reportElement uuid="05daa953-7c92-4129-ab14-ef5133de3607" x="0" y="0" width="220" height="16" origin="9" srcId="36"/>
+					<font size="11" isBold="true"/>
+					<textContent><![CDATA[NOMBRE (SUPLIDO O REPUESTO)]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="7df1011d-95d4-4346-930c-ec8447d73efc" style="table 3_TD" x="392" y="0" width="90" height="33" origin="9" srcId="37">
+					<property name="net.sf.jasperreports.export.headertoolbar.cellID" value="FECHAPEIDO_11344543_0"/>
+					<property name="net.sf.jasperreports.export.html.class" value="jrcolHeader interactiveElement"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="47697358-61ed-4423-b6c3-f781ece83679"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="a6ccc345-6cc6-4d60-81a7-5403cbeb89c3"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="4"/>
+				</reportElement>
+				<genericElement>
+					<reportElement uuid="43228766-9b6a-4fa8-88e0-5e73c6734d38" mode="Transparent" x="0" y="0" width="1" height="1" origin="9" srcId="38">
+						<property name="net.sf.jasperreports.export.headertoolbar.can.sort" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.filter" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.format.conditionally" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.field.or.variable" value="FECHAPEIDO"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnType" value="Field"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.filter.type" value="Date"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="47697358-61ed-4423-b6c3-f781ece83679"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="4"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnName" value="FECHAPEIDO"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="a6ccc345-6cc6-4d60-81a7-5403cbeb89c3"/>
+					</reportElement>
+					<genericElementType namespace="http://jasperreports.sourceforge.net/jasperreports" name="headertoolbar"/>
+					<genericElementParameter name="column.3|2dac5f74-c098-424e-808f-17281fc01740|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[NOMBRE (SUPLIDO O REPUESTO)]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="sortColumnLabel">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[F REQ.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.6|8ea896f3-e16a-4273-8f4b-8e642668b452|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[DIAS]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.7|9c0ee287-63d8-4f23-a137-7d456891e325|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[TIPO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.4|47697358-61ed-4423-b6c3-f781ece83679|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[F REQ.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.9|d4d8e3f8-7774-4c01-bacb-9f6a071bbd85|true"/>
+					<genericElementParameter name="column.1|031e8096-8bc5-469a-832f-f9687650a285|false">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[OC]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.8|1965719e-5948-4cb9-be3e-46edda764e75|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[INF. DE RECEP.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.2|1671b02d-32de-4243-bb13-7a552f990da7|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[TIPO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.5|d88b98ea-730a-44db-a3b1-ed4a67479c1a|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[F RECEP.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.0|51986313-6990-4901-af72-2d656a2135ba|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[REQ.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+				</genericElement>
+				<text textAlignment="Center" textHeight="13.8359375" lineSpacingFactor="1.2578125" leadingOffset="-2.4169922">
+					<reportElement uuid="e647ab9d-8e5d-4304-8db6-b129812532ae" x="0" y="0" width="90" height="16" origin="9" srcId="39"/>
+					<font size="11" isBold="true"/>
+					<textContent><![CDATA[F REQ.]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="d470fecb-4dd7-41fa-904f-09a14e53097e" style="table 3_TD" x="482" y="0" width="56" height="33" origin="9" srcId="40">
+					<property name="net.sf.jasperreports.export.headertoolbar.cellID" value="FECHAENTREGA_11457705_0"/>
+					<property name="net.sf.jasperreports.export.html.class" value="jrcolHeader interactiveElement"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="d88b98ea-730a-44db-a3b1-ed4a67479c1a"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="a6ccc345-6cc6-4d60-81a7-5403cbeb89c3"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="5"/>
+				</reportElement>
+				<genericElement>
+					<reportElement uuid="5dd48e40-3a88-4eb4-857c-04c47085c762" mode="Transparent" x="0" y="0" width="1" height="1" origin="9" srcId="41">
+						<property name="net.sf.jasperreports.export.headertoolbar.can.sort" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.filter" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.format.conditionally" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.field.or.variable" value="FECHAENTREGA"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnType" value="Field"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.filter.type" value="Date"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="d88b98ea-730a-44db-a3b1-ed4a67479c1a"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="5"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnName" value="FECHAENTREGA"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="a6ccc345-6cc6-4d60-81a7-5403cbeb89c3"/>
+					</reportElement>
+					<genericElementType namespace="http://jasperreports.sourceforge.net/jasperreports" name="headertoolbar"/>
+					<genericElementParameter name="column.3|2dac5f74-c098-424e-808f-17281fc01740|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[NOMBRE (SUPLIDO O REPUESTO)]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="sortColumnLabel">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[F RECEP.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.6|8ea896f3-e16a-4273-8f4b-8e642668b452|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[DIAS]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.7|9c0ee287-63d8-4f23-a137-7d456891e325|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[TIPO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.4|47697358-61ed-4423-b6c3-f781ece83679|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[F REQ.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.9|d4d8e3f8-7774-4c01-bacb-9f6a071bbd85|true"/>
+					<genericElementParameter name="column.1|031e8096-8bc5-469a-832f-f9687650a285|false">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[OC]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.8|1965719e-5948-4cb9-be3e-46edda764e75|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[INF. DE RECEP.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.2|1671b02d-32de-4243-bb13-7a552f990da7|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[TIPO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.5|d88b98ea-730a-44db-a3b1-ed4a67479c1a|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[F RECEP.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.0|51986313-6990-4901-af72-2d656a2135ba|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[REQ.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+				</genericElement>
+				<text textAlignment="Center" textHeight="13.8359375" lineSpacingFactor="1.2578125" leadingOffset="-2.4169922">
+					<reportElement uuid="3815fd43-0367-4000-b8d3-a1698c2dde96" x="1" y="0" width="55" height="16" origin="9" srcId="42"/>
+					<font size="11" isBold="true"/>
+					<textContent><![CDATA[F RECEP.]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="2ebaacf6-46a4-4ec7-a06b-9452ee61ce91" style="table 3_TD" x="538" y="0" width="30" height="33" origin="9" srcId="43">
+					<property name="net.sf.jasperreports.export.headertoolbar.cellID" value="Dias_776169_0"/>
+					<property name="net.sf.jasperreports.export.html.class" value="jrcolHeader interactiveElement"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="8ea896f3-e16a-4273-8f4b-8e642668b452"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="a6ccc345-6cc6-4d60-81a7-5403cbeb89c3"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="6"/>
+				</reportElement>
+				<genericElement>
+					<reportElement uuid="2f9cfb8a-d063-45ef-86a0-7192f58e84b0" mode="Transparent" x="0" y="0" width="1" height="1" origin="9" srcId="44">
+						<property name="net.sf.jasperreports.export.headertoolbar.can.sort" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.filter" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.format.conditionally" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.field.or.variable" value="Dias"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnType" value="Variable"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.filter.type" value="Numeric"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="8ea896f3-e16a-4273-8f4b-8e642668b452"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="6"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnName" value="Dias"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="a6ccc345-6cc6-4d60-81a7-5403cbeb89c3"/>
+					</reportElement>
+					<genericElementType namespace="http://jasperreports.sourceforge.net/jasperreports" name="headertoolbar"/>
+					<genericElementParameter name="column.3|2dac5f74-c098-424e-808f-17281fc01740|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[NOMBRE (SUPLIDO O REPUESTO)]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="sortColumnLabel">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[DIAS]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.6|8ea896f3-e16a-4273-8f4b-8e642668b452|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[DIAS]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.7|9c0ee287-63d8-4f23-a137-7d456891e325|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[TIPO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.4|47697358-61ed-4423-b6c3-f781ece83679|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[F REQ.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.9|d4d8e3f8-7774-4c01-bacb-9f6a071bbd85|true"/>
+					<genericElementParameter name="column.1|031e8096-8bc5-469a-832f-f9687650a285|false">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[OC]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.8|1965719e-5948-4cb9-be3e-46edda764e75|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[INF. DE RECEP.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.2|1671b02d-32de-4243-bb13-7a552f990da7|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[TIPO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.5|d88b98ea-730a-44db-a3b1-ed4a67479c1a|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[F RECEP.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.0|51986313-6990-4901-af72-2d656a2135ba|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[REQ.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+				</genericElement>
+				<text textAlignment="Center" textHeight="13.8359375" lineSpacingFactor="1.2578125" leadingOffset="-2.4169922">
+					<reportElement uuid="0127ff43-0523-46a2-bf84-e4463c93ea7e" x="1" y="0" width="29" height="16" origin="9" srcId="45"/>
+					<font size="11" isBold="true"/>
+					<textContent><![CDATA[DIAS]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="30729f4d-be8a-4e17-9052-5e463d1902f9" style="table 3_TD" x="568" y="0" width="29" height="33" origin="9" srcId="46">
+					<property name="net.sf.jasperreports.export.headertoolbar.cellID" value="7_25965378_0"/>
+					<property name="net.sf.jasperreports.export.html.class" value="jrcolHeader interactiveElement"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="9c0ee287-63d8-4f23-a137-7d456891e325"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="a6ccc345-6cc6-4d60-81a7-5403cbeb89c3"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="7"/>
+				</reportElement>
+				<genericElement>
+					<reportElement uuid="536bcfac-1993-4478-a7fe-30fe421b4624" mode="Transparent" x="0" y="0" width="1" height="1" origin="9" srcId="47">
+						<property name="net.sf.jasperreports.export.headertoolbar.can.sort" value="false"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.filter" value="false"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.format.conditionally" value="false"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="9c0ee287-63d8-4f23-a137-7d456891e325"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="7"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnName" value="7"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="a6ccc345-6cc6-4d60-81a7-5403cbeb89c3"/>
+					</reportElement>
+					<genericElementType namespace="http://jasperreports.sourceforge.net/jasperreports" name="headertoolbar"/>
+					<genericElementParameter name="column.3|2dac5f74-c098-424e-808f-17281fc01740|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[NOMBRE (SUPLIDO O REPUESTO)]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="sortColumnLabel">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[TIPO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.6|8ea896f3-e16a-4273-8f4b-8e642668b452|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[DIAS]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.7|9c0ee287-63d8-4f23-a137-7d456891e325|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[TIPO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.4|47697358-61ed-4423-b6c3-f781ece83679|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[F REQ.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.9|d4d8e3f8-7774-4c01-bacb-9f6a071bbd85|true"/>
+					<genericElementParameter name="column.1|031e8096-8bc5-469a-832f-f9687650a285|false">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[OC]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.8|1965719e-5948-4cb9-be3e-46edda764e75|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[INF. DE RECEP.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.2|1671b02d-32de-4243-bb13-7a552f990da7|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[TIPO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.5|d88b98ea-730a-44db-a3b1-ed4a67479c1a|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[F RECEP.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.0|51986313-6990-4901-af72-2d656a2135ba|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[REQ.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+				</genericElement>
+				<text textAlignment="Center" textHeight="13.8359375" lineSpacingFactor="1.2578125" leadingOffset="-2.4169922">
+					<reportElement uuid="2af6a1e7-cb67-43fa-b597-f6e576dea2c4" x="0" y="0" width="29" height="16" origin="9" srcId="48"/>
+					<font size="11" isBold="true"/>
+					<textContent><![CDATA[TIPO]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="b5917b1f-b29a-459f-a158-9831d164cb4c" style="table 3_TD" x="597" y="0" width="49" height="33" origin="9" srcId="49">
+					<property name="net.sf.jasperreports.export.headertoolbar.cellID" value="RECEPNUMERO_24725341_0"/>
+					<property name="net.sf.jasperreports.export.html.class" value="jrcolHeader interactiveElement"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="1965719e-5948-4cb9-be3e-46edda764e75"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="a6ccc345-6cc6-4d60-81a7-5403cbeb89c3"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="8"/>
+				</reportElement>
+				<genericElement>
+					<reportElement uuid="c306bf36-cddf-45bc-99ef-59deeca76b8b" mode="Transparent" x="0" y="0" width="1" height="1" origin="9" srcId="50">
+						<property name="net.sf.jasperreports.export.headertoolbar.can.sort" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.filter" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.format.conditionally" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.field.or.variable" value="RECEPNUMERO"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnType" value="Field"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.filter.type" value="Text"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="1965719e-5948-4cb9-be3e-46edda764e75"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="8"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnName" value="RECEPNUMERO"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="a6ccc345-6cc6-4d60-81a7-5403cbeb89c3"/>
+					</reportElement>
+					<genericElementType namespace="http://jasperreports.sourceforge.net/jasperreports" name="headertoolbar"/>
+					<genericElementParameter name="column.3|2dac5f74-c098-424e-808f-17281fc01740|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[NOMBRE (SUPLIDO O REPUESTO)]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="sortColumnLabel">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[INF. DE RECEP.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.6|8ea896f3-e16a-4273-8f4b-8e642668b452|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[DIAS]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.7|9c0ee287-63d8-4f23-a137-7d456891e325|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[TIPO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.4|47697358-61ed-4423-b6c3-f781ece83679|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[F REQ.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.9|d4d8e3f8-7774-4c01-bacb-9f6a071bbd85|true"/>
+					<genericElementParameter name="column.1|031e8096-8bc5-469a-832f-f9687650a285|false">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[OC]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.8|1965719e-5948-4cb9-be3e-46edda764e75|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[INF. DE RECEP.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.2|1671b02d-32de-4243-bb13-7a552f990da7|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[TIPO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.5|d88b98ea-730a-44db-a3b1-ed4a67479c1a|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[F RECEP.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.0|51986313-6990-4901-af72-2d656a2135ba|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[REQ.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+				</genericElement>
+				<text textAlignment="Center" textHeight="27.671875" lineSpacingFactor="1.2578125" leadingOffset="-2.4169922">
+					<reportElement uuid="26390fad-dddf-4dc9-882b-e395848a3eb3" x="0" y="0" width="49" height="33" origin="9" srcId="51"/>
+					<font size="11" isBold="true"/>
+					<textContent><![CDATA[INF. DE RECEP.]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="9fd7ec84-df1d-4834-bff0-4efb7ef817b0" x="646" y="0" width="33" height="33" origin="9" srcId="52">
+					<property name="net.sf.jasperreports.export.headertoolbar.cellID" value="CountFilas_20727057_0"/>
+					<property name="net.sf.jasperreports.export.html.class" value="jrcolHeader interactiveElement"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="d4d8e3f8-7774-4c01-bacb-9f6a071bbd85"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="a6ccc345-6cc6-4d60-81a7-5403cbeb89c3"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="9"/>
+				</reportElement>
+				<genericElement>
+					<reportElement uuid="8600342e-1559-4e27-9bc3-946cd9588824" mode="Transparent" x="0" y="0" width="1" height="1" origin="9" srcId="53">
+						<property name="net.sf.jasperreports.export.headertoolbar.can.sort" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.filter" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.can.format.conditionally" value="true"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.field.or.variable" value="CountFilas"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnType" value="Variable"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.filter.type" value="Numeric"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnUUID" value="d4d8e3f8-7774-4c01-bacb-9f6a071bbd85"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.columnIndex" value="9"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.sortColumnName" value="CountFilas"/>
+						<property name="net.sf.jasperreports.export.headertoolbar.tableUUID" value="a6ccc345-6cc6-4d60-81a7-5403cbeb89c3"/>
+					</reportElement>
+					<genericElementType namespace="http://jasperreports.sourceforge.net/jasperreports" name="headertoolbar"/>
+					<genericElementParameter name="column.3|2dac5f74-c098-424e-808f-17281fc01740|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[NOMBRE (SUPLIDO O REPUESTO)]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="sortColumnLabel"/>
+					<genericElementParameter name="column.6|8ea896f3-e16a-4273-8f4b-8e642668b452|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[DIAS]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.7|9c0ee287-63d8-4f23-a137-7d456891e325|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[TIPO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.4|47697358-61ed-4423-b6c3-f781ece83679|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[F REQ.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.9|d4d8e3f8-7774-4c01-bacb-9f6a071bbd85|true"/>
+					<genericElementParameter name="column.1|031e8096-8bc5-469a-832f-f9687650a285|false">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[OC]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.8|1965719e-5948-4cb9-be3e-46edda764e75|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[INF. DE RECEP.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.2|1671b02d-32de-4243-bb13-7a552f990da7|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[TIPO]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.5|d88b98ea-730a-44db-a3b1-ed4a67479c1a|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[F RECEP.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+					<genericElementParameter name="column.0|51986313-6990-4901-af72-2d656a2135ba|true">
+						<genericElementParameterValue class="java.lang.String">
+							<![CDATA[REQ.]]>
+						</genericElementParameterValue>
+					</genericElementParameter>
+				</genericElement>
+			</frame>
+			<frame>
+				<reportElement uuid="b0f62d43-c917-4d61-ab83-086cbaf19fa4" style="table 3_TD" x="0" y="33" width="61" height="20" origin="10" srcId="54">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_REQUINUMERO_23212128_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.math.BigDecimal">
+					<reportElement uuid="6e695e82-78e8-4f9b-adda-5afca30e2647" x="0" y="0" width="61" height="20" origin="10" srcId="55"/>
+					<textContent><![CDATA[4]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="b521aa4f-fa9f-4f37-9d7a-bf35b9ae146f" style="table 3_TD" x="61" y="33" width="41" height="20" origin="10" srcId="56"/>
+				<text textAlignment="Center" textHeight="13.8359375" lineSpacingFactor="1.2578125" leadingOffset="-2.4169922">
+					<reportElement uuid="7d9d6e8e-3917-4b0a-85e0-b982bca398ca" x="0" y="0" width="40" height="20" origin="10" srcId="57"/>
+					<font size="11" isBold="true"/>
+					<textContent><![CDATA[A]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="8a581cdb-ac18-46cd-80b6-aae50fb9f2a9" style="table 3_TD" x="102" y="33" width="70" height="20" origin="10" srcId="58">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_2_23511869_0"/>
+				</reportElement>
+				<text textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+					<reportElement uuid="cd7efc67-e7d9-479f-9a82-77da6213c2e1" x="0" y="0" width="69" height="20" origin="10" srcId="59"/>
+					<textContent><![CDATA[ORDINARIO]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="6f1fdc02-a9f9-4cf7-a5d8-adef8fba5bf3" style="table 3_TD" x="172" y="33" width="220" height="20" origin="10" srcId="60">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_C1_DESCRIPCION_26996749_0"/>
+				</reportElement>
+				<text textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+					<reportElement uuid="0d1b5748-cce4-4dca-b7ff-fe8a97123758" x="0" y="0" width="220" height="20" origin="10" srcId="61"/>
+					<textContent><![CDATA[AVELLANADOR 40MM]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="2597af0f-6cd6-448d-82c3-6f73c62bb8c1" style="table 3_TD" x="392" y="33" width="90" height="20" origin="10" srcId="62">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_FECHAPEIDO_11344543_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.sql.Date" pattern="dd/MM/yyyy">
+					<reportElement uuid="93fd5ce5-7f14-457a-9479-973f8340969e" x="0" y="0" width="90" height="20" origin="10" srcId="63"/>
+					<textContent><![CDATA[14/08/2013]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="b6a1464b-a013-416e-9244-798a3787553c" style="table 3_TD" x="482" y="33" width="56" height="20" origin="10" srcId="64">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_FECHAENTREGA_11457705_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.sql.Date" pattern="dd/MM/yyyy">
+					<reportElement uuid="8365f544-1f42-4e16-a359-49bfab74d8ba" x="0" y="0" width="55" height="20" origin="10" srcId="65"/>
+					<textContent><![CDATA[18/08/2013]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="c6679eb3-c8f5-4b6f-93ce-d5f13377af70" style="table 3_TD" x="538" y="33" width="30" height="20" origin="10" srcId="66">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_Dias_776169_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.lang.Long">
+					<reportElement uuid="a9a2c2bc-b6bc-42b7-b55e-9b31cefd73bc" x="1" y="0" width="29" height="20" origin="10" srcId="67"/>
+					<textContent><![CDATA[4]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="0c1ce839-9f30-4a1a-9cce-df1f0630326e" style="table 3_TD" x="568" y="33" width="29" height="20" origin="10" srcId="68">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_7_25965378_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+					<reportElement uuid="c5583eab-f934-4cb7-8d24-d074459be32b" x="0" y="0" width="29" height="20" origin="10" srcId="69"/>
+					<textContent><![CDATA[A]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="520a0a17-71fb-4d90-a6c3-ed69a8a70ab5" style="table 3_TD" x="597" y="33" width="49" height="20" origin="10" srcId="70">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_RECEPNUMERO_24725341_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+					<reportElement uuid="30b34b3c-0749-45e3-80dc-6cdf171c0804" style="table 3_TD" x="0" y="0" width="49" height="20" origin="10" srcId="71"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textContent><![CDATA[2]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="9115bf63-405a-417b-8e95-084fab304475" style="table 3_TD" x="646" y="33" width="33" height="20" origin="10" srcId="72">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_CountFilas_20727057_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.lang.Integer">
+					<reportElement uuid="3e535050-c9f2-4127-b801-3b20457510db" x="0" y="0" width="32" height="20" origin="10" srcId="73"/>
+					<font isBold="true"/>
+					<textContent><![CDATA[1]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="b0f62d43-c917-4d61-ab83-086cbaf19fa4" style="table 3_TD" x="0" y="53" width="61" height="20" origin="10" srcId="54">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_REQUINUMERO_23212128_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.math.BigDecimal">
+					<reportElement uuid="6e695e82-78e8-4f9b-adda-5afca30e2647" x="0" y="0" width="61" height="20" origin="10" srcId="55"/>
+					<textContent><![CDATA[1]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="b521aa4f-fa9f-4f37-9d7a-bf35b9ae146f" style="table 3_TD" x="61" y="53" width="41" height="20" origin="10" srcId="56"/>
+				<text textAlignment="Center" textHeight="13.8359375" lineSpacingFactor="1.2578125" leadingOffset="-2.4169922">
+					<reportElement uuid="7d9d6e8e-3917-4b0a-85e0-b982bca398ca" x="0" y="0" width="40" height="20" origin="10" srcId="57"/>
+					<font size="11" isBold="true"/>
+					<textContent><![CDATA[A]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="8a581cdb-ac18-46cd-80b6-aae50fb9f2a9" style="table 3_TD" x="102" y="53" width="70" height="20" origin="10" srcId="58">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_2_23511869_0"/>
+				</reportElement>
+				<text textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+					<reportElement uuid="cd7efc67-e7d9-479f-9a82-77da6213c2e1" x="0" y="0" width="69" height="20" origin="10" srcId="59"/>
+					<textContent><![CDATA[URGENTE]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="6f1fdc02-a9f9-4cf7-a5d8-adef8fba5bf3" style="table 3_TD" x="172" y="53" width="220" height="20" origin="10" srcId="60">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_C1_DESCRIPCION_26996749_0"/>
+				</reportElement>
+				<text textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+					<reportElement uuid="0d1b5748-cce4-4dca-b7ff-fe8a97123758" x="0" y="0" width="220" height="20" origin="10" srcId="61"/>
+					<textContent><![CDATA[PLETINA H.N DE 1X3/16X6 MTS.]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="2597af0f-6cd6-448d-82c3-6f73c62bb8c1" style="table 3_TD" x="392" y="53" width="90" height="20" origin="10" srcId="62">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_FECHAPEIDO_11344543_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.sql.Date" pattern="dd/MM/yyyy">
+					<reportElement uuid="93fd5ce5-7f14-457a-9479-973f8340969e" x="0" y="0" width="90" height="20" origin="10" srcId="63"/>
+					<textContent><![CDATA[08/08/2013]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="b6a1464b-a013-416e-9244-798a3787553c" style="table 3_TD" x="482" y="53" width="56" height="20" origin="10" srcId="64">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_FECHAENTREGA_11457705_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.sql.Date" pattern="dd/MM/yyyy">
+					<reportElement uuid="8365f544-1f42-4e16-a359-49bfab74d8ba" x="0" y="0" width="55" height="20" origin="10" srcId="65"/>
+					<textContent><![CDATA[18/08/2013]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="c6679eb3-c8f5-4b6f-93ce-d5f13377af70" style="table 3_TD" x="538" y="53" width="30" height="20" origin="10" srcId="66">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_Dias_776169_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.lang.Long">
+					<reportElement uuid="a9a2c2bc-b6bc-42b7-b55e-9b31cefd73bc" x="1" y="0" width="29" height="20" origin="10" srcId="67"/>
+					<textContent><![CDATA[10]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="0c1ce839-9f30-4a1a-9cce-df1f0630326e" style="table 3_TD" x="568" y="53" width="29" height="20" origin="10" srcId="68">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_7_25965378_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+					<reportElement uuid="c5583eab-f934-4cb7-8d24-d074459be32b" x="0" y="0" width="29" height="20" origin="10" srcId="69"/>
+					<textContent><![CDATA[A]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="520a0a17-71fb-4d90-a6c3-ed69a8a70ab5" style="table 3_TD" x="597" y="53" width="49" height="20" origin="10" srcId="70">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_RECEPNUMERO_24725341_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+					<reportElement uuid="30b34b3c-0749-45e3-80dc-6cdf171c0804" style="table 3_TD" x="0" y="0" width="49" height="20" origin="10" srcId="71"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textContent><![CDATA[7]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="9115bf63-405a-417b-8e95-084fab304475" style="table 3_TD" x="646" y="53" width="33" height="20" origin="10" srcId="72">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_CountFilas_20727057_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.lang.Integer">
+					<reportElement uuid="3e535050-c9f2-4127-b801-3b20457510db" x="0" y="0" width="32" height="20" origin="10" srcId="73"/>
+					<font isBold="true"/>
+					<textContent><![CDATA[2]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="b0f62d43-c917-4d61-ab83-086cbaf19fa4" style="table 3_TD" x="0" y="73" width="61" height="20" origin="10" srcId="54">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_REQUINUMERO_23212128_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.math.BigDecimal">
+					<reportElement uuid="6e695e82-78e8-4f9b-adda-5afca30e2647" x="0" y="0" width="61" height="20" origin="10" srcId="55"/>
+					<textContent><![CDATA[3]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="b521aa4f-fa9f-4f37-9d7a-bf35b9ae146f" style="table 3_TD" x="61" y="73" width="41" height="20" origin="10" srcId="56"/>
+				<text textAlignment="Center" textHeight="13.8359375" lineSpacingFactor="1.2578125" leadingOffset="-2.4169922">
+					<reportElement uuid="7d9d6e8e-3917-4b0a-85e0-b982bca398ca" x="0" y="0" width="40" height="20" origin="10" srcId="57"/>
+					<font size="11" isBold="true"/>
+					<textContent><![CDATA[A]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="8a581cdb-ac18-46cd-80b6-aae50fb9f2a9" style="table 3_TD" x="102" y="73" width="70" height="20" origin="10" srcId="58">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_2_23511869_0"/>
+				</reportElement>
+				<text textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+					<reportElement uuid="cd7efc67-e7d9-479f-9a82-77da6213c2e1" x="0" y="0" width="69" height="20" origin="10" srcId="59"/>
+					<textContent><![CDATA[ORDINARIO]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="6f1fdc02-a9f9-4cf7-a5d8-adef8fba5bf3" style="table 3_TD" x="172" y="73" width="220" height="20" origin="10" srcId="60">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_C1_DESCRIPCION_26996749_0"/>
+				</reportElement>
+				<text textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+					<reportElement uuid="0d1b5748-cce4-4dca-b7ff-fe8a97123758" x="0" y="0" width="220" height="20" origin="10" srcId="61"/>
+					<textContent><![CDATA[LAMINA H.N 0.90X100X200 CAL.20]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="2597af0f-6cd6-448d-82c3-6f73c62bb8c1" style="table 3_TD" x="392" y="73" width="90" height="20" origin="10" srcId="62">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_FECHAPEIDO_11344543_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.sql.Date" pattern="dd/MM/yyyy">
+					<reportElement uuid="93fd5ce5-7f14-457a-9479-973f8340969e" x="0" y="0" width="90" height="20" origin="10" srcId="63"/>
+					<textContent><![CDATA[12/08/2013]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="b6a1464b-a013-416e-9244-798a3787553c" style="table 3_TD" x="482" y="73" width="56" height="20" origin="10" srcId="64">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_FECHAENTREGA_11457705_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.sql.Date" pattern="dd/MM/yyyy">
+					<reportElement uuid="8365f544-1f42-4e16-a359-49bfab74d8ba" x="0" y="0" width="55" height="20" origin="10" srcId="65"/>
+					<textContent><![CDATA[18/08/2013]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="c6679eb3-c8f5-4b6f-93ce-d5f13377af70" style="table 3_TD" x="538" y="73" width="30" height="20" origin="10" srcId="66">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_Dias_776169_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.lang.Long">
+					<reportElement uuid="a9a2c2bc-b6bc-42b7-b55e-9b31cefd73bc" x="1" y="0" width="29" height="20" origin="10" srcId="67"/>
+					<textContent><![CDATA[6]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="0c1ce839-9f30-4a1a-9cce-df1f0630326e" style="table 3_TD" x="568" y="73" width="29" height="20" origin="10" srcId="68">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_7_25965378_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+					<reportElement uuid="c5583eab-f934-4cb7-8d24-d074459be32b" x="0" y="0" width="29" height="20" origin="10" srcId="69"/>
+					<textContent><![CDATA[A]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="520a0a17-71fb-4d90-a6c3-ed69a8a70ab5" style="table 3_TD" x="597" y="73" width="49" height="20" origin="10" srcId="70">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_RECEPNUMERO_24725341_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+					<reportElement uuid="30b34b3c-0749-45e3-80dc-6cdf171c0804" style="table 3_TD" x="0" y="0" width="49" height="20" origin="10" srcId="71"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textContent><![CDATA[2]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="9115bf63-405a-417b-8e95-084fab304475" style="table 3_TD" x="646" y="73" width="33" height="20" origin="10" srcId="72">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_CountFilas_20727057_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.lang.Integer">
+					<reportElement uuid="3e535050-c9f2-4127-b801-3b20457510db" x="0" y="0" width="32" height="20" origin="10" srcId="73"/>
+					<font isBold="true"/>
+					<textContent><![CDATA[3]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="b0f62d43-c917-4d61-ab83-086cbaf19fa4" style="table 3_TD" x="0" y="93" width="61" height="20" origin="10" srcId="54">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_REQUINUMERO_23212128_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.math.BigDecimal">
+					<reportElement uuid="6e695e82-78e8-4f9b-adda-5afca30e2647" x="0" y="0" width="61" height="20" origin="10" srcId="55"/>
+					<textContent><![CDATA[1]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="b521aa4f-fa9f-4f37-9d7a-bf35b9ae146f" style="table 3_TD" x="61" y="93" width="41" height="20" origin="10" srcId="56"/>
+				<text textAlignment="Center" textHeight="13.8359375" lineSpacingFactor="1.2578125" leadingOffset="-2.4169922">
+					<reportElement uuid="7d9d6e8e-3917-4b0a-85e0-b982bca398ca" x="0" y="0" width="40" height="20" origin="10" srcId="57"/>
+					<font size="11" isBold="true"/>
+					<textContent><![CDATA[A]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="8a581cdb-ac18-46cd-80b6-aae50fb9f2a9" style="table 3_TD" x="102" y="93" width="70" height="20" origin="10" srcId="58">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_2_23511869_0"/>
+				</reportElement>
+				<text textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+					<reportElement uuid="cd7efc67-e7d9-479f-9a82-77da6213c2e1" x="0" y="0" width="69" height="20" origin="10" srcId="59"/>
+					<textContent><![CDATA[URGENTE]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="6f1fdc02-a9f9-4cf7-a5d8-adef8fba5bf3" style="table 3_TD" x="172" y="93" width="220" height="20" origin="10" srcId="60">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_C1_DESCRIPCION_26996749_0"/>
+				</reportElement>
+				<text textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+					<reportElement uuid="0d1b5748-cce4-4dca-b7ff-fe8a97123758" x="0" y="0" width="220" height="20" origin="10" srcId="61"/>
+					<textContent><![CDATA[LAMINA H.N 0.90X100X200 CAL.20]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="2597af0f-6cd6-448d-82c3-6f73c62bb8c1" style="table 3_TD" x="392" y="93" width="90" height="20" origin="10" srcId="62">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_FECHAPEIDO_11344543_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.sql.Date" pattern="dd/MM/yyyy">
+					<reportElement uuid="93fd5ce5-7f14-457a-9479-973f8340969e" x="0" y="0" width="90" height="20" origin="10" srcId="63"/>
+					<textContent><![CDATA[08/08/2013]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="b6a1464b-a013-416e-9244-798a3787553c" style="table 3_TD" x="482" y="93" width="56" height="20" origin="10" srcId="64">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_FECHAENTREGA_11457705_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.sql.Date" pattern="dd/MM/yyyy">
+					<reportElement uuid="8365f544-1f42-4e16-a359-49bfab74d8ba" x="0" y="0" width="55" height="20" origin="10" srcId="65"/>
+					<textContent><![CDATA[18/08/2013]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="c6679eb3-c8f5-4b6f-93ce-d5f13377af70" style="table 3_TD" x="538" y="93" width="30" height="20" origin="10" srcId="66">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_Dias_776169_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.lang.Long">
+					<reportElement uuid="a9a2c2bc-b6bc-42b7-b55e-9b31cefd73bc" x="1" y="0" width="29" height="20" origin="10" srcId="67"/>
+					<textContent><![CDATA[10]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="0c1ce839-9f30-4a1a-9cce-df1f0630326e" style="table 3_TD" x="568" y="93" width="29" height="20" origin="10" srcId="68">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_7_25965378_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+					<reportElement uuid="c5583eab-f934-4cb7-8d24-d074459be32b" x="0" y="0" width="29" height="20" origin="10" srcId="69"/>
+					<textContent><![CDATA[A]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="520a0a17-71fb-4d90-a6c3-ed69a8a70ab5" style="table 3_TD" x="597" y="93" width="49" height="20" origin="10" srcId="70">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_RECEPNUMERO_24725341_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656">
+					<reportElement uuid="30b34b3c-0749-45e3-80dc-6cdf171c0804" style="table 3_TD" x="0" y="0" width="49" height="20" origin="10" srcId="71"/>
+					<box>
+						<pen lineWidth="0.0"/>
+						<topPen lineWidth="0.0"/>
+						<leftPen lineWidth="0.0"/>
+						<bottomPen lineWidth="0.0"/>
+						<rightPen lineWidth="0.0"/>
+					</box>
+					<textContent><![CDATA[2]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="9115bf63-405a-417b-8e95-084fab304475" style="table 3_TD" x="646" y="93" width="33" height="20" origin="10" srcId="72">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_CountFilas_20727057_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="12.578125" lineSpacingFactor="1.2578125" leadingOffset="-2.1972656" valueClass="java.lang.Integer">
+					<reportElement uuid="3e535050-c9f2-4127-b801-3b20457510db" x="0" y="0" width="32" height="20" origin="10" srcId="73"/>
+					<font isBold="true"/>
+					<textContent><![CDATA[4]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="a00d5b96-e1d9-499f-bc00-79cd76f019e5" x="0" y="113" width="679" height="30" origin="8" srcId="14"/>
+				<box padding="0">
+					<pen lineWidth="0.0"/>
+				</box>
+				<frame>
+					<reportElement uuid="ce5436a2-bd93-4595-b4dd-3debd996473d" x="0" y="0" width="61" height="30" origin="8" srcId="15">
+						<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_REQUINUMERO_23212128_0"/>
+					</reportElement>
+				</frame>
+				<frame>
+					<reportElement uuid="36845d7a-b80d-4033-bdf4-b5320c1dcbfc" x="61" y="0" width="41" height="30" origin="8" srcId="16"/>
+				</frame>
+				<frame>
+					<reportElement uuid="14ff5eee-72ef-42ee-929c-49d0b7d0591e" x="102" y="0" width="70" height="30" origin="8" srcId="17">
+						<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_2_23511869_0"/>
+					</reportElement>
+				</frame>
+				<frame>
+					<reportElement uuid="82c78e7a-9101-449b-b3dd-47dee1e17195" x="172" y="0" width="220" height="30" origin="8" srcId="18">
+						<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_C1_DESCRIPCION_26996749_0"/>
+					</reportElement>
+				</frame>
+				<frame>
+					<reportElement uuid="945b239d-9c8a-4887-bc56-0335ef998a54" x="392" y="0" width="90" height="30" origin="8" srcId="19">
+						<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_FECHAPEIDO_11344543_0"/>
+					</reportElement>
+				</frame>
+				<frame>
+					<reportElement uuid="1a756bd3-6715-4796-816d-78be48d074a7" x="482" y="0" width="56" height="30" origin="8" srcId="20">
+						<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_FECHAENTREGA_11457705_0"/>
+					</reportElement>
+				</frame>
+				<frame>
+					<reportElement uuid="70f169e8-4a35-4eaa-a2e8-bbf351b9ceb6" style="table 3_TD" x="538" y="0" width="30" height="30" origin="8" srcId="21">
+						<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_Dias_776169_0"/>
+					</reportElement>
+					<text textAlignment="Center" textHeight="13.8359375" lineSpacingFactor="1.2578125" leadingOffset="-2.4169922" valueClass="java.lang.Integer">
+						<reportElement uuid="466902a5-2006-4623-a125-888cfbe3c484" x="0" y="0" width="30" height="30" origin="8" srcId="22"/>
+						<box>
+							<bottomPen lineWidth="5.5" lineStyle="Double"/>
+						</box>
+						<font size="11" isBold="true"/>
+						<textContent><![CDATA[30]]></textContent>
+					</text>
+				</frame>
+				<frame>
+					<reportElement uuid="1aac5bcd-d97c-4cc8-8904-3a367ac54272" x="568" y="0" width="29" height="30" origin="8" srcId="23">
+						<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_7_25965378_0"/>
+					</reportElement>
+				</frame>
+				<frame>
+					<reportElement uuid="4940a474-7305-465f-a8c7-6bd78e1b8714" x="597" y="0" width="49" height="30" origin="8" srcId="24">
+						<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_RECEPNUMERO_24725341_0"/>
+					</reportElement>
+				</frame>
+				<frame>
+					<reportElement uuid="5fa97f40-d405-4e8c-9c5f-1f7530fef27b" x="646" y="0" width="33" height="30" origin="8" srcId="25">
+						<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_CountFilas_20727057_0"/>
+					</reportElement>
+				</frame>
+			</frame>
+			<frame>
+				<reportElement uuid="9f66f45d-d6c9-4b37-be80-bfae6bcbc0fd" style="table 3_TD" x="482" y="143" width="56" height="36" origin="13" srcId="85">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_FECHAENTREGA_11457705_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="13.8359375" lineSpacingFactor="1.2578125" leadingOffset="-2.4169922">
+					<reportElement uuid="1fc6202d-76f7-4c2b-b0d3-07eb29af9923" x="0" y="12" width="55" height="15" origin="13" srcId="86"/>
+					<font size="11" isBold="true"/>
+					<textContent><![CDATA[Promedio ]]></textContent>
+				</text>
+			</frame>
+			<frame>
+				<reportElement uuid="6cc20df9-3747-4271-a24b-c60c26da9359" style="table 3_TD" x="538" y="143" width="30" height="36" origin="13" srcId="87">
+					<property name="net.sf.jasperreports.export.html.class" value="jrcel cel_Dias_776169_0"/>
+				</reportElement>
+				<text textAlignment="Center" textHeight="13.8359375" lineSpacingFactor="1.2578125" leadingOffset="-2.4169922" valueClass="java.lang.Float" pattern="#0.0">
+					<reportElement uuid="6ac6477d-5578-47ad-8ad5-2f1289ac8cdd" x="0" y="12" width="30" height="15" origin="13" srcId="88"/>
+					<font size="11" isBold="true"/>
+					<textContent><![CDATA[6,7]]></textContent>
+				</text>
+			</frame>
+		</frame>
+	</page>
+</jasperPrint>

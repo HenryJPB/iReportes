@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporteActCtasBanco" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b7c1a867-367b-4ed0-aca6-aa15143c2c4c">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="codBanco" class="java.lang.String">
+		<parameterDescription><![CDATA[Codigo del Banco?:]]></parameterDescription>
+		<defaultValueExpression><![CDATA["16"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="desdeFecha" class="java.util.Date">
+		<parameterDescription><![CDATA[Desde la fecha? (mm/dd/aaaa):]]></parameterDescription>
+		<defaultValueExpression><![CDATA[01/01/2012]]></defaultValueExpression>
+	</parameter>
+	<parameter name="hastaFecha" class="java.util.Date">
+		<parameterDescription><![CDATA[Hasta la fecha? (mm/dd/aaaa):]]></parameterDescription>
+	</parameter>
+	<parameter name="desdeTipoMov" class="java.lang.String">
+		<parameterDescription><![CDATA[Desde tipo de Mov (AAA)?:]]></parameterDescription>
+		<defaultValueExpression><![CDATA["AAA"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="hastaTipoMov" class="java.lang.String">
+		<parameterDescription><![CDATA[Hasta Tipo Mov (ZZZ)?:]]></parameterDescription>
+		<defaultValueExpression><![CDATA["ZZZ"]]></defaultValueExpression>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[select ( select nvl(sum(decode(C2_TIPO_CONTABLE,
+                                                'D',C3_MONTO,
+                                                -C3_MONTO )),0)
+                          from   BAN02_DAT,BAN03_DAT
+                          where  C3_COD_BANCO=$P{codBanco}
+                          and    C2_TIPO_MOV=C3_TIPO_MOV
+                          and    C3_FECHA< $P{desdeFecha} ) as saldoAnterior,
+          C3_COD_BANCO||' '||C1_NOMBRE_BANCO as banco,
+          C3_TIPO_MOV as tipoMov,
+          C3_FECHA as fecha,
+          C3_DESCRIP_OPERACION as descripcion,
+          decode( C2_TIPO_CONTABLE,'D',C3_MONTO) as debito,
+          decode( C2_TIPO_CONTABLE,'C',C3_MONTO) as credito,
+          decode( C2_TIPO_CONTABLE,
+                                 'D',C3_MONTO,
+                                 'C',(-1)*C3_MONTO ) as saldo
+from   BAN01_DAT, BAN03_DAT, BAN02_DAT
+where   C3_COD_BANCO = C1_COD_BANCO
+and    C3_COD_BANCO  = $P{codBanco}
+and    C3_FECHA between $P{desdeFecha} and $P{hastaFecha}
+and    C3_TIPO_MOV = C2_TIPO_MOV
+and    C3_TIPO_MOV between $P{desdeTipoMov} and $P{hastaTipoMov}
+order by C3_COD_BANCO, C3_FECHA, C3_TIPO_MOV]]>
+	</queryString>
+	<field name="saldoAnterior" class="java.lang.Number"/>
+	<field name="BANCO" class="java.lang.String"/>
+	<field name="TIPOMOV" class="java.lang.String"/>
+	<field name="FECHA" class="java.util.Date"/>
+	<field name="DESCRIPCION" class="java.lang.String"/>
+	<field name="DEBITO" class="java.math.BigDecimal"/>
+	<field name="CREDITO" class="java.math.BigDecimal"/>
+	<field name="SALDO" class="java.math.BigDecimal"/>
+	<variable name="SALDO_1" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{SALDO}]]></variableExpression>
+	</variable>
+	<variable name="DEBITO_1" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{DEBITO}]]></variableExpression>
+	</variable>
+	<variable name="CREDITO_1" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{CREDITO}]]></variableExpression>
+	</variable>
+	<variable name="runningSaldo" class="java.lang.Number">
+		<variableExpression><![CDATA[$F{saldoAnterior}+$V{SALDO_1}]]></variableExpression>
+	</variable>
+	<group name="BANCO">
+		<groupExpression><![CDATA[$F{BANCO}]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<pageHeader>
+		<band height="68">
+			<staticText>
+				<reportElement x="0" y="5" width="307" height="20" forecolor="#550707" uuid="cf253697-62b6-4467-ae4e-8454b756031e"/>
+				<textElement>
+					<font size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DERIVADOS SIDERURGICOS,C.A.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="343" y="5" width="187" height="20" forecolor="#770101" uuid="c3d4a86b-4df3-44cb-8ec2-47864efcf4ae"/>
+				<textElement textAlignment="Left">
+					<font size="14" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Estado de Cuenta]]></text>
+			</staticText>
+			<textField>
+				<reportElement mode="Transparent" x="2" y="30" width="305" height="19" forecolor="#0650F0" backcolor="#E6E6E6" uuid="578212c0-a2d5-40eb-8c41-b1612b00d499"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{BANCO}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="380" y="29" width="58" height="20" uuid="9844b6ce-c5b8-4bba-be39-02cdf2a95268"/>
+				<textFieldExpression><![CDATA[$P{desdeFecha}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="343" y="29" width="35" height="20" uuid="86864fe4-9760-47d6-8bc1-47bcab754492"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[desde: ]]></text>
+			</staticText>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement isPrintRepeatedValues="false" mode="Opaque" x="102" y="51" width="100" height="16" backcolor="#E0E3E3" uuid="7f5a1693-0366-45bf-b6f4-bb13e0c5faf7"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{saldoAnterior}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="2" y="51" width="100" height="16" uuid="e7dea38c-994d-4215-bf4e-e45b27a5e3e3"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vienen:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="442" y="30" width="31" height="18" uuid="8beb24c1-2885-4c80-b903-9a30baf0a3dd"/>
+				<textElement textAlignment="Left"/>
+				<text><![CDATA[hasta: ]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="475" y="30" width="58" height="20" uuid="a4d76644-601a-422d-9d66-1230959e5b11"/>
+				<textFieldExpression><![CDATA[$P{hastaFecha}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="23">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="7" width="31" height="15" forecolor="#040607" backcolor="#E6E6E6" uuid="887f399c-d13a-4c5f-8e19-5adf12fe4b46"/>
+				<textElement textAlignment="Left">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TIPO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="31" y="7" width="52" height="15" forecolor="#040607" backcolor="#E6E6E6" uuid="1938686c-c3fe-439b-9b40-ceabfaae0b78"/>
+				<textElement textAlignment="Left">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="83" y="7" width="193" height="15" forecolor="#040607" backcolor="#E6E6E6" uuid="3acdc85a-faa1-4987-8532-1cdf3614f98b"/>
+				<textElement textAlignment="Center">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIPCION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="276" y="7" width="92" height="15" forecolor="#040607" backcolor="#E6E6E6" uuid="8c429e51-f0ac-4763-8288-ae340d53c9e9"/>
+				<textElement textAlignment="Right">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEBITO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="368" y="7" width="92" height="15" forecolor="#040607" backcolor="#E6E6E6" uuid="fc748c7b-f51d-49fe-8915-e2f44fc1530c"/>
+				<textElement textAlignment="Right">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CREDITO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="460" y="7" width="92" height="15" forecolor="#040607" backcolor="#E6E6E6" uuid="376fedff-b385-4ed3-99d1-48213e9ac4d7"/>
+				<textElement textAlignment="Right">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SALDO]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="22" width="553" height="1" uuid="18fbc9c3-4fd4-4a2f-a76c-8cdfb89d7496"/>
+			</line>
+			<line>
+				<reportElement x="2" y="6" width="553" height="1" uuid="9bcfe6b4-bac8-443a-b9fb-27c4d02d86d5"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="1" width="31" height="14" uuid="f72633a9-d5e4-4c47-9f28-9fc6ba53cdf9"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{TIPOMOV}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="dd/MM/yyyy">
+				<reportElement x="33" y="1" width="62" height="14" uuid="8a219c29-bc24-4ea4-a109-e6e2b307d85e"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{FECHA}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="100" y="1" width="207" height="14" uuid="249a2254-f42b-4d71-8ec1-5e17f03bd751"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DESCRIPCION}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement mode="Transparent" x="276" y="1" width="92" height="14" uuid="6c895728-5b3e-49b0-b9a8-bf3f2de149c6"/>
+				<textElement textAlignment="Right">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DEBITO}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement x="368" y="1" width="92" height="14" uuid="8589ce8e-566f-4133-b65d-1395c76c5dc4"/>
+				<textElement textAlignment="Right">
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CREDITO}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00">
+				<reportElement x="460" y="1" width="92" height="14" uuid="f91600e2-d548-455a-8d8f-cb39be4d292b"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$V{runningSaldo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="cfa5d594-ca06-4322-a906-d82883f53a00"/>
+				<textElement textAlignment="Right">
+					<font isPdfEmbedded="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pag. No. "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="8502872f-d42d-4504-b8de-4852d281ecc7"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="ea62114a-bdc8-40c3-bade-41c667b3899d"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="20" splitType="Stretch">
+			<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="276" y="4" width="92" height="12" forecolor="#06050B" backcolor="#D4D4D4" uuid="7842fa20-da28-40f9-a328-c09cb43ea0ce"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{DEBITO_1}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="378" y="4" width="82" height="12" forecolor="#06050B" backcolor="#D4D4D4" uuid="5e60b9f5-e558-4c4f-898d-c6d16a54b324"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{CREDITO_1}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;-#,##0.00" isBlankWhenNull="true">
+				<reportElement mode="Opaque" x="471" y="2" width="81" height="16" forecolor="#1607F8" backcolor="#CBD1D3" uuid="ac51fb7b-8cb6-4a58-add8-0529facf4309"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{runningSaldo}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="2" y="0" width="553" height="1" uuid="4a2a8cdc-3f77-423d-acc6-0001c97bd020"/>
+			</line>
+			<line>
+				<reportElement x="3" y="16" width="553" height="1" uuid="0d117415-ae9b-49c9-9977-c178dd78d45a"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

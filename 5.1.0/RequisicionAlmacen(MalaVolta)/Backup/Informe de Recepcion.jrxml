@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Informe de Recepcion" language="groovy" pageWidth="612" pageHeight="792" columnWidth="572" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b16e102f-c1c2-4595-8654-f54e8cd53c31">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab Data Text" hAlign="Center"/>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 3_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 4_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 5_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 6_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 7_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 8">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 8_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 8_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 8_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 9">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 9_TH" mode="Opaque" backcolor="#C3C3D9">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 9_CH" mode="Opaque" backcolor="#E6E6FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 9_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 10">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 10_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 10_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 10_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="RECEP" uuid="7fd536dc-f827-459d-8a91-3870d271eeec">
+		<queryString language="xPath">
+			<![CDATA[/Recepciones/producto]]>
+		</queryString>
+		<field name="SUP01_DAT_C1_UM" class="java.lang.String">
+			<fieldDescription><![CDATA[SUP01_DAT_C1_UM]]></fieldDescription>
+		</field>
+		<field name="ALMAC_RECEP_DETALLE_CANTIDAD" class="java.lang.Double">
+			<fieldDescription><![CDATA[ALMAC_RECEP_DETALLE_CANTIDAD]]></fieldDescription>
+		</field>
+		<field name="SUP01_DAT_C1_DESCRIPCION" class="java.lang.String">
+			<fieldDescription><![CDATA[SUP01_DAT_C1_DESCRIPCION]]></fieldDescription>
+		</field>
+		<field name="ALMAC_RECEP_DETALLE_PRODU_ID" class="java.lang.String">
+			<fieldDescription><![CDATA[ALMAC_RECEP_DETALLE_PRODU_ID]]></fieldDescription>
+		</field>
+		<field name="ALMAC_RECEP_DETALLE_PRODU_ID2" class="java.lang.String">
+			<fieldDescription><![CDATA[ALMAC_RECEP_DETALLE_PRODU_ID]]></fieldDescription>
+		</field>
+		<field name="ALMAC_RECEP_DETALLE_PRECIO" class="java.lang.Double">
+			<fieldDescription><![CDATA[ALMAC_RECEP_DETALLE_PRECIO]]></fieldDescription>
+		</field>
+		<field name="ID_CUEN" class="java.lang.String">
+			<fieldDescription><![CDATA[ID_CUEN]]></fieldDescription>
+		</field>
+		<variable name="variable1" class="java.lang.Float" calculation="Sum">
+			<variableExpression><![CDATA[$F{ALMAC_RECEP_DETALLE_CANTIDAD}*$F{ALMAC_RECEP_DETALLE_PRECIO}]]></variableExpression>
+		</variable>
+		<variable name="IT" class="java.lang.Number" calculation="Count">
+			<variableExpression><![CDATA[]]></variableExpression>
+		</variable>
+	</subDataset>
+	<queryString language="xPath">
+		<![CDATA[/Recepciones/Datos]]>
+	</queryString>
+	<field name="ALMAC_RECEP_FECHA" class="java.util.Date">
+		<fieldDescription><![CDATA[ALMAC_RECEP_FECHA]]></fieldDescription>
+	</field>
+	<field name="ALMAC_RECEP_RECEPNUMERO" class="java.lang.String">
+		<fieldDescription><![CDATA[ALMAC_RECEP_RECEPNUMERO]]></fieldDescription>
+	</field>
+	<field name="ALMAC_RECEP_PROVEEDOR" class="java.lang.String">
+		<fieldDescription><![CDATA[ALMAC_RECEP_PROVEEDOR]]></fieldDescription>
+	</field>
+	<field name="ALMAC_RECEP_ORDENCOMPRA" class="java.lang.String">
+		<fieldDescription><![CDATA[ALMAC_RECEP_ORDENCOMPRA]]></fieldDescription>
+	</field>
+	<field name="ALMAC_RECEP_FACTURA" class="java.lang.String">
+		<fieldDescription><![CDATA[ALMAC_RECEP_FACTURA]]></fieldDescription>
+	</field>
+	<field name="CANTIDAD_CONF" class="java.lang.String">
+		<fieldDescription><![CDATA[CANTIDAD_CONF]]></fieldDescription>
+	</field>
+	<field name="MATERIAL_CONF" class="java.lang.String">
+		<fieldDescription><![CDATA[MATERIAL_CONF]]></fieldDescription>
+	</field>
+	<field name="ESPESIFICACIONES_CONF" class="java.lang.String">
+		<fieldDescription><![CDATA[ESPESIFICACIONES_CONF]]></fieldDescription>
+	</field>
+	<field name="FACTURA_CONF" class="java.lang.String">
+		<fieldDescription><![CDATA[FACTURA_CONF]]></fieldDescription>
+	</field>
+	<field name="PRECIO_CONF" class="java.lang.String">
+		<fieldDescription><![CDATA[PRECIO_CONF]]></fieldDescription>
+	</field>
+	<field name="PARTICULARES_CONF" class="java.lang.String">
+		<fieldDescription><![CDATA[PARTICULARES_CONF]]></fieldDescription>
+	</field>
+	<field name="DOCUMENTACION_CONF" class="java.lang.String">
+		<fieldDescription><![CDATA[DOCUMENTACION_CONF]]></fieldDescription>
+	</field>
+	<field name="COMENTARIOS" class="java.lang.String">
+		<fieldDescription><![CDATA[COMENTARIOS]]></fieldDescription>
+	</field>
+	<group name="NUMERO_RECEP">
+		<groupExpression><![CDATA[$F{ALMAC_RECEP_RECEPNUMERO}]]></groupExpression>
+		<groupHeader>
+			<band/>
+		</groupHeader>
+		<groupFooter>
+			<band height="96">
+				<line>
+					<reportElement uuid="00c51226-afc5-40a1-bf61-0b42b9f92b26" x="294" y="58" width="197" height="1"/>
+				</line>
+				<staticText>
+					<reportElement uuid="ed118600-b4c6-4687-aecc-f1ec4a73af13" x="0" y="68" width="226" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Dpt. de Almacén de Suplidos y Repuestos]]></text>
+				</staticText>
+				<line>
+					<reportElement uuid="aef3bc66-019a-4b4c-9bf1-55410b8c5fe0" x="0" y="57" width="197" height="1"/>
+				</line>
+				<staticText>
+					<reportElement uuid="40fb4587-ff19-4063-8dc7-d93b46fbbabd" x="0" y="0" width="100" height="20"/>
+					<textElement>
+						<font size="11" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Elaborado por:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="02b13061-a26b-4d28-a7ab-10bb8ff8f222" x="295" y="0" width="100" height="20"/>
+					<textElement>
+						<font size="11" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Revisado por:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="76f3fb6c-2c73-4dbb-9f99-710933cf4499" x="294" y="69" width="226" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Dpt. de Contabilidad y Costos]]></text>
+				</staticText>
+			</band>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="124" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="cb6f66cb-a74c-4161-a981-d5911b1caa44" x="145" y="27" width="239" height="33"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[INFORME DE RECEPCIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b402dfef-12ed-4c19-b68f-7b8d2bf36508" x="413" y="0" width="70" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RC-AL4.6-01]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="be821fa3-d4b1-412b-9513-549723364754" x="413" y="27" width="23" height="20" forecolor="#FF3333"/>
+				<textElement>
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[N° 	]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="a1a56460-a026-4b09-bea9-f4456e2dee47" x="454" y="27" width="70" height="20" forecolor="#FF3333"/>
+				<textElement textAlignment="Left">
+					<font size="14" isBold="true" isItalic="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ALMAC_RECEP_RECEPNUMERO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="5ceb9a0d-2f32-475e-9480-29a362d2fe91" x="413" y="60" width="41" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement uuid="92f8ec4b-d3f8-4b4d-9a95-6f4313f0f77e" x="454" y="60" width="70" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{ALMAC_RECEP_FECHA}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="5204f255-4af6-4b39-948b-aacbade0cfc3" x="0" y="95" width="555" height="20"/>
+			</rectangle>
+			<staticText>
+				<reportElement uuid="559c6c48-2e98-4559-9f48-a27b0cad5cb1" x="0" y="95" width="66" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Proveedor :]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="db229ae7-4849-4c68-9eb9-fbaa6f571198" x="66" y="95" width="243" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{ALMAC_RECEP_PROVEEDOR}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="dc594fe7-2ab1-4462-85ae-d9feaca15f82" x="313" y="95" width="45" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[O.C.N° :]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="d6957408-f6f9-4a31-b103-9987da33788f" x="309" y="95" width="1" height="20"/>
+			</line>
+			<textField>
+				<reportElement uuid="5d5cecaf-cf43-4e8b-9dae-241d9291851d" x="358" y="95" width="68" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{ALMAC_RECEP_ORDENCOMPRA}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement uuid="a58b75b0-fc7e-4a01-b485-9a5ce9ca18a0" x="426" y="95" width="1" height="20"/>
+			</line>
+			<staticText>
+				<reportElement uuid="d795dce7-ba64-45e5-9258-ab6a6a9e587d" x="436" y="95" width="47" height="20"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fact. N°]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="82106691-ca0a-49bb-9d3b-e079e2c38b7b" x="483" y="95" width="72" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{ALMAC_RECEP_FACTURA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="1ea3ecd5-d9f3-4924-ae4f-8e01cf4e4407" x="0" y="7" width="196" height="13"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9" isBold="false"/>
+				</textElement>
+				<text><![CDATA[DERIVADOS SIDERURGICOS, C.A]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="104" splitType="Stretch">
+			<componentElement>
+				<reportElement uuid="34dd4563-8c0b-46dc-92e5-6509ca9fc7f4" key="table 11" x="0" y="0" width="572" height="103"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="RECEP" uuid="b976d436-08dd-4be9-9d52-0459542c6fe6">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).dataSource("/Recepciones/producto")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="22" uuid="bc1584b8-3685-4af8-a83a-c61a95e6a886">
+						<jr:tableHeader height="30" rowSpan="1"/>
+						<jr:tableFooter height="30" rowSpan="1"/>
+						<jr:columnHeader style="table 9_TD" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="19961db1-b732-4d44-bed4-c3dfdee38c64" x="0" y="0" width="20" height="18"/>
+								<textElement textAlignment="Center">
+									<font size="11" isBold="true"/>
+								</textElement>
+								<text><![CDATA[IT]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter height="30" rowSpan="1"/>
+						<jr:detailCell style="table 9_TD" height="23" rowSpan="1">
+							<textField pattern="##00;-###0">
+								<reportElement uuid="815c975f-570f-400f-98dd-a0185b795e6a" x="0" y="0" width="20" height="20"/>
+								<textElement textAlignment="Center"/>
+								<textFieldExpression><![CDATA[$V{IT}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="188" uuid="6ee5bb95-c0f2-482f-a5a9-34843a043706">
+						<jr:columnHeader style="table 9_TD" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="af7b7601-b81c-456e-9481-633cd8b716da" x="0" y="0" width="186" height="18"/>
+								<textElement textAlignment="Center"/>
+								<text><![CDATA[    DESCRIPCIÓN]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 9_TD" height="23" rowSpan="1">
+							<textField>
+								<reportElement uuid="2ecbb9f4-25da-4014-bd41-de7a53ac7ef2" x="0" y="0" width="186" height="20"/>
+								<textElement/>
+								<textFieldExpression><![CDATA[$F{SUP01_DAT_C1_DESCRIPCION}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="44" uuid="44f31487-caf4-4f55-b726-15ea9033f98e">
+						<jr:columnHeader style="table 9_TD" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="eb8dbc17-2c25-4d47-829e-08d2230536f1" x="0" y="0" width="43" height="18"/>
+								<textElement textAlignment="Center"/>
+								<text><![CDATA[UND.]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 9_TD" height="23" rowSpan="1">
+							<textField>
+								<reportElement uuid="05a7803b-2706-4354-aaf7-fe0aba060321" x="0" y="0" width="43" height="20"/>
+								<textElement textAlignment="Center"/>
+								<textFieldExpression><![CDATA[$F{SUP01_DAT_C1_UM}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="69" uuid="9109cfcf-c7a7-4a12-8719-789fd56dd4ef">
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="9ba4ec25-af27-457a-b37a-068a650e31ee" style="table 9_TD" x="0" y="0" width="68" height="30"/>
+								<textElement textAlignment="Center"/>
+								<text><![CDATA[CENTRO COSTO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 9_TD" height="23" rowSpan="1">
+							<textField>
+								<reportElement uuid="2085b7f2-7b35-4d1e-a10c-cb2f59c4e40a" x="0" y="0" width="68" height="20"/>
+								<textElement textAlignment="Center"/>
+								<textFieldExpression><![CDATA[$F{ID_CUEN}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="76" uuid="bab82720-a0b3-4e49-a420-773f3926b586">
+						<jr:columnHeader style="table 9_TD" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="d6f6777a-a372-4220-8955-80de3bb80ae2" x="0" y="0" width="71" height="18"/>
+								<textElement textAlignment="Center"/>
+								<text><![CDATA[CÓDIGO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 9_TD" height="23" rowSpan="1">
+							<textField>
+								<reportElement uuid="e479670b-2201-40fa-a90c-fb52136fff8c" x="1" y="0" width="73" height="20"/>
+								<textElement textAlignment="Center"/>
+								<textFieldExpression><![CDATA[$F{ALMAC_RECEP_DETALLE_PRODU_ID}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="38" uuid="6f58c0db-edb4-4644-8fed-64d8e2c69f8a">
+						<jr:columnHeader style="table 9_TD" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="e2a07496-d04f-4d6f-99ea-f053a8882e53" x="0" y="0" width="37" height="18"/>
+								<textElement textAlignment="Center"/>
+								<text><![CDATA[CANT.]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="table 9_TD" height="23" rowSpan="1">
+							<textField>
+								<reportElement uuid="2fc791c2-4af5-4ee0-8b95-899f51558a3b" x="1" y="0" width="36" height="20"/>
+								<textElement textAlignment="Center"/>
+								<textFieldExpression><![CDATA[$F{ALMAC_RECEP_DETALLE_CANTIDAD}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="71" uuid="178a946f-fb5f-4b15-ae89-085aeaac0133">
+						<jr:columnHeader style="table 9_TD" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="1d3aaa30-da6f-429a-8ec5-ce035f42fa63" x="0" y="0" width="70" height="30"/>
+								<textElement textAlignment="Center"/>
+								<text><![CDATA[COSTO UNITARIOO]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="ec43321b-3da1-4bb2-a3da-5a03be482e14" x="0" y="0" width="71" height="20"/>
+								<textElement textAlignment="Center">
+									<font size="11" isBold="true"/>
+								</textElement>
+								<text><![CDATA[TOTAL Bsf.]]></text>
+							</staticText>
+						</jr:columnFooter>
+						<jr:detailCell style="table 9_TD" height="23" rowSpan="1">
+							<textField pattern="#,##0.00;-#,##0.00">
+								<reportElement uuid="7677bfc3-3120-49b2-bcf4-d4aecb0c7ff1" x="0" y="0" width="71" height="20"/>
+								<textElement textAlignment="Center"/>
+								<textFieldExpression><![CDATA[$F{ALMAC_RECEP_DETALLE_PRECIO}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="71" uuid="93294594-d546-4713-810c-6836196d3d14">
+						<jr:columnHeader style="table 9_TD" height="30" rowSpan="1">
+							<staticText>
+								<reportElement uuid="c36f18ad-bf7a-4cc8-a667-7add811ec17d" x="0" y="0" width="68" height="30"/>
+								<textElement textAlignment="Center"/>
+								<text><![CDATA[COSTO TOTAL]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 9_TD" height="30" rowSpan="1">
+							<textField pattern="#,##0.00;-#,##0.00">
+								<reportElement uuid="817e4d01-9fa5-4b60-bb68-11a390872041" x="0" y="0" width="71" height="20"/>
+								<box>
+									<pen lineStyle="Double"/>
+									<topPen lineStyle="Double"/>
+									<leftPen lineStyle="Double"/>
+									<bottomPen lineWidth="1.5" lineStyle="Solid"/>
+									<rightPen lineStyle="Dashed"/>
+								</box>
+								<textElement textAlignment="Center"/>
+								<textFieldExpression><![CDATA[$V{variable1}]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="table 9_TD" height="23" rowSpan="1">
+							<textField pattern="#,##0.00;-#,##0.00">
+								<reportElement uuid="e2e4dedd-1e75-4926-9a5a-27e23ae04c63" x="0" y="0" width="71" height="20"/>
+								<textElement textAlignment="Center"/>
+								<textFieldExpression><![CDATA[$F{ALMAC_RECEP_DETALLE_CANTIDAD}*$F{ALMAC_RECEP_DETALLE_PRECIO}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="98" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

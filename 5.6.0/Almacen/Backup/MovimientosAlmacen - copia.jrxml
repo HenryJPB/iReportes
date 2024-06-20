@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="MovimientosAlmacen" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7a134b02-e51e-418d-b5dd-7c90fc6baedf">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT c5_codigo as codItem,
+       c1_descripcion as descripcion,
+       c5_fecha as fecha,
+       c5_unidades as cantidad,
+       c5_referencia as nroRequisicion
+FROM   Sup01_dat, Sup05_dat
+WHERE  c1_codigo = c5_codigo
+AND    c5_tipo_mov = 'S'
+AND    c5_fecha BETWEEN '01-06-2020' AND '30-06-2020'
+ORDER  BY C5_CODIGO]]>
+	</queryString>
+	<field name="CODITEM" class="java.lang.String"/>
+	<field name="DESCRIPCION" class="java.lang.String"/>
+	<field name="FECHA" class="java.sql.Timestamp"/>
+	<field name="CANTIDAD" class="java.math.BigDecimal"/>
+	<field name="NROREQUISICION" class="java.lang.String"/>
+	<group name="CODITEM">
+		<groupExpression><![CDATA[$F{CODITEM}]]></groupExpression>
+		<groupHeader>
+			<band height="56">
+				<textField>
+					<reportElement style="SubTitle" x="5" y="18" width="120" height="15" forecolor="#333333" uuid="9d333a4a-94e1-480e-b189-72f25926a881"/>
+					<textElement>
+						<font size="13" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{CODITEM}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="106" y="18" width="157" height="15" uuid="bbac25f7-d94c-4ef5-9932-0b24e1e71def"/>
+					<textElement>
+						<font size="13" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{DESCRIPCION}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement style="Column header" x="5" y="38" width="138" height="15" uuid="f997c4b5-78a7-4d2d-9f99-70154bea14cf"/>
+					<text><![CDATA[Fecha]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="167" y="38" width="138" height="15" uuid="8c21dab8-b8a2-45b7-8381-05af406a2dc2"/>
+					<text><![CDATA[Nro Requisicion]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="340" y="37" width="138" height="15" uuid="a161f644-598a-4b14-bcc2-68bc901703b9"/>
+					<text><![CDATA[Cantidad]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="86" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="131" splitType="Stretch">
+			<staticText>
+				<reportElement style="SubTitle" x="8" y="75" width="74" height="28" forecolor="#330000" uuid="515021d3-7ba9-4af3-bd5d-4536927c6624"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial Black" size="13"/>
+				</textElement>
+				<text><![CDATA[Desde:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="157" y="74" width="26" height="28" forecolor="#330000" uuid="b45c50b8-41cb-43ce-a7aa-60de9b73d428"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial Black" size="13"/>
+				</textElement>
+				<text><![CDATA[al]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="6" y="44" width="247" height="28" forecolor="#330000" uuid="b8593612-97e4-48df-a667-5aebcfa95520"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial Black"/>
+				</textElement>
+				<text><![CDATA[Consumos de Almacen ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Title" x="5" y="9" width="552" height="33" forecolor="#330000" uuid="45e02432-0d3c-4e3c-a370-634f72c1822f"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[DERIVADOS SIDERGICOS, C.A.]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="28" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="3b583f63-0893-4783-b2da-3c7c17b169c6"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="5" y="0" width="138" height="15" uuid="8aed5a5c-9503-4d92-beff-62729a1dc7c4"/>
+				<textFieldExpression><![CDATA[$F{FECHA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="340" y="1" width="138" height="15" uuid="632a0953-5b48-424b-aa07-f47cf8535710"/>
+				<textFieldExpression><![CDATA[$F{CANTIDAD}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="167" y="1" width="138" height="15" uuid="64f3885b-370a-414c-9b1f-6f7476f6cdd8"/>
+				<textFieldExpression><![CDATA[$F{NROREQUISICION}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="f5037079-d4f2-4e06-9aca-aa0ca5bff8b4"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="3617ac0b-596f-4562-957c-4543612d8425"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="98706726-c5a8-473e-bec5-92e454cfd9de"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="ce6f125c-6991-447d-a599-9ba541f4ae31"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

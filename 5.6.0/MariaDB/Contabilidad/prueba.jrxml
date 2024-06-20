@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="prueba" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9846a937-4a05-481e-96a7-37888fa7d119">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT ( CASE
+           WHEN b.cargable = "C" THEN b.codigo
+         END ) AS codigoCuenta,
+
+       ( CASE
+           WHEN b.cargable = "C" THEN descripcion
+         END ) AS descripcion,
+
+       ( CASE
+            WHEN b.cargable = "C" THEN (  IFNULL(saldoAnterior,0.00) + IFNULL(totalDebitos,0.00) - IFNULL(totalCreditos,0.00) )
+         END ) AS sumSaldoActual
+
+FROM   ContabbDat b, ContabdDat d
+WHERE  b.codigo BETWEEN '1' AND '1124zzzzz'
+AND    b.codigo = d.codigoCuenta
+AND    periodo = '2021-01'
+ORDER  BY b.codigo]]>
+	</queryString>
+	<field name="codigoCuenta" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sumSaldoActual" class="java.lang.Double"/>
+	<variable name="totalSaldoActual" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{sumSaldoActual}]]></variableExpression>
+		<initialValueExpression><![CDATA[0.00]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement x="275" y="0" width="300" height="64" uuid="1abcaf53-222f-4963-ae2f-3af0bbb9e93d"/>
+				<imageExpression><![CDATA["leaf_banner_red.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="0" y="13" width="263" height="33" uuid="ef1356eb-4fd2-40f1-b902-3cefbbefc4c8"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Leaf Red Title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="117" y="46" width="157" height="22" uuid="e84f16f5-2f6c-46c6-b8d5-7787125f3d19"/>
+				<text><![CDATA[Leaf Red SubTitle]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="bdcadb05-5dfa-41b5-ba0f-9cdf882efc8f"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="19" width="185" height="15" uuid="6d416b0d-2857-4416-bc2f-f80f689bd449"/>
+				<text><![CDATA[codigoCuenta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="185" y="19" width="185" height="15" uuid="14110faf-a18f-4698-bc29-742bef07d85b"/>
+				<text><![CDATA[descripcion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="370" y="19" width="185" height="15" uuid="3fab6c75-bca6-4ea9-9c02-bab3a6b5f896"/>
+				<text><![CDATA[sumSaldoActual]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="22b89b3d-67cc-4d2d-a89f-ec6a2ad3020c"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement style="Detail" x="0" y="0" width="185" height="15" uuid="9afcead9-02a5-4b41-8b50-539317554dcf"/>
+				<textFieldExpression><![CDATA[$F{codigoCuenta}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Detail" x="185" y="0" width="185" height="15" uuid="dc4a91ca-f045-4041-9f91-4fd9beaa2b37"/>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00;(#,##0.00)">
+				<reportElement style="Detail" x="370" y="0" width="185" height="15" uuid="69a124c8-217b-4d4e-9fbd-57535255d2f2"/>
+				<textFieldExpression><![CDATA[$F{sumSaldoActual}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="6ce11805-30e8-43d7-9427-01a68e4407c9"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField pattern="#,##0.00;(#,##0.00)">
+				<reportElement x="323" y="4" width="147" height="20" uuid="bcd6182c-53df-4de8-83ee-60330bfed405"/>
+				<textElement>
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{totalSaldoActual}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="2bada2ec-79e1-4516-8d1a-3eabc0186077"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="b705f057-1f5b-4a28-96ed-101530fb08c4"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="702741be-035e-407d-bf5b-d86e38f483e3"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="802" splitType="Stretch">
+			<textField pattern="#,##0.00;(#,##0.00)">
+				<reportElement x="323" y="0" width="147" height="20" forecolor="#515455" uuid="16d15237-b638-48b9-8a38-7469be0ea72c"/>
+				<textFieldExpression><![CDATA[$V{totalSaldoActual}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

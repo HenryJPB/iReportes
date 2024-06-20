@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="datosFiscalCliente_v4" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="60f87a2f-8027-407a-9bf1-aa493801f46a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="codCliente1" class="java.lang.String">
+		<parameterDescription><![CDATA[Desde Cod Cliente ( C-n )]]></parameterDescription>
+		<defaultValueExpression><![CDATA["C-0001"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="codCliente2" class="java.lang.String">
+		<parameterDescription><![CDATA[Hasta Cod Cliente ( C-nnnn )]]></parameterDescription>
+		<defaultValueExpression><![CDATA["C-9999"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="nombreClienteLike" class="java.lang.String">
+		<parameterDescription><![CDATA[%<prefijo/sufijo del nombre>%]]></parameterDescription>
+		<defaultValueExpression><![CDATA["%"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="region" class="java.lang.String">
+		<parameterDescription><![CDATA[Region: Todas, Barquisimeto o Caracas]]></parameterDescription>
+		<defaultValueExpression><![CDATA["Todas"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="clienteRifVencido" class="java.lang.Integer">
+		<parameterDescription><![CDATA[Relacionar Clientes Rif Vencidos ( 0 = false / 1=true )]]></parameterDescription>
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select  CODIGO as codCliente,
+            NOMBRE_CLI_PROV as nombreCliente,
+            DIRECCION1,
+            DIRECCION2,
+            nvl(DIRECCION3,'-') as DIRECCION3,
+            UBIC_GEOGRAF,
+            nvl(CEDULA,'-') as rif,
+            CONTRIBUYENTE,
+            nvl(FECHA_EMISION_RIF,'-') as FECHA_EMISION_RIF,
+            nvl(FECHA_VENC_RIF,'-') as FECHA_VENC_RIF,
+            decode( $P{clienteRifVencido},
+                          0,'',
+                           'Cliente(s) Rif Vencido(s)' ) as etiquetaRifVencido
+from   CXCD_DAT
+where  TIPO_DE_CLIENTE = 'A'
+and    SUBSTR(CODIGO,1,1 ) = 'C'
+and    CODIGO between $P{codCliente1} and $P{codCliente2}
+and    CODIGO not in ('C-9','C-9999')
+and    ( ( $P{region} = 'Todas' and UBIC_GEOGRAF between 'A-000' and 'Z-000' )
+           or ( $P{region}='Excluir' and UBIC_GEOGRAF not in ('A-000','B-000') )
+           or ( UBIC_GEOGRAF = decode( $P{region},
+                                      'Barquisimeto','B-000',
+                                      'Caracas','A-000' ) ) )
+and    NOMBRE_CLI_PROV like $P{nombreClienteLike}
+and    ( $P{clienteRifVencido}=0 or ( $P{clienteRifVencido}=1 and  FECHA_VENC_RIF is not null and to_date(FECHA_VENC_RIF,'dd-MM-yyyy')<sysdate ) )
+order  by CODIGO, NOMBRE_CLI_PROV]]>
+	</queryString>
+	<field name="CODCLIENTE" class="java.lang.String"/>
+	<field name="NOMBRECLIENTE" class="java.lang.String"/>
+	<field name="DIRECCION1" class="java.lang.String"/>
+	<field name="DIRECCION2" class="java.lang.String"/>
+	<field name="DIRECCION3" class="java.lang.String"/>
+	<field name="UBIC_GEOGRAF" class="java.lang.String"/>
+	<field name="RIF" class="java.lang.String"/>
+	<field name="CONTRIBUYENTE" class="java.lang.String"/>
+	<field name="FECHA_EMISION_RIF" class="java.lang.String"/>
+	<field name="FECHA_VENC_RIF" class="java.lang.String"/>
+	<field name="etiquetaRifVencido" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="75" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="73" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="a9d2e2b4-d14a-46d8-b9b5-501adfdac66e" style="Column header" x="2" y="29" width="165" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[COD/ NOMBRE CLIENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b80b7c0a-2f91-455b-94f3-a0309d983031" style="Column header" x="199" y="29" width="88" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[DIRECCION]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="af354399-76f3-4a44-83cd-3a3c2362946a" style="Column header" x="466" y="29" width="88" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[RIF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0e187c31-11d1-4067-8352-638c78fda6ce" style="Column header" x="554" y="29" width="62" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[CONTRIB]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="2860d0b9-430f-411d-968b-4a1482aed100" style="Column header" mode="Opaque" x="616" y="29" width="78" height="20" forecolor="#000000" backcolor="#FEFD0C"/>
+				<textElement textAlignment="Center">
+					<font isBold="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[EMISION RIF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="e511502e-337c-472a-84db-d5ee31d6b2f6" style="Column header" mode="Opaque" x="694" y="29" width="98" height="20" forecolor="#000000" backcolor="#FEFD0C"/>
+				<textElement>
+					<font isBold="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[VENCIMIENTO]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="5dd3215a-662d-42b2-9299-c672c8b3abed" x="665" y="-58" width="127" height="22" forecolor="#170B0B"/>
+				<textElement textAlignment="Right">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement uuid="e5ed00f8-2e6e-46b5-9a90-1697f05e1c94" mode="Opaque" x="0" y="-35" width="792" height="32" forecolor="#000000" backcolor="#CC0000"/>
+			</frame>
+			<staticText>
+				<reportElement uuid="d5e2a8c1-d6cd-4f0f-b8a5-d1d0a7809e1a" style="SubTitle" x="436" y="-91" width="316" height="29" forecolor="#180E0E"/>
+				<textElement textAlignment="Right">
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Informacion Fiscal del Cliente (v2)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a36619fd-463e-4843-b4c1-d1601c7452e9" style="Title" x="0" y="-95" width="326" height="56" forecolor="#140A0A"/>
+				<box topPadding="4" leftPadding="4" bottomPadding="4" rightPadding="4"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="32" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESICA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a8b8de00-b431-46be-8b24-9b0114415db9" x="436" y="-58" width="62" height="20"/>
+				<textElement>
+					<font size="12" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[Desde el Cod.:]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="d8230574-ee25-4d01-9664-5aadc6b2e489" x="498" y="-58" width="51" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{codCliente1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="06713220-5261-44e1-ab9c-44775578ed60" x="549" y="-58" width="49" height="20"/>
+				<textElement>
+					<font size="12" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[hasta: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="fce11647-a865-43a0-8b3d-1e06f0dc6cd9" x="598" y="-58" width="50" height="20"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{codCliente2}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="cbf0e7b4-5ac3-43ce-be8f-0a6ea2394a16" mode="Opaque" x="616" y="7" width="176" height="20" backcolor="#E4E9E8"/>
+				<textElement textAlignment="Center" markup="styled">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[FECHA RIF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="41383ab2-67a9-4603-ab52-27bbac7d2baf" x="648" y="-58" width="17" height="20"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[al]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b80b7c0a-2f91-455b-94f3-a0309d983031" style="Column header" x="111" y="50" width="54" height="18" forecolor="#000000"/>
+				<textElement>
+					<font isBold="false" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[REGION]]></text>
+			</staticText>
+			<textField>
+				<reportElement uuid="fc9cb86b-ea41-4c47-b27d-01fd804de5aa" style="Column header" x="2" y="4" width="197" height="20"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{etiquetaRifVencido}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="6434c3b4-5b18-4460-bae0-aa71c215aab9" mode="Transparent" x="2" y="-1" width="790" height="73"/>
+				<graphicElement>
+					<pen lineWidth="1.25"/>
+				</graphicElement>
+			</rectangle>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="77" splitType="Stretch">
+			<frame>
+				<reportElement uuid="fc0f3a75-0713-4e11-8e83-80a9d3804e55" style="Row" mode="Opaque" x="0" y="0" width="797" height="18"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="f63c2aa6-2e35-4e5c-a732-24f4664f314d" style="Detail" positionType="Float" x="2" y="0" width="88" height="18"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{CODCLIENTE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="f7793697-9b4f-407e-b1c5-ad1b6896b6df" style="Detail" positionType="Float" x="199" y="0" width="267" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{DIRECCION1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="ce8b0ff4-eda7-4ba4-952e-33104fafa679" style="Detail" positionType="Float" x="466" y="0" width="88" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{RIF}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="36f6732c-4538-4f80-a5ef-6da414ae739e" style="Detail" positionType="Float" x="555" y="0" width="49" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{CONTRIBUYENTE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="4203d85c-5638-4c06-80e1-f51b15c9e569" style="Detail" positionType="Float" x="616" y="0" width="88" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{FECHA_EMISION_RIF}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="907fb850-94af-4b47-903d-fc7105783fc2" style="Detail" positionType="Float" x="704" y="0" width="88" height="18"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{FECHA_VENC_RIF}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="4c5914d1-606f-42c2-b004-60a8b43d455c" style="Detail" positionType="Float" x="199" y="18" width="267" height="18"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DIRECCION2}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="f9d0c046-14d0-41ed-9109-1c94cd502e9c" style="Detail" positionType="Float" x="199" y="36" width="267" height="18"/>
+				<textElement>
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DIRECCION3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="b8ce9c4a-4f3b-46dc-8242-84ece20c9f1f" x="143" y="54" width="56" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{UBIC_GEOGRAF}]]></textFieldExpression>
+			</textField>
+			<elementGroup>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="f0e256a1-b56d-4814-81c8-5d00d2b3ce30" style="Detail" positionType="Float" x="2" y="18" width="197" height="36"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{NOMBRECLIENTE}]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="9" splitType="Stretch">
+			<line>
+				<reportElement uuid="4469ce4a-a62f-445a-88ed-1da69ffd306e" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement uuid="e823ec72-b4b7-468a-8891-a6245902e862" mode="Opaque" x="0" y="0" width="802" height="25" forecolor="#D0B48E" backcolor="#000000"/>
+				<textField evaluationTime="Report">
+					<reportElement uuid="94d61319-c0a5-4108-9672-df368793af0d" style="Column header" x="757" y="3" width="40" height="20" forecolor="#FFFFFF"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="78885663-7c41-4ec5-aea0-e69a5b4740e7" style="Column header" x="677" y="3" width="80" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement uuid="f5f41cc2-f3a6-49d7-94be-1f4e7a4c411b" style="Column header" x="2" y="3" width="197" height="20" forecolor="#FFFFFF"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report1" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="272b44b1-124b-4224-8347-46e26b1c2682">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     BAN01_DAT."C1_COD_BANCO" AS BAN01_DAT_C1_COD_BANCO,
+     BAN01_DAT."C1_NOMBRE_BANCO" AS BAN01_DAT_C1_NOMBRE_BANCO,
+     BAN01_DAT."C1_TIPO" AS BAN01_DAT_C1_TIPO,
+     BAN01_DAT."C1_NUM_CUENTA" AS BAN01_DAT_C1_NUM_CUENTA,
+     BAN01_DAT."C1_COD_CONTABLE" AS BAN01_DAT_C1_COD_CONTABLE
+FROM
+     "OPS$DESBAN01"."BAN01_DAT" BAN01_DAT]]>
+	</queryString>
+	<field name="BAN01_DAT_C1_COD_BANCO" class="java.lang.String"/>
+	<field name="BAN01_DAT_C1_NOMBRE_BANCO" class="java.lang.String"/>
+	<field name="BAN01_DAT_C1_TIPO" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="9b11b037-bc6e-414f-83c1-6a90b94d6194" style="Title" x="0" y="13" width="391" height="33"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[CUENTAS BANCARIAS]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3a3b2c44-6ab8-479e-bcb6-97a90b5648e0" style="SubTitle" x="0" y="46" width="329" height="22"/>
+				<textElement/>
+				<text><![CDATA[Gerencia Administracion y Finanzas]]></text>
+			</staticText>
+			<elementGroup/>
+			<image>
+				<reportElement uuid="1b9e897b-ccaf-408a-88c6-1d887ac26418" x="416" y="0" width="137" height="68"/>
+				<imageExpression><![CDATA["logo-desica.bmp"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement uuid="db5e1b47-3daa-45f0-9af9-e0e912da5624" positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="a854f0b0-1be3-40e6-818d-68a6a0ce46ef" style="Column header" x="0" y="19" width="185" height="15"/>
+				<textElement/>
+				<text><![CDATA[COD_BANCO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="123b9020-28ba-4148-b231-eb2491733826" style="Column header" x="185" y="19" width="185" height="15"/>
+				<textElement/>
+				<text><![CDATA[NOMBRE_BANCO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c18014ca-c327-414c-9a07-b425bbdc9bd0" style="Column header" x="370" y="19" width="185" height="15"/>
+				<textElement/>
+				<text><![CDATA[TIPO]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement uuid="ce076c4c-df98-4dd3-a99d-847348802972" positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement uuid="d5212e1c-9c6a-43ab-b241-d2f95ee4e946" style="Detail" x="0" y="0" width="185" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{BAN01_DAT_C1_COD_BANCO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="939c40a8-087e-4521-865e-721b6c5fb55f" style="Detail" x="185" y="0" width="185" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{BAN01_DAT_C1_NOMBRE_BANCO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="228e5b9e-94a4-4b99-94b3-5a7ec7b3d6c0" style="Detail" x="370" y="0" width="185" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{BAN01_DAT_C1_TIPO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement uuid="50c9818e-1a49-461a-a6ee-0895f93e207d" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="b984adee-1a04-4065-b884-dc09bae8c902" style="Column header" x="433" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="4cbdedfb-c6ed-49cc-adb3-cad1743d3a2a" style="Column header" x="513" y="0" width="40" height="20"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="620f4576-4b5a-4237-b9fe-fe19e7aa294f" style="Column header" x="0" y="0" width="197" height="20"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

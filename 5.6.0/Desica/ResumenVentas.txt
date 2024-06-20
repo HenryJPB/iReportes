@@ -1,0 +1,257 @@
+
+
+DERIVADOS SIDERURGICOS, C.A.                                                                Fecha: 13-09-2022
+Desde: 01-01-2015 al: 13-09-2022                                                            Hora : 01:09:11
+                                                                                            Pag. No.   1
+                                       ++++  RESUMEN DE VENTAS ++++
+                                             ======= == ======
+
+
+  Codigo    Nombre Cliente                     Facturado (Bs)  Peso Guia (Kgs)     Prom Bs/Kgs  Ult. Venta  Frecuencia
+  --------  ------------------------------  -----------------  ---------------  --------------  ----------  ----------
+  C-2024    FERRE-MAX,C.A.                   3.825.769.769,01         2.613,80    1.463.681,14  29/06/2022           3
+  C-1499    FERREMAT LAO LEE C.A             5.069.411.390,82        76.045,75       66.662,65  10/05/2022          15
+  C-2057    DECORUSTICOS LARA C.A.             472.928.735,19           319,80    1.478.826,56  06/10/2021           3
+  C-1452    MIGO LARA C.A                      591.711.480,70        98.063,51        6.033,96  17/08/2021          33
+  C-2072    C.A. PROSALCA                      211.285.350,00            97,92    2.157.734,38  12/04/2021           1
+  C-2056    FERRETERIA LA VENEZOLANA,C.A.       51.571.581,60            20,00    2.578.579,08  03/02/2021           1
+  C-2020    FERRETERIA Y SERVICIOS PERIJA,   6.261.764.670,45        17.299,12      361.970,13  28/09/2020           2
+  C-2019    TODO HIERRO MATERIALES, C.A.       338.597.209,74         1.628,29      207.946,50  27/07/2020           1
+  C-0269    VICTOR JOSE RODRIGUEZ, C.A.        366.528.855,12        72.136,50        5.081,05  10/06/2020          12
+  C-9       CLIENTE VENTA AL CONTADO           180.955.694,88       217.469,90          832,10  18/04/2018         296
+  C-1936    PERFILADORA GUAYANA C.A            165.256.000,00       193.294,08          854,95  22/01/2018          12
+  C-1938    RMG ACEROS, C.A                  1.002.342.010,00       673.095,30        1.489,15  18/01/2018          43
+  C-0001    ANDAMIOS DALMINE,S.A.               67.904.814,20       294.500,77          230,58  17/01/2018          13
+  C-2001    INVERSIONES HIVERCA, C.A.          119.647.800,00        92.028,00        1.300,12  13/12/2017           2
+  C-1980    LAMIFLEJE C.A                      872.752.348,67     1.094.451,51          797,43  12/12/2017          62
+  C-2011    FLH ACEROS Y DERIVADOS, C.A.        77.200.000,00       105.648,00          730,73  11/12/2017           8
+  C-0295    MATERIALES LOS ANDES, C.A.         615.968.205,36       564.205,38        1.091,74  05/12/2017          74
+  C-1052    MATERIALES LOS ANDES DE EL VIG     585.880.755,25       467.601,70        1.252,95  05/12/2017          59
+  C-0999    DERIVADOS SIDERURGICOS C.A         136.343.365,75        58.850,92        2.316,76  30/11/2017          17
+  C-1982    FERRETERIA EL VAQUIRO, C.A         517.861.600,00        73.825,09        7.014,71  30/11/2017           6
+  C-1915    COMPLEJO SIDERURGICO NACIONAL,         697.300,38        36.840,00           18,93  29/11/2017           3
+  C-1930    INVERSIONES Z Y V, C.A             429.080.900,00       156.420,66        2.743,12  28/11/2017          17
+  C-0423    MATERIALES DE CONSTRUCCION SAN     573.828.983,78       672.163,25          853,70  21/11/2017          75
+  C-2007    HIERRO NACIONAL, C.A.               31.200.000,00        15.235,68        2.047,82  15/11/2017           2
+  C-1406    CONCRETERA OL-BLO-CO, S.R.L.       356.588.307,09       149.567,28        2.384,13  02/11/2017          19
+  C-1730    HIERRO Y MATERIALES DE ABREU C     101.631.751,81       159.726,92          636,28  01/11/2017          17
+  C-0144    MATERIALES LOS ANDES BARINAS C     363.806.934,66       496.458,78          732,80  31/10/2017          57
+  C-1932    HIERROCATIA, C.A                   171.438.856,15        96.159,76        1.782,85  31/10/2017          11
+  C-1862    DISTRIBUIDORA DE HIERRO LA SIL     136.979.399,82       179.541,56          762,94  30/10/2017          15
+  C-0493    HIERRO LARA, C.A.                   26.290.343,90        74.025,68          355,15  25/10/2017          13
+  C-0514    FERRETERIA EL ANCLA, S.A.           88.539.897,31        82.742,32        1.070,07  25/10/2017          10
+  C-0651    PIERO ENRIQUE AGOLA DARBISI        117.606.526,59       108.947,09        1.079,48  24/10/2017          14
+  C-2012    INVERSIONES RTT CA                  94.636.080,00        36.649,20        2.582,21  23/10/2017           2
+  C-2016    VENEZOLANA DE PROYECTOS INTEGR     370.761.660,00        82.391,48        4.500,00  20/10/2017           9
+  C-1574    GRAMOCA, C.A                        61.611.660,65        46.005,76        1.339,22  10/10/2017           6
+  C-2018    MAXIMA,MAYOR DE FERRETERIA,C.A      17.040.000,00         4.260,00        4.000,00  09/10/2017           1
+  C-2006    SERVI HIERRO EL RECREO, S.A.       134.400.000,00       224.000,00          600,00  06/10/2017           9
+  C-1298    HIERRO UNION, C.A.                  27.352.203,85        51.047,92          535,81  05/10/2017           6
+  C-2017    INDUSTRIAS ACEROGRADO, C.A          18.290.262,20         4.064,04        4.500,51  05/10/2017           1
+  C-2013    INVERSIONES F.H GLOBAL, C.A          5.173.700,00        32.781,14          157,83  19/09/2017           3
+  C-2014    REPRESENTACIONES ZV C.A            104.510.000,00        28.325,54        3.689,60  18/09/2017           4
+  C-1706    MATERIALES LIFECA, C.A              64.211.711,10        64.365,54          997,61  08/09/2017           9
+  C-1438    DISTRIBUIDORA DE CEMENTO NUNEZ      31.747.193,95        59.052,46          537,61  29/08/2017           6
+  C-1034    DELL ACQUA, C.A.                    18.793.850,00         4.945,50        3.800,19  23/08/2017           1
+  C-2008    FERRETERIA LOS PRIMOS, C.A.         25.280.000,00         7.735,68        3.267,97  23/08/2017           1
+  C-2010    "LM VALENCIANA, C.A."               24.720.000,00        30.257,28          816,99  22/08/2017           2
+  C-2004    CONSTRUCCIONES Y MANTENIMIENTO     164.711.497,50        99.825,15        1.650,00  17/08/2017           6
+  C-1471    MATERIALES VULCANO (VULCA) C.A      51.821.679,60        57.410,20          902,66  14/08/2017           8
+  C-2000    CONCRETERA INDUSTRIAL BARINAS,      35.095.000,00        20.224,50        1.735,27  11/08/2017           3
+  C-1981    INVERSIONES GARRIDO, C.A            80.800.000,00        75.790,08        1.066,10  10/08/2017           7
+  C-1994    HIERROBECO, C.A                     39.670.713,60        14.905,60        2.661,46  10/08/2017           2
+
+                                                         Informatica DESICA
+
+
+DERIVADOS SIDERURGICOS, C.A.                                                                Fecha: 13-09-2022
+Desde: 01-01-2015 al: 13-09-2022                                                            Hora : 01:09:11
+                                                                                            Pag. No.   2
+                                       ++++  RESUMEN DE VENTAS ++++
+                                             ======= == ======
+
+
+  Codigo    Nombre Cliente                     Facturado (Bs)  Peso Guia (Kgs)     Prom Bs/Kgs  Ult. Venta  Frecuencia
+  --------  ------------------------------  -----------------  ---------------  --------------  ----------  ----------
+  C-0563    FEDIVE, C.A.                        19.725.299,84        40.134,14          491,48  08/08/2017           5
+  C-0816    FRANCESCO PAOLO SAVINO PANAREL      35.919.008,91        56.910,08          631,15  07/08/2017           6
+  C-1153    IRON WOLTER Y LA GUARDIA, S.A       54.400.000,00        16.646,40        3.267,97  03/08/2017           1
+  C-1570    MIGO SABANA C.A                     22.446.103,91        46.721,48          480,42  03/08/2017           7
+  C-2009    FIJACIONES INDUSTRIALES TECNIC       3.836.000,00         1.918,00        2.000,00  02/08/2017           1
+  C-0089    MIGO TORONDOY C.A                   13.350.023,44        52.522,12          254,18  19/07/2017           8
+  C-0364    MIGO VICTORIA C.A                   21.901.620,42        63.083,82          347,18  19/07/2017           8
+  C-1929    MIGO CHARALLAVE, C.A                 8.622.058,06        13.113,86          657,48  19/07/2017           3
+  C-1735    MIGO PALONEGRO, C.A.                 8.875.280,40        12.661,68          700,96  19/07/2017           3
+  C-1393    MIGO LAGO C.A                        9.410.620,00         7.616,08        1.235,63  19/07/2017           3
+  C-1325    FERRE MATERIALES EL POTENTE, C      10.981.500,00         8.714,88        1.260,09  17/07/2017           2
+  C-0410    HIERROS Y FERRETERIA CRIOLLA,C      29.870.298,63        65.757,46          454,25  11/07/2017           7
+  C-1764    ORGANIZACION LOS BOSQUES, C.A       81.148.725,00        77.284,50        1.050,00  10/07/2017          10
+  C-1971    CONSTRUMALLA, C.A                    9.389.963,25        19.165,59          489,94  06/07/2017           5
+  C-1992    MEGA HIERROS, C.A.                   9.404.000,00         6.128,40        1.534,50  06/07/2017           2
+  C-2005    DISTRIBUIDORA MACERAL, C.A           4.400.000,00         1.958,40        2.246,73  06/07/2017           1
+  C-1996    TERRA 701 CONSTRUCTORA, C.A.       104.764.227,00        69.518,06        1.507,01  04/07/2017          10
+  C-1225    FERRETERIA LA PRINCIPAL, C.A        17.380.000,00         7.735,68        2.246,73  29/06/2017           1
+  C-1554    FERRETERIA Y ELECTRODOMESTICOS      36.149.461,40        35.517,60        1.017,79  29/06/2017           4
+  C-1819    TERRAZAS DE LA ENSENADA, C.A       122.239.696,00       155.705,47          785,07  28/06/2017          20
+  C-1998    INDUSTRIAS F & P, C.A              132.054.300,00        75.089,70        1.758,62  28/06/2017          10
+  C-1870    CONCRETUBO, S.A                     53.307.798,80        93.276,82          571,50  28/06/2017          17
+  C-1951    DISTRIBUIDORA DE HIERRO OESTE       34.490.544,93       130.509,36          264,28  22/06/2017          15
+  C-0763    FERRETERIA EL LLANO, C.A.           40.189.071,66        83.044,46          483,95  21/06/2017          10
+  C-2003    FERREMATERIALES LARA LG, C.A.       17.424.000,00         7.912,80        2.202,00  20/06/2017           1
+  C-2002    LAMINAS LARA, C.A.                  64.732.500,00        61.650,00        1.050,00  16/06/2017           1
+  C-1997    PROGAMAR, C.A                      189.384.648,48       120.935,28        1.566,00  22/05/2017           6
+  C-1995    H.J. INGENIERIA C.A                 80.149.110,00        53.432,74        1.500,00  17/04/2017           7
+  C-1990    PAVIMENTOS Y CONSTRUCCIONES EX      25.066.298,40        28.484,43          880,00  30/03/2017           2
+  C-1750    FERREOFERTAS BARINAS,CA             17.621.733,35        72.001,34          244,74  20/02/2017           9
+  C-0914    FERRETERIA Y SERVICIOS DE PERI       3.057.461,40        21.436,24          142,63  15/02/2017           3
+  C-1988    CONSTRUCCIONES Y SERVICIOS NAI       3.336.000,00         2.780,00        1.200,00  15/02/2017           1
+  C-1991    CONSTRUCCIONES Y SERVICIOS CON       9.110.500,00         9.590,00          950,00  10/02/2017           2
+  C-1989    CONCRETO EXPRESS, C.A               25.113.563,20        28.538,14          880,00  07/02/2017           2
+  C-0414    MATERIALES STELLA, C.A.             18.307.099,25        46.197,92          396,28  24/01/2017           6
+  C-0521    VENEZOLANA DE CERCAS, C.A.          21.711.920,64        59.938,58          362,24  24/01/2017           7
+  C-0428    MIGO TEJERIAS, C.A.                  7.048.122,45        24.527,76          287,35  23/01/2017           3
+  C-1543    HIERRO LA 42, C.A.                  19.760.085,84        96.479,70          204,81  18/01/2017          15
+  C-1985    COMERCIALIZADORA ANGOLO, C.A           126.000,00         7.670,40           16,43  30/11/2016           1
+  C-1977    MARSHALL Y ASOCIADOS, C.A          460.433.563,89     3.535.309,32          130,24  25/11/2016          13
+  C-1955    INVERSIONES Y SUMINISTRO ATG,      114.750.316,92     1.206.129,14           95,14  22/11/2016          64
+  C-1987    PAMPA, S.A.                          7.505.000,00         7.735,68          970,18  22/11/2016           1
+  C-1986    TUBERIAS NACIONALES TUNACA, C.       7.781.500,00         7.735,68        1.005,92  18/11/2016           1
+  C-1556    TECHO-HIERRO VARYNA (TEHIVAR)        6.312.974,73        40.192,38          157,07  16/11/2016           5
+  C-1974    FERRE GIO, COMPANIA ANONIMA          6.967.038,25        14.296,32          487,33  15/11/2016           2
+  C-1637    HIERROMAX AGRO, C.A (HIERROMAX      10.012.275,09        41.805,60          239,50  14/11/2016           5
+  C-1817    SUPLY HIERRO CA                     14.624.491,53        54.936,86          266,21  14/11/2016           6
+  C-0505    CRISTOBAL AZUAJE, C.A.              10.168.824,07        60.920,98          166,92  09/11/2016           7
+  C-0980    FERRETERIA CUATRICENTENARIO S.       9.335.657,94        25.043,26          372,78  27/10/2016           3
+  C-1983    FERREMATERIALES GONZA, C.A           4.009.305,00         4.176,20          960,04  27/10/2016           1
+  C-1592    FERREMATERIALES GONCA, COMPANI       5.078.340,00        23.892,20          212,55  27/10/2016           3
+
+                                                         Informatica DESICA
+
+
+DERIVADOS SIDERURGICOS, C.A.                                                                Fecha: 13-09-2022
+Desde: 01-01-2015 al: 13-09-2022                                                            Hora : 01:09:11
+                                                                                            Pag. No.   3
+                                       ++++  RESUMEN DE VENTAS ++++
+                                             ======= == ======
+
+
+  Codigo    Nombre Cliente                     Facturado (Bs)  Peso Guia (Kgs)     Prom Bs/Kgs  Ult. Venta  Frecuencia
+  --------  ------------------------------  -----------------  ---------------  --------------  ----------  ----------
+  C-1962    ACEROS YARA, C.A.                    6.685.690,20        31.748,21          210,58  26/10/2016           6
+  C-1201    CONSTRUFER, C.A                      9.223.426,49        60.170,21          153,29  25/10/2016           7
+  C-1549    FERREMATERIALES EL CASTOR I CA      12.212.523,86        72.678,04          168,04  25/10/2016           7
+  C-1690    FERRETERIA Y MATERIALES DE CON       6.715.000,00         7.735,68          868,06  24/10/2016           1
+  C-1250    FERVENCA C.A                        13.229.640,54        58.107,48          227,68  21/10/2016           6
+  C-1845    HIERRO MAYOR 2010, C.A.             23.297.804,46       123.431,09          188,75  19/10/2016          13
+  C-1029    FERRETERIA MARCONE, C.A.            10.131.419,27        41.301,74          245,30  10/10/2016           5
+  C-1879    FERRECENCA                          10.248.737,98        52.318,24          195,89  30/09/2016           6
+  C-1979    PROYECTO KUBO, C.A.                  1.941.800,00        63.321,44           30,67  29/07/2016           2
+  C-1975    INVERSIONES MH 0405,C.A              2.834.694,00        40.468,08           70,05  21/07/2016           8
+  C-1978    CORPORACION GRENA, C.A.              5.443.440,00        22.681,00          240,00  04/07/2016           3
+  C-1973    MAFER 2007 C.A                       1.680.000,00        59.760,00           28,11  16/03/2016          12
+  C-1493    CONSTRUCTORA SURCO C.A               8.714.876,31        77.356,80          112,66  09/03/2016          10
+  C-1756    FERRETERIA HERREFERRE, C.A           4.114.777,30        30.310,30          135,76  26/02/2016           3
+  C-1781    METALBLOQ, C.A                       4.940.006,96        34.961,84          141,30  18/02/2016           4
+  C-1802    MATERIALES SANTA LUCIA,C.A.          4.937.385,72        34.339,70          143,78  18/02/2016           4
+  C-1731    PROMOTORA AGUA DE CANTO C.A             68.400,00        14.090,40            4,85  04/02/2016           2
+  C-1958    PROYECTOS ALORU, C.A                   353.800,00       113.506,00            3,12  02/02/2016          15
+  C-1577    AGROFER C.A                          4.612.341,56        50.672,73           91,02  15/12/2015           5
+  C-1732    PROMOTORA AGUA VIVA C.A                724.503,00       110.536,17            6,55  14/12/2015          17
+  C-0105    PRETENSADOS VENEZOLANOS, C.A           227.400,00        44.235,00            5,14  11/12/2015           8
+  C-0459    CENTRO CEMENTO ACARIGUA, C.A         3.098.788,65        34.353,16           90,20  05/11/2015           4
+  C-1861    PDVSA INDUSTRIAL, S.A               28.392.000,00       541.434,24           52,44  04/11/2015          64
+  C-1972    MATERIALES CCL, C.A                    128.500,00        37.080,00            3,47  30/10/2015           6
+  C-1959    REPRESENTACIONES LA TORTUGA, C       2.009.416,40       144.288,00           13,93  29/10/2015          21
+  C-0962    COMERCIAL LOPEZ GONZALEZ, C.A.       2.442.704,17        29.948,72           81,56  21/10/2015           3
+  C-1803    INVERSIONES FERRECAMPO, C.A          1.869.573,60        17.139,68          109,08  21/10/2015           2
+  C-1823    INVERSIONES PARCELA LA ARBOLED       3.944.475,60       202.082,80           19,52  30/09/2015          27
+  C-1910    SUPLIDORA INDUSTRIAL MARACAIBO       2.462.535,10        38.049,86           64,72  17/09/2015           4
+  C-1961    INVERSIONES RUR, C.A                   417.837,46        74.110,02            5,64  01/09/2015           8
+  C-1912    CONSTRUCTORA VDC 2011, C.A           1.123.238,88       137.372,22            8,18  31/08/2015          18
+  C-1969    HAACK INGENIERIA DE PROYECTOS,          48.300,00        34.849,60            1,39  31/08/2015           4
+  C-0531    FERRETERIA H.MATERIALES, C.A.        2.381.091,12        35.466,88           67,14  19/08/2015           3
+  C-1970    RAUL COROMOTO PEREZ ASUAJE             394.371,75         4.575,51           86,19  06/08/2015           1
+  C-1482    PROYECTOS CORDILLERA, C.A              231.340,00       125.014,40            1,85  05/08/2015          17
+  C-0544    CONSTRUCCIONES Y SERVICIOS C.A       1.770.525,00       165.158,36           10,72  03/08/2015          19
+  C-1968    EDIFICACIONES EL INGENIO 2015,         232.028,00        63.095,14            3,68  31/07/2015           9
+  C-1759    AGROPECUARIA E INVERSIONES LOS          35.275,00        19.459,35            1,81  20/07/2015           3
+  C-1956    URBANIZADORA LAS JUNTAS C.A            674.876,00       317.260,81            2,13  20/07/2015          46
+  C-1944    PROMOTORA TU CASA C.A                  282.860,00        92.833,00            3,05  16/07/2015          13
+  C-1963    IMERCON, C.A                         1.560.600,00        26.964,00           57,88  14/07/2015           3
+  C-1856    PROMOTORA C.D.V 54, C.A                102.350,00        48.359,00            2,12  08/07/2015           7
+  C-1967    SV MANUFACTURAS METALICAS C.A          888.624,00        26.928,00           33,00  03/07/2015           4
+  C-1947    S.V. VALENCIANA DE SUMINISTROS      14.470.301,96       534.356,06           27,08  30/06/2015          64
+  C-1867    CONSTRUCTORA ROANGI, C.A               663.760,86       410.930,64            1,62  29/06/2015          50
+  C-1960    FONDO GLOBAL DE CONSTRUCCION,          195.529,60        75.760,00            2,58  29/06/2015           9
+  C-1965    INVERSIONES BENDITO SEAS, C.A          521.550,00         8.988,00           58,03  26/06/2015           1
+  C-1964    INVERSIONES RAMBAR, C.A                678.250,26        28.874,00           23,49  16/06/2015           1
+  C-0068    FERRETERIA DOBLE AA, C.A.            1.336.655,40        25.532,98           52,35  11/06/2015           2
+  C-1950    PROMOTORA CAMPO CLARO, C.A              19.600,00        10.996,00            1,78  29/04/2015           2
+  C-0723    INDUSTRIA NACIONAL DE CONEXION         781.759,44        27.258,00           28,68  16/04/2015           1
+
+                                                         Informatica DESICA
+
+
+DERIVADOS SIDERURGICOS, C.A.                                                                Fecha: 13-09-2022
+Desde: 01-01-2015 al: 13-09-2022                                                            Hora : 01:09:11
+                                                                                            Pag. No.   4
+                                       ++++  RESUMEN DE VENTAS ++++
+                                             ======= == ======
+
+
+  Codigo    Nombre Cliente                     Facturado (Bs)  Peso Guia (Kgs)     Prom Bs/Kgs  Ult. Venta  Frecuencia
+  --------  ------------------------------  -----------------  ---------------  --------------  ----------  ----------
+  C-1902    EL CONUCO, C.A                         175.950,00        85.625,80            2,05  09/04/2015          10
+  C-1903    SARCAR CONSTRUCCIONES EN GENER         164.150,00        95.616,50            1,72  09/04/2015           8
+  C-1953    K & C DISENOS PROYECTOS Y CONS         196.980,00        78.198,00            2,52  08/04/2015          11
+  C-1946    EDIFICACIONES EL INGENIO 2013          339.251,00       166.321,53            2,04  06/04/2015          21
+  C-1914    INDUSTRIA NACIONAL DE OCCIDENT       2.426.573,60       145.130,00           16,72  30/03/2015           5
+  C-1069    CABILLAS Y PERFILES CABIPERCA,         351.828,87         7.735,68           45,48  18/03/2015           1
+  C-1949    CONSTRUCTORA PUNTA REAL, C.A           190.610,00        98.734,40            1,93  17/03/2015          10
+  C-1760    COHIN C.A                              445.020,00        10.878,00           40,91  16/03/2015           1
+  C-1957    CONSTRUCTORA Z.Z, C.A                  855.776,80        18.808,00           45,50  13/03/2015           2
+  C-1923    CONSTRUCCIONES METROPOLITANA,           84.050,00        61.150,50            1,37  10/03/2015           8
+  C-1873    BIENES IRUVEN C.A                      108.855,00        96.101,64            1,13  06/03/2015          10
+  C-1825    INVERSIONES COIMPRO C.A                 37.142,00        26.006,98            1,43  04/03/2015           5
+                                          -------------------   --------------
+  Sum                                       27.554.054.555,93    19.452.099,99
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                                         Informatica DESICA
+

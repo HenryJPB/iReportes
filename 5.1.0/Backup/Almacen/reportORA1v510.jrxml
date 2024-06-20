@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportORA1v510" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8d4cbe3a-7c46-4ca6-ad09-4c870db2691e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT c9_um as unidMed, c9_descripcion as descripcion
+FROM   sup09_dat
+ORDER  BY c9_um]]>
+	</queryString>
+	<field name="UNIDMED" class="java.lang.String"/>
+	<field name="DESCRIPCION" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="0891557a-7b0f-4630-9655-dd6f760320e6" style="Title" mode="Opaque" x="0" y="5" width="263" height="33" forecolor="#000000" backcolor="#FFAFAF"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Wood Title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a7077d4a-70d3-4b5c-a66e-e4eb804296b6" style="SubTitle" mode="Opaque" x="349" y="30" width="200" height="22" forecolor="#000000" backcolor="#E0E000"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Wood SubTitle]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement uuid="b66e2a6b-0c8f-4840-b876-f5e0d19d068e" positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="8909ecb6-aaa1-46e6-8b74-f85e08d1cede" style="Column header" x="0" y="19" width="277" height="15"/>
+				<textElement/>
+				<text><![CDATA[UNIDMED]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="48bd2fb3-0d9d-4ca2-8287-8e0a61063626" style="Column header" x="277" y="19" width="277" height="15"/>
+				<textElement/>
+				<text><![CDATA[DESCRIPCION]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement uuid="bf17c7e4-05c6-41f7-a753-4b5477ce922f" positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement uuid="c30399d0-9a2e-4d3c-8d7c-4ee2d77b7e66" style="Detail" x="0" y="0" width="277" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{UNIDMED}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="afc90ff5-19c4-43b2-8fc3-a5111d81768a" style="Detail" x="277" y="0" width="277" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{DESCRIPCION}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement uuid="82827728-eb89-4b71-9ca1-4386d2c81868" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="c0ffa381-7fab-4d6a-90f2-c2bdb1bdfce6" style="Column header" x="433" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="cdaadb42-b785-4d9d-8f70-776edc64166b" style="Column header" x="513" y="0" width="40" height="20"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="489a393a-d096-4728-be53-692a09eac48e" style="Column header" x="0" y="0" width="197" height="20"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

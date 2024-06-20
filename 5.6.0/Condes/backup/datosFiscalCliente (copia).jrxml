@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="datosFiscalCliente" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2840b402-dff4-413a-af4e-77417bd17a8a">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[select  CODIGO as codCliente,
+            NOMBRE_CLI_PROV as nombreCliente,
+            DIRECCION1,
+            DIRECCION2,
+            DIRECCION3,
+            CEDULA as rif,
+            CONTRIBUYENTE,
+            FECHA_EMISION_RIF,
+            FECHA_VENC_RIF
+from    CXCD_DAT
+where  TIPO_DE_CLIENTE = 'A'
+and     SUBSTR(CODIGO,1,1 ) = 'C'
+order   by CODIGO, NOMBRE_CLI_PROV]]>
+	</queryString>
+	<field name="CODCLIENTE" class="java.lang.String"/>
+	<field name="NOMBRECLIENTE" class="java.lang.String"/>
+	<field name="DIRECCION1" class="java.lang.String"/>
+	<field name="DIRECCION2" class="java.lang.String"/>
+	<field name="DIRECCION3" class="java.lang.String"/>
+	<field name="RIF" class="java.lang.String"/>
+	<field name="CONTRIBUYENTE" class="java.lang.String"/>
+	<field name="FECHA_EMISION_RIF" class="java.lang.String"/>
+	<field name="FECHA_VENC_RIF" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<image>
+				<reportElement uuid="3c196363-5a43-40c4-b21a-e6691e559f16" x="275" y="0" width="300" height="64"/>
+				<imageExpression><![CDATA["leaf_banner_green.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="5e2a5d14-19c4-41e8-a360-5032ae337514" style="Title" x="0" y="13" width="263" height="33"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Leaf Green Title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="fe42156b-79fd-4b89-a3c0-3bbb12150afd" style="SubTitle" x="100" y="46" width="174" height="22"/>
+				<textElement/>
+				<text><![CDATA[Leaf Green SubTitle]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement uuid="fa9b4a7e-d1c4-487e-9752-d4a6c731e01f" positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="3bf60044-6727-4b1f-9b85-986c309b0503" style="Column header" x="0" y="19" width="61" height="15"/>
+				<textElement/>
+				<text><![CDATA[CODCLIENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="be5d3302-2bb6-407d-a928-ac45563f245c" style="Column header" x="61" y="19" width="61" height="15"/>
+				<textElement/>
+				<text><![CDATA[NOMBRECLIENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="93acd701-9db1-4363-99f0-d157dfa0be5b" style="Column header" x="122" y="19" width="183" height="15"/>
+				<textElement/>
+				<text><![CDATA[DIRECCION1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="02880629-e30c-4d22-bc0b-0dfc34233390" style="Column header" x="305" y="19" width="61" height="15"/>
+				<textElement/>
+				<text><![CDATA[RIF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="3699baf6-633e-44c4-b875-eb8dd7f5441f" style="Column header" x="366" y="19" width="61" height="15"/>
+				<textElement/>
+				<text><![CDATA[CONTRIBUYENTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="b1207284-56d2-4f22-bbea-4a6944db4232" style="Column header" x="427" y="19" width="61" height="15"/>
+				<textElement/>
+				<text><![CDATA[FECHA_EMISION_RIF]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="8d218465-dab3-4803-aeb7-e47413ac9bc7" style="Column header" x="488" y="19" width="61" height="15"/>
+				<textElement/>
+				<text><![CDATA[FECHA_VENC_RIF]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement uuid="11e52878-4f74-4011-9ae5-e92480124cbc" positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement uuid="1b81e25b-e67b-45e5-bff3-5bb2c497c9fd" style="Detail" x="0" y="0" width="61" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{CODCLIENTE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="c608cc5b-cdca-487e-9202-b89d8760373f" style="Detail" x="61" y="0" width="61" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{NOMBRECLIENTE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f1f6d06d-e8d6-403d-81c7-58244baa01ec" style="Detail" x="122" y="0" width="183" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{DIRECCION1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2c85734f-78f7-4af4-95aa-e92d1e3c5460" style="Detail" x="122" y="16" width="183" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{DIRECCION2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9ff8102e-7cad-4b43-9c5c-2e06b8e16e8c" style="Detail" x="122" y="30" width="183" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{DIRECCION3}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="130c82e3-80cb-46d0-b5e7-382c83b99e2e" style="Detail" x="305" y="0" width="61" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{RIF}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="d8e43344-b9ac-4886-9eb3-7ec2f1842051" style="Detail" x="366" y="0" width="61" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{CONTRIBUYENTE}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5d58bfc1-426e-4c19-98ab-48b8b21569bf" style="Detail" x="427" y="0" width="61" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FECHA_EMISION_RIF}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="011a5ba9-6c34-4a6e-b63c-383fdaf9c2fc" style="Detail" x="488" y="0" width="61" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{FECHA_VENC_RIF}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement uuid="b1210743-fa1b-4fdd-82af-6be981e3364e" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="a814aecf-2960-4b95-baee-279d2b3742de" style="Column header" x="433" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="247c9f17-93d4-4105-a286-9c4768e131cb" style="Column header" x="513" y="0" width="40" height="20"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="6c618364-70c0-4e8d-808e-a48c29efdf4c" style="Column header" x="0" y="0" width="197" height="20"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

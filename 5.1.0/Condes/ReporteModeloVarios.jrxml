@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteModeloVarios" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="95857286-2cae-4b28-87f8-de77cabfc828">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[select cod1 as codigo1, rTrim( descrip2 ) as decrip2,
+       ( select to_Char(sysDate,'month') from dual ) as mesIngles,
+       ( select to_Char(sysDate,'month','nls_date_language=spanish') from dual ) as mesEspanol
+from   (
+          select datos1_dat.c as cod1, datos1_dat.d as descrip1,
+                 datos2_dat.c as cod2, datos2_dat.d as descrip2
+          from   datos1_dat left join datos2_dat
+          on     datos1_dat.c = datos2_dat.c
+	  ) MiTabla
+order  by cod1, descrip1
+/* ///////////////////////////////////////////////////////////////////////
+ Para toda tabla, datos1_dat:
+                                       - c varchar2(10)
+                                       - d varchar2(25)
+                                      datos2_dat:
+                                       - c varchar2(10)
+                                       - d varchar2(25)
+
+//////////////////////////////////////////////////////////////////////// */]]>
+	</queryString>
+	<field name="CODIGO1" class="java.lang.String"/>
+	<field name="DECRIP2" class="java.lang.String"/>
+	<field name="MESINGLES" class="java.lang.String"/>
+	<field name="MESESPANOL" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="87" splitType="Stretch">
+			<image>
+				<reportElement uuid="2f25c308-30b8-4d24-9873-30fb7ddfd630" x="275" y="0" width="300" height="64"/>
+				<imageExpression><![CDATA["leaf_banner_red.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="3355c454-1b46-4ef9-9058-861bad702d9a" style="Title" x="0" y="13" width="263" height="33"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[REPORTE MODELO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="166b6c49-30bb-4b08-91b8-2fd3f3239296" style="SubTitle" x="25" y="64" width="443" height="22"/>
+				<textElement/>
+				<text><![CDATA[utilizando inner join + nls_date_language=spanish]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement uuid="f2bfe54a-7c75-4113-8c54-4335d7869178" positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="1719b9ee-5d74-47d1-8c69-d140a1def898" style="Column header" x="0" y="19" width="138" height="15"/>
+				<textElement/>
+				<text><![CDATA[CODIGO1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0f2cf008-8de8-4c3b-b80d-82269809714c" style="Column header" x="138" y="19" width="138" height="15"/>
+				<textElement/>
+				<text><![CDATA[DECRIP2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="745c44d1-4c77-4191-8d97-c05b9631cd31" style="Column header" x="276" y="19" width="138" height="15"/>
+				<textElement/>
+				<text><![CDATA[MESINGLES]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="a2230f37-5be3-450f-87d3-3bf8ce690105" style="Column header" x="414" y="19" width="138" height="15"/>
+				<textElement/>
+				<text><![CDATA[MESESPANOL]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement uuid="bf8d2611-7cbe-4109-9457-1b1015d5732b" positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement uuid="b1e97e97-ed2a-42fe-9e88-f0c1ad80679e" style="Detail" x="0" y="0" width="138" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{CODIGO1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="100f7421-967c-4929-b42a-984838b28a29" style="Detail" x="138" y="0" width="138" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{DECRIP2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="cafb1904-a2fe-4f29-b79f-454f47ac7299" style="Detail" x="276" y="0" width="138" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{MESINGLES}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="db1a51ef-ae5e-4056-b288-cc0373aad594" style="Detail" x="414" y="0" width="138" height="15"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{MESESPANOL}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement uuid="1a957b57-ffad-4a59-917f-2fd605d524c7" positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement uuid="99c9f2da-a624-410c-82c9-91b6fe7909e6" style="Column header" x="433" y="0" width="80" height="20"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="5b274483-3f7c-43fb-9f09-d824a6290c07" style="Column header" x="513" y="0" width="40" height="20"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="79e14cd2-69fe-4f5f-a9ee-297c7b99632a" style="Column header" x="0" y="0" width="197" height="20"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
